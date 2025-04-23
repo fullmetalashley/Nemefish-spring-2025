@@ -1,4 +1,5 @@
 using UnityEngine;
+using Yarn.Compiler;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,11 +13,17 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rigidBody;
 
     public SpriteRenderer spriteRenderer;
+
+    public GameObject leftSpawnPoint;
+    public GameObject rightSpawnPoint;
+
+    private Gun _gun;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rigidBody = this.gameObject.GetComponent<Rigidbody>();
+        _gun = this.gameObject.GetComponent<Gun>();
     }
 
     // Update is called once per frame
@@ -41,13 +48,32 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDir = new Vector3(x, 0, y);
         rigidBody.linearVelocity = moveDir * speed;
 
+        
+        
         if (x != 0 && x < 0)
         {
-            spriteRenderer.flipX = true;
+            FlipSprite(-1);
         }
         else if (x != 0 && x > 0)
         {
-            spriteRenderer.flipX = false;
+            FlipSprite(1);
+        }
+    }
+
+    public void FlipSprite(int dir)
+    {
+        switch (dir)
+        {
+            case -1:
+                spriteRenderer.flipX = true;
+                _gun.SetSpawnPoint(leftSpawnPoint.transform, -1);
+                break;
+            case 1:
+                spriteRenderer.flipX = false;
+                _gun.SetSpawnPoint(rightSpawnPoint.transform, 1);
+                break;
+            default:
+                break;
         }
     }
 }
