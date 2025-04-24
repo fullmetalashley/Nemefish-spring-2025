@@ -18,12 +18,15 @@ public class PlayerController : MonoBehaviour
     public GameObject rightSpawnPoint;
 
     private Gun _gun;
+
+    private PlayerRaycasting raycast;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rigidBody = this.gameObject.GetComponent<Rigidbody>();
         _gun = this.gameObject.GetComponent<Gun>();
+        raycast = this.gameObject.GetComponent<PlayerRaycasting>();
     }
 
     // Update is called once per frame
@@ -47,16 +50,32 @@ public class PlayerController : MonoBehaviour
         float y = Input.GetAxis("Vertical");
         Vector3 moveDir = new Vector3(x, 0, y);
         rigidBody.linearVelocity = moveDir * speed;
-
+        
+        
         
         
         if (x != 0 && x < 0)
         {
+            //West
             FlipSprite(-1);
+            raycast.ChangeDirection(3);
         }
         else if (x != 0 && x > 0)
         {
+            //East
             FlipSprite(1);
+            raycast.ChangeDirection(1);
+
+        }
+
+        if (y != 0 && y < 0)
+        {
+            //South
+            raycast.ChangeDirection(2);
+        }else if (y != 0 && y > 0)
+        {
+            //North
+            raycast.ChangeDirection(0);
         }
     }
 

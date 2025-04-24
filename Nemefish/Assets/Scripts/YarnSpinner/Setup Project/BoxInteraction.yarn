@@ -1,0 +1,16 @@
+﻿title: BoxInteraction
+tags:
+---
+Box: What the hell? Why do you have a gun? 
+
+-> Player: It shoots worms.
+    Box: Really? 
+    Box: Where are you getting your worms?
+    -> Player: I steal them. 
+        Box: I don't have any. Please don't rob me.
+    -> Player: They're my children.
+        Box: I don't know that you're a good parent.
+-> Player: There's a fish that needs shooting.
+    Box: Oh, I get that. Carry on. 
+<<leap InteractablePoint>>
+===
