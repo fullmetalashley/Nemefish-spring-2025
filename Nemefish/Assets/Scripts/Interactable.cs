@@ -50,4 +50,11 @@ public class Interactable : MonoBehaviour
     {
         _dialogueRunner.StartDialogue(yarnNode);
     }
+
+    [YarnCommand("leap")]
+    public void EndDialogue()
+    {
+        Debug.Log("Stopping dialogue");
+        dialogueRunning = false;
+    }
 }

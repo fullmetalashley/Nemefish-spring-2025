@@ -884,7 +884,7 @@ GameObject:
   - component: {fileID: 1433949575}
   - component: {fileID: 1433949574}
   m_Layer: 0
-  m_Name: Interactable Point
+  m_Name: InteractablePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
