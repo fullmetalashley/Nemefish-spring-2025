@@ -27,12 +27,10 @@ public class PlayerRaycasting : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hitinfo,
                 100f, _layerMask))
         {
-            Debug.Log("Hit something");
             Debug.DrawRay(raycastPoint.position, raycastPoint.TransformDirection(Vector3.forward) * hitinfo.distance, Color.red);
         }
         else
         {
-            Debug.Log("Hit nothing");
             Debug.DrawRay(raycastPoint.position, raycastPoint.TransformDirection(Vector3.forward) * 20f, Color.green);
         }
     }

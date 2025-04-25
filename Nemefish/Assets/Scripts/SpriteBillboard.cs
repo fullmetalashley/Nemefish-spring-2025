@@ -2,9 +2,14 @@ using UnityEngine;
 
 public class SpriteBillboard : MonoBehaviour
 {
+    private SpriteRenderer theSR;
+    void Start()
+    {
+        theSR = GetComponent<SpriteRenderer>();
+    }
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = Quaternion.Euler(0f, Camera.main.transform.rotation.eulerAngles.y, 0f);
+        transform.LookAt(PlayerController.instance.transform.position);
     }
 }

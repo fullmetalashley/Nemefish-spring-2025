@@ -3,7 +3,8 @@ using Yarn.Compiler;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public static PlayerController instance;
+    
     public float speed;
 
     public float groundDist;
@@ -20,6 +21,11 @@ public class PlayerController : MonoBehaviour
     private Gun _gun;
 
     private PlayerRaycasting raycast;
+
+    private void Awake()
+    {
+        instance = this;
+    }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
