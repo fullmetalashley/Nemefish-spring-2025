@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
     //Destroy an object if you shoot it
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag != "Terrain")
+        if (other.gameObject.tag != "Terrain" && other.gameObject.tag != "Player" && other.gameObject.tag != "Interactables")
         {
             Destroy(other.gameObject);
             Destroy(gameObject);

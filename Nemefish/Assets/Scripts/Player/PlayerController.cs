@@ -91,11 +91,9 @@ public class PlayerController : MonoBehaviour
         {
             case -1:
                 spriteRenderer.flipX = true;
-                _gun.SetSpawnPoint(leftSpawnPoint.transform, -1);
                 break;
             case 1:
                 spriteRenderer.flipX = false;
-                _gun.SetSpawnPoint(rightSpawnPoint.transform, 1);
                 break;
             default:
                 break;

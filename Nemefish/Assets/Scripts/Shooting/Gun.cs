@@ -13,6 +13,7 @@ public class Gun : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            direction = bulletSpawnPoint.forward;
             bullet.GetComponent<Rigidbody>().linearVelocity = direction * bulletSpeed;
         }
     }
