@@ -13,8 +13,11 @@ public class Gun : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.gunShoot, this.transform.position);
             direction = bulletSpawnPoint.forward;
             bullet.GetComponent<Rigidbody>().linearVelocity = direction * bulletSpeed;
+
+            
         }
     }
 
