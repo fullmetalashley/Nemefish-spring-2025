@@ -15,7 +15,7 @@ title: Start_Dialogue
 <<declare $Hold2Account = false>>
 
 
-<<pose FirstCustomerGreeting>>
+// <<pose FirstCustomerGreeting>>
     That's him, alright. Over or under he stiffs us, Theodore?
 Theodore: Meow.
 <<wait 2>> 

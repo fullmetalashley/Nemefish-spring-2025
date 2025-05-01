@@ -14,22 +14,22 @@ title: FindExterminatorCamp_Dialogue
 <<set $FindExterminatorCamp = true>>
 
 <<if $BloomLevel1 == false>>
-<<pose FOHIStandingHissing>>
-<<pose PCStandingSurprised>>
-<<pose FOHIStandingNeutral>>
-<<pose PCStandingNeutral>>
+// <<pose FOHIStandingHissing>>
+// <<pose PCStandingSurprised>>
+// <<pose FOHIStandingNeutral>>
+// <<pose PCStandingNeutral>>
 You: The Exterminator... she must've barely made it back from the beach. We should look around, Theodore.
 Theodore: Meow.
-<<pose FOHISittingNeutral>>
+// <<pose FOHISittingNeutral>>
 
 <<else>>
-<<pose FOHIStandingHissing>>
-<<pose PCStandingSurprised>>
-<<pose FOHIStandingNeutral>>
-<<pose PCStandingNeutral>>
+// <<pose FOHIStandingHissing>>
+// <<pose PCStandingSurprised>>
+// <<pose FOHIStandingNeutral>>
+// <<pose PCStandingNeutral>>
 You: The Exterminator... she must've barely made it back from the beach. We should look around, Whiskers.
 Whiskers: I'll hang back here, if you don't mind. It would take <i>ages</i> to get that stink from my coat.
-<<pose FOHISittingNeutral>>
+// <<pose FOHISittingNeutral>>
 
 <<endif>>
 ===

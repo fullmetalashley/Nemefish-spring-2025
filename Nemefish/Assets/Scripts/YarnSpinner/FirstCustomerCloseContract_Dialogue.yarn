@@ -1,9 +1,9 @@
 title: FirstCustomerCloseContract_Dialogue
 ---
-<<pose FirstCustomerGreeting>>
+// <<pose FirstCustomerGreeting>>
 //Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
 //start "FirstCustomerCloseContract_Dialogue" after mousedown on customer.
-<<pose FirstCustomerOther>>
+// <<pose FirstCustomerOther>>
 Customer: Golly, am I glad to see you back in one piece. No shivers? No runny nose? Dismal Notch can have a bite to her.
 -> POKE SOME FUN.
     You're worried about a <i>cold</i>? We nearly died out there.
@@ -15,7 +15,7 @@ Customer: Golly, am I glad to see you back in one piece. No shivers? No runny no
 
 title: WeAlmostDied
 ---
-<<pose FirstCustomerCrying>>
+// <<pose FirstCustomerCrying>>
 Customer: I—I'm sorry. You're right. I'm relieved you're safe, that's all, but that doesn't mean it was easy. 
 -> MOVE THINGS ALONG.
     So, aren't you curious to know what the critter was?
@@ -28,7 +28,7 @@ Customer: I—I'm sorry. You're right. I'm relieved you're safe, that's all, but
 title: LastExterminator
 ---
 <<set $Hold2Account = true>>
-<<pose FirstCustomerCrying>>
+// <<pose FirstCustomerCrying>>
 Customer: Yes, of course. I—I'm so sorry. I'm relieved you're safe but that doesn't make what happened to her any less tragic. Gosh, but I never thought—  
 <<wait .2>>
 These are dangerous times. 
@@ -41,9 +41,9 @@ These are dangerous times.
 
 title: UpAgainst
 ---
-<<pose FirstCustomerWorried>>
+// <<pose FirstCustomerWorried>>
 Customer: The shark with legs? No! I mean, yes! I mean... Oh dear... my wife always says I'm a terrible liar.
-<<pose FOHISittingHissing>>
+// <<pose FOHISittingHissing>>
 You: You knew it was a shark with legs? And said nothing?!
 Customer: I mean, look, there's knowing... and then there's <i>knowing</i>, isn't there? 
 -> DIG DEEPER.
@@ -56,11 +56,11 @@ Customer: I mean, look, there's knowing... and then there's <i>knowing</i>, isn'
 
 title: UpAgainstKnew
 ---
-<<pose FirstCustomerWorried>>
+// <<pose FirstCustomerWorried>>
 Customer: What, the shark with legs? No! I mean, yes! I mean... Oh dear... my wife always says I'm a terrible liar.
 You: I hoped I'd misunderstood. Why would you conceal something so important?
 Customer: I mean, look, there's knowing... and then there's <i>knowing</i>, isn't there?
-<<pose FOHISittingHissing>>
+// <<pose FOHISittingHissing>>
 -> DIG DEEPER.
     That Exterminator might've had a fighting chance if you'd been honest. <<if $Hold2Account == true>>
     <<jump FirstCustomerLiesHold2Account>>
@@ -82,7 +82,7 @@ Customer: No, of course not! Please, hear me out.
 
 title: FirstCustomerLiesHold2Account
 ---
-<<pose FirstCustomerCrying>>
+// <<pose FirstCustomerCrying>>
 Customer: You're right. Of course, you're right. I can't tell you what it's been like... But believe me when I say that if I had a choice, I would've explained everything. To her <i>and</i> to you. 
 -> DIG DEEPER.
     Well, you've got your chance now.  
@@ -94,8 +94,8 @@ Customer: You're right. Of course, you're right. I can't tell you what it's been
 
 title: Explanation
 ---
-<<pose FOHISittingNeutral>>
-<<pose FirstCustomerTalking>>
+// <<pose FOHISittingNeutral>>
+// <<pose FirstCustomerTalking>>
 Customer: If you remember, it was my aunt who tipped me off about the creature. She belongs to a... community. Not everyone's fond of them. Have you heard of the Cruisers? 
 -> MOVE THINGS ALONG.
     We haven't. Will you fill us in?
@@ -117,7 +117,7 @@ Customer: They live on a derelict cruise ship—the Mother Superior. Eccentric f
 
 title: Reputation
 ---
-<<pose FirstCustomerCrying>>
+// <<pose FirstCustomerCrying>>
 Customer: Not for my reputation. For my family. Every day I watch the tide inch closer to my home. By the time my youngest is four, it'll be flooded. Still—no matter how much we scrimp and save—we've never had enough to leave. Then, it hit me: Dismal Notch! Thanks to the shark with legs, land there is cheap. But we needed the shark with legs gone in order to relocate.
 You: I can't say I would've done what you did, but I suppose I now understand why. 
 Customer: Thank you, friend. That's all I ask.
@@ -128,7 +128,7 @@ Customer: Thank you, friend. That's all I ask.
 
 title: FloatingCults
 ---
-<<pose FirstCustomerWorried>>
+// <<pose FirstCustomerWorried>>
 Customer: They're not a cult, I swear! They've just built their lives around... a fringe set of beliefs. It's all highly organized.
 -> POKE SOME FUN.
     You're not exactly helping their case.
@@ -142,10 +142,10 @@ Customer: They're not a cult, I swear! They've just built their lives around... 
 title: NotHelping
 ---
 <<if $NotHelping == true>>
-<<pose FirstCustomerTalking>>
+// <<pose FirstCustomerTalking>>
 Customer: Maybe not. Look, even on the Drowned Coast, the Swallowed Strait has a reputation. But most Drowners haven't seen the things we have.
 <<else>>
-<<pose FirstCustomerTalking>>
+// <<pose FirstCustomerTalking>>
 Customer: Thank you! Especially here in the Swallowed Strait—you can't host a proper book club without attracting chatter. But most Drowners havent seen what we've seen.
 <<endif>>
 You: Like what?
@@ -181,11 +181,11 @@ title: TruthBloomFOHISpeaks
 ---
 Customer: What happened?
 Whiskers: <i>Guess.</i>
-<<pose FirstCustomerSurprised>>
+// <<pose FirstCustomerSurprised>>
 Whiskers: See? I warned you. 
 You: I think he's warming up.
 Whiskers: I think he's asphyxiating.
-<<pose FirstCustomerTalking>>
+// <<pose FirstCustomerTalking>>
 Customer: Oh—oh my. 
 Whiskers: I'm Whiskers, human. 
 Customer: Whiskers?
@@ -195,7 +195,7 @@ You: Yep.
 Customer: I'll be. The Bloom must be getting stronger. I mean, talking critters... what's next?
 Whiskers: Please: don't lump me in with the riff raff.
 Customer: Oh, of course. Apologies. Gosh. My kids will think I'm spinning a yarn...
--> It isn't just Whiskers. We heard Pacific Tree Octopuses this morning (EAVESDROPPED ON THE PACIFIC TREE OCTOPUSES).
+    -> It isn't just Whiskers. We heard Pacific Tree Octopuses this morning (EAVESDROPPED ON THE PACIFIC TREE OCTOPUSES).
 Customer: No kidding! What were they talking about?
 Whiskers: Philosophy. 
 Customer: Figures.
@@ -220,7 +220,7 @@ Customer: Figures! Always were brainy little things. Wow. I can't wait to tell m
 title: Skip2End
 ---
 <<if $FindPayment == true and $FOHISpeaks == true>>
-<<pose FirstCustomerWorried>>
+// <<pose FirstCustomerWorried>>
 Customer: Of course. Now, I hate asking, but did you happen to find the deposit? The one I gave your colleague?
     -> We did (FOUND OTHER EXTERMINATOR'S PAYMENT).
 Customer: What a relief. So... about the rest...
@@ -232,9 +232,9 @@ Customer: With my aunt. She lives on a cruise ship—the Mother Superior! It's n
 // [NOTE: Inventory system hook]
 <<inventoryAdd "Mother Superior Coordinates">>
 Whiskers: Can I eat him? Oh, <i>please</i>, let me eat him.
-<<pose FirstCustomerSurprised>>
+// <<pose FirstCustomerSurprised>>
 Customer: He?—The cat? Oh...
-<<pose FirstCustomerPassedOut>>
+// <<pose FirstCustomerPassedOut>>
 -> POKE SOME FUN.
     He's out cold. I guess you talking was more of a shock than I anticipated.
 -> BE POLITE.
@@ -251,7 +251,7 @@ Whiskers: I prefer the kind that pays.
 <<questUpdate "FindAuntEunice">>
 
 <<elseif $FindPayment == true and $FOHISpeaks == false>>
-<<pose FirstCustomerWorried>>
+// <<pose FirstCustomerWorried>>
 Customer: Of course. Now, I hate asking, but did you happen to find the deposit? The one I gave your colleague?
     -> We did (FOUND OTHER EXTERMINATOR'S PAYMENT).
 Customer: What a relief. So... about the rest...
@@ -282,7 +282,7 @@ Whiskers: I prefer the kind that pays.
 <<questUpdate "FindAuntEunice">>
 
 <<elseif $FindPayment == false and $FOHISpeaks == true>>
-<<pose FirstCustomerWorried>>
+// <<pose FirstCustomerWorried>>
 Customer: Of course. Now, I hate asking, but did you happen to find the deposit? The one I gave your colleague?
 You: We didn't.
 Customer: Oh dear. That makes this quite awkward. So... about the rest...
@@ -294,9 +294,9 @@ Customer: With my aunt. She lives on a cruise ship—the Mother Superior! It's n
 // [NOTE: Inventory system hook]
 <<inventoryAdd "Mother Superior Coordinates">>
 Whiskers: Can I eat him? Oh, <i>please</i>, let me eat him.
-<<pose FirstCustomerSurprised>>
+// <<pose FirstCustomerSurprised>>
 Customer: He?—The cat? Oh...
-<<pose FirstCustomerPassedOut>>
+// <<pose FirstCustomerPassedOut>>
 -> POKE SOME FUN.
     He's out cold. I guess you talking was more of a shock than I anticipated.
 -> BE POLITE.
@@ -313,7 +313,7 @@ Whiskers: I prefer the kind that pays.
 <<questUpdate "FindAuntEunice">>
 
 <<elseif $FOHISpeaks == false and $FindPayment == false>>
-<<pose FirstCustomerWorried>>
+// <<pose FirstCustomerWorried>>
 Customer: Customer: Of course. Now, I hate asking, but did you happen to find the deposit? The one I gave your colleague?
 You: We didn't.
 Customer: Oh dear. That makes this quite awkward. So... about the rest...
@@ -349,7 +349,7 @@ Whiskers: I prefer the kind that pays.
 title: CloseOutContract
 ---
 <<if $FindPayment == true and $FOHISpeaks == true>>
-<<pose FirstCustomerWorried>>
+// <<pose FirstCustomerWorried>>
 Customer: Of course. Now, I hate asking, but did you happen to find the deposit? The one I gave your colleague?
 -> We did (FOUND OTHER EXTERMINATOR'S PAYMENT).
 Customer: What a relief. So... about the rest...
@@ -384,7 +384,7 @@ Whiskers: I prefer the kind that pays.
 <<questUpdate "FindAuntEunice">>
 
 <<elseif $FindPayment == true and $FOHISpeaks == false>>
-<<pose FirstCustomerWorried>>
+// <<pose FirstCustomerWorried>>
 Customer: Of course. Now, I hate asking, but did you happen to find the deposit? The one I gave your colleague?
 -> We did (FOUND OTHER EXTERMINATOR'S PAYMENT).
 Customer: What a relief. So... about the rest...
@@ -419,7 +419,7 @@ Whiskers: I prefer the kind that pays.
 <<questUpdate "FindAuntEunice">>   
 
 <<elseif $FindPayment == false and $FOHISpeaks == true>>
-<<pose FirstCustomerWorried>>
+// <<pose FirstCustomerWorried>>
 Customer: Of course. Now, I hate asking, but did you happen to find the deposit? The one I gave your colleague?
 You: We didn't.
 Customer: Oh dear. That makes this quite awkward. So... about the rest...
@@ -454,7 +454,7 @@ Whiskers: I prefer the kind that pays.
 <<questUpdate "FindAuntEunice">>  
 
 <<elseif $FOHISpeaks == false and $FindPayment == false>>
-<<pose FirstCustomerWorried>>
+// <<pose FirstCustomerWorried>>
 Customer: Of course. Now, I hate asking, but did you happen to find the deposit? The one I gave your colleague?
 You: We didn't.
 Customer: Oh dear. That makes this quite awkward. So... about the rest...

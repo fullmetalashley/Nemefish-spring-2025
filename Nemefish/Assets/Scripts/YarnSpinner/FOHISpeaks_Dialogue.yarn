@@ -1,10 +1,10 @@
 title: FOHISpeaks_Dialogue
 ---
 //should be triggered to play immediately upon Day 2
-<<pose FOHISittingNeutral>>
+// <<pose FOHISittingNeutral>>
 You: Oof. My poor back.
-<<pose PCSittingStretching>>
-<<pose PCSitting>>
+// <<pose PCSittingStretching>>
+// <<pose PCSitting>>
 You'd an early morning, Theodore. Least, I assume that was you thumping up and down the tent while I was trying to get some shut eye.
 Theodore: A quickening of blood, a pinch at the nape, the impulse to knead a lump of flesh into biscuits—
 If you had <i>my</i> cerebellum instead of your frontal lobe, you might enjoy the same urges.
@@ -12,12 +12,12 @@ If you had <i>my</i> cerebellum instead of your frontal lobe, you might enjoy th
     Blood? <i>Biscuits?</i> How about we try getting a full night's rest before getting all—
 -> BE POLITE.
     Whoa, there. That's some pretty colorful language for first thing in the—
-<<pose PCSittingSurprised>>
+// <<pose PCSittingSurprised>>
 Good grief, Theodore! You speak!
 Theodore: Yes, I speak.
 <<wait .5>>
 If you keep making that face, it might stay that way. A laugh for me—but for you... well, maybe it wouldn't change much.
-<<pose PCSitting>>
+// <<pose PCSitting>>
 You: But when did this happen? <i>How?</i>
 <<jump ButHow>>
 ===
@@ -106,9 +106,9 @@ Whiskers: Indeed.
 title: NotToLaugh
 ---
 Whiskers: Laugh? I haven't tried yet.
-<<pose FOHISittingHissing>>
+// <<pose FOHISittingHissing>>
 <<wait .2>>
-<<pose FOHISittingNeutral>>
+// <<pose FOHISittingNeutral>>
 Whiskers: <i>*Cough* *Cough*</i> No. That's not how it's supposed to sound. <i>So?</i> Ask away.
 -> DIG EVEN DEEPER.
     Okay. Well. I've always wondered, but now I guess I can just put it to you. Do you still... I mean, did you ever...
@@ -119,9 +119,9 @@ title: AskQuestion
 ---
 Whiskers: Come on, spit it out! We have a nemefish to kill.
 -> DIG EVEN MORE DEEPLY. 
-    <<pose PCSittingSurprise>>
+    // <<pose PCSittingSurprise>>
     <i>DO YOU LOVE ME?!</i>
-    <<pose PCSitting>>
+    // <<pose PCSitting>>
     <<jump LoveMe>>
 ===
 

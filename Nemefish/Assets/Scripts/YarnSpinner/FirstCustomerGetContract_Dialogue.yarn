@@ -2,9 +2,9 @@ title: FirstCustomerGetContract_Dialogue
 ---
 //Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
 //start "FirstCustomerGetContract_Dialogue" after mousedown on customer.
-<<pose FirstCustomerTalking>>
-<<pose FOHISittingNeutral>>
-<<pose PCStandingNeutral>>
+// <<pose FirstCustomerTalking>>
+// <<pose FOHISittingNeutral>>
+// <<pose PCStandingNeutral>>
 <<set $FirstCustomerVisited = true>>
     Customer: Well, hey there! You with Nixers Inc.?
     -> POKE SOME FUN. 
@@ -41,7 +41,7 @@ Customer: Well, Inlander, you'll find people out here aren't so formal. We're a 
 
 title: AnySaySo
 ---
-<<pose FirstCustomerOther>>
+// <<pose FirstCustomerOther>>
 Customer: You'd surprised how many people love this Strait—myself included. I'd even say it's the prettiest spot on the Drowned Coast. In fact, that's why I contacted the Nixers.
 
 See that blotch on the horizon? That's Dismal Notch Island. I grew up there. It's got a little town right on the waterfront. A very nice boardwalk, too. I used to run down it back when I was my son's age. I'd a funny superstition about landing just right on the boards...  
@@ -55,7 +55,7 @@ See that blotch on the horizon? That's Dismal Notch Island. I grew up there. It'
 
 title: BreakBack
 ---
-<<pose FirstCustomerTalking>>
+// <<pose FirstCustomerTalking>>
 Customer: The very one! So, they must say the same thing Inland. What an odd thing to teach kids, huh? I mean, why make them feel it was up to them—who lived and died? I'm sorry, excuse me. What use is there in combing over the past these days?
 -> POKE SOME FUN.
     Hey, one man's past is another man's presents. So, how can I help?
@@ -82,7 +82,7 @@ Customer: I wish. I imagine Nixers told you that you're not the first to come. T
     Well, I don't know anyone who's picked my line of work for the pension.
 -> BE POLITE.
     We all know the risks.
-<<pose FirstCustomerCrying>>
+// <<pose FirstCustomerCrying>>
 Customer: Perhaps. But it's never just the one person who's lost, is it? 
 -> BE POLITE.
     You're kind to consider my safety, but I'm up for this job.
@@ -94,7 +94,7 @@ Customer: Perhaps. But it's never just the one person who's lost, is it?
 
 title: UpForJob
 ---
-<<pose FirstCustomerTalking>>
+// <<pose FirstCustomerTalking>>
 Customer: I'm sure you are. But I <i>do</i> feel responsible, you know. For what happens to you. For even calling Nixers. And your... cat? What does he do?
 Theodore: Meow.
 -> POKE SOME FUN.
@@ -110,9 +110,9 @@ title: TossToNemefish
 <<set $Relate2FOHI = $Relate2FOHI - 2>>
 <<ShowNotification "Theodore didn't appreciate that.">>
 //UI script commandhandler cue
-<<pose FOHISittingHissing>>
+// <<pose FOHISittingHissing>>
 Theodore: Hiss.
-<<pose FOISittingNeutral>>
+// <<pose FOISittingNeutral>>
 Customer: I'd mind what you say—he doesn't seem too forgiving! Well, here's the contract.
 <<set $hasContract = true>>
 <<showNotification "You've received your contract.">>
@@ -140,9 +140,9 @@ Customer: I suppose you're the expert. Well, here's the contract.
 
 title: HalfUpFront
 ---
-<<pose FirstCustomerWorried>>
+// <<pose FirstCustomerWorried>>
 Customer: Oh! I gave it to your colleague—before she, erm,  well, before she vanished. Customer Service said you'd retrieve it. Something about a warranty? Should be in her pack. 
-<<pose FirstCustomerTalking>>
+// <<pose FirstCustomerTalking>>
 Now, if you don't mind, I'm soaked through. If—when you finish, you can find me here. I'll see you coming from my spot down the way. Good luck!
 <<showNotification "Your Quest Log has been updated.">>
 <<questUpdate "KillNemefish">>

@@ -1,13 +1,13 @@
 title: FirstBossEncounter_Dialogue
 ---
-<<pose PCSittingNeutral>>
-<<pose FOHISittingNeutral>>
+// <<pose PCSittingNeutral>>
+// <<pose FOHISittingNeutral>>
 You: Geez, this is some chop. How about we land over there, Theodore?
 Theodore: Meow.
 You: Aye aye, Captain.
-<<pose SharkWithLegsFin>>
+// <<pose SharkWithLegsFin>>
 <<wait .2>>
-<<pose FOHISittingHissing>>
+// <<pose FOHISittingHissing>>
 You: What is it, Theodore?
 Theodore: Hiss.
 You: Is that what I think it is?

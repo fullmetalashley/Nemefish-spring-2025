@@ -79,7 +79,7 @@ Theodore: Meow.
 You: Now, why would the Exterminator go this way first?
 Whiskers: I don't know. Maybe she needed to nip into town?
 
-<<<<if $BloomLevel1 == true and $FindExterminatorCamp == false>>
+<<elseif $BloomLevel1 == true and $FindExterminatorCamp == false>>
 You: More bloody footprints. Strange... these look different somehow.
 Whiskers: It's just <i>incredible</i> the mess some people leave behind them.
 <<endif>>

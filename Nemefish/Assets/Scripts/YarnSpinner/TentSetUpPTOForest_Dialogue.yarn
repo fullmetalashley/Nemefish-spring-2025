@@ -22,17 +22,17 @@ title: SetUpCampTree
 
 title: TentSetUpPTOForest_Dialogue
 ---
-<<pose PTO1CAMO>>
-<<pose PTO2CAMO>>
-<<pose PTO3CAMO>>
+// <<pose PTO1CAMO>>
+// <<pose PTO2CAMO>>
+// <<pose PTO3CAMO>>
 You: Flat ground, some big trees—Look, there's even a view of that town our customer mentioned! Seems like the perfect place to set up camp, Theodore.
     Theodore: Meow.
 //animation note that PTOs in trees will change from the color of the bark to their NoBloom animations.
-<<pose PTO1NOBLOOM>>
-<<pose PTO2NOBLOOM>>
-<<pose PTO3NOBLOOM>>
+// <<pose PTO1NOBLOOM>>
+// <<pose PTO2NOBLOOM>>
+// <<pose PTO3NOBLOOM>>
 <<wait .2>>
-<<pose FOHISittingHissing>>
+// <<pose FOHISittingHissing>>
 Theodore: Hiss.
 You: Holy moly! This must be a Pacific Tree Octopus roost.
 -> POKE SOME FUN.
@@ -47,12 +47,12 @@ title: WussPuss
 ---
 <<set $Relate2FOHI = $Relate2FOHI - 1>>
 <<ShowNotification "Theodore didn't appreciate that.">>
-<<pose FOHISittingNeutral>>
+// <<pose FOHISittingNeutral>>
 //UI script commandhandler cue
 You: If it's any consolation, that clicking sound they make helps keep the creepy crawlies away.
 Theodore: Hiss.
 You: Point taken. The <i>other</i> creepy crawlies. Well, let's get this tent up.
-<<pose TentSetUpAnimation>>
+// <<pose TentSetUpAnimation>>
 <<wait 2>>
 <<set $MakeCamp = true>>
 You: There. Our home away from home. 
@@ -68,12 +68,12 @@ title: PrettyAsYou
 ---
 <<set $Relate2FOHI = $Relate2FOHI + 1>>
 <<ShowNotification "Theodore appreciated that.">>
-<<pose FOHISittingNeutral>>
+// <<pose FOHISittingNeutral>>
 //UI script commandhandler cue
 You: If it's any consolation, that clicking sound they make helps keep the creepy crawlies away.
 Theodore: Hiss.
 You: Point taken. The <i>other</i> creepy crawlies. Well, let's get this tent up.
-<<pose TentSetUpAnimation>>
+// <<pose TentSetUpAnimation>>
 <<wait 2>>
 <<set $MakeCamp = true>>
 You: There. Our home away from home. 
