@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5341758236625263444
+--- !u!114 &-8827233613026272583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,23 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/GunShoot
+  m_Name: event:/SFX/PlayerFootsteps
   m_EditorClassIdentifier: 
-  Path: event:/GunShoot
+  Path: event:/SFX/PlayerFootsteps
   Guid:
-    Data1: -1983594512
-    Data2: 1333742896
-    Data3: 838865560
-    Data4: 1185633782
+    Data1: -368846495
+    Data2: 1077670640
+    Data3: -752145484
+    Data4: -1968647844
   Banks:
   - {fileID: -1407432340309203548}
+  - {fileID: -2202291059534021572}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 500
 --- !u!114 &-2202291059534021572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,7 +43,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638814534958242717
+  lastModified: 638817245380892741
   FileSizes:
   - Name: Desktop
     Value: 19744
@@ -62,11 +63,38 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638814534958474348
+  lastModified: 638817242692529299
   FileSizes:
   - Name: Desktop
     Value: 28096
   Exists: 1
+--- !u!114 &-431872256295231000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/GunShoot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/GunShoot
+  Guid:
+    Data1: -1983594512
+    Data2: 1333742896
+    Data3: 838865560
+    Data4: 1185633782
+  Banks:
+  - {fileID: -1407432340309203548}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,21 +111,72 @@ MonoBehaviour:
   - {fileID: 5609342470370000707}
   - {fileID: -2202291059534021572}
   - {fileID: -1407432340309203548}
+  - {fileID: 1344526290046757870}
   EditorEvents:
-  - {fileID: -5341758236625263444}
-  - {fileID: 6816795354266937443}
+  - {fileID: -8827233613026272583}
+  - {fileID: -431872256295231000}
+  - {fileID: 5008783946936730923}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2202291059534021572}
   StringsBanks:
   - {fileID: 5609342470370000707}
   cacheVersion: 131847
-  cacheTime: 638814534958474348
+  cacheTime: 638817245381156911
   SerializableEventsDict:
-  - key: event:/GunShoot
+  - key: event:/SFX/PlayerFootsteps
     index: 0
-  - key: event:/PlayerFootsteps
+  - key: event:/SFX/GunShoot
     index: 1
+  - key: event:/Ambience/ForestWind
+    index: 2
+--- !u!114 &1344526290046757870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/PTO Forest.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/PTO Forest.bank
+  Name: PTO Forest
+  StudioPath: bank:/PTO Forest
+  lastModified: 638817245381156911
+  FileSizes:
+  - Name: Desktop
+    Value: 798976
+  Exists: 1
+--- !u!114 &5008783946936730923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/ForestWind
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/ForestWind
+  Guid:
+    Data1: 238417635
+    Data2: 1112125841
+    Data3: -1007837012
+    Data4: 2032137617
+  Banks:
+  - {fileID: 1344526290046757870}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 61002
 --- !u!114 &5609342470370000707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,36 +192,8 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638814534958256687
+  lastModified: 638817245380903343
   FileSizes:
   - Name: Desktop
-    Value: 874
+    Value: 980
   Exists: 1
---- !u!114 &6816795354266937443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/PlayerFootsteps
-  m_EditorClassIdentifier: 
-  Path: event:/PlayerFootsteps
-  Guid:
-    Data1: -368846495
-    Data2: 1077670640
-    Data3: -752145484
-    Data4: -1968647844
-  Banks:
-  - {fileID: -2202291059534021572}
-  - {fileID: -1407432340309203548}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 500
