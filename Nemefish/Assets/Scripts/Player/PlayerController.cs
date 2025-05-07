@@ -1,5 +1,6 @@
 using UnityEngine;
 using Yarn.Compiler;
+using FMOD.Studio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class PlayerController : MonoBehaviour
 
     private PlayerRaycasting raycast;
 
+    // Audio
+    private EventInstance playerFootsteps;
+
     private void Awake()
     {
         instance = this;
@@ -33,6 +37,7 @@ public class PlayerController : MonoBehaviour
         rigidBody = this.gameObject.GetComponent<Rigidbody>();
         _gun = this.gameObject.GetComponent<Gun>();
         raycast = this.gameObject.GetComponent<PlayerRaycasting>();
+        playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootsteps);
     }
 
     // Update is called once per frame
@@ -83,6 +88,8 @@ public class PlayerController : MonoBehaviour
             //North
             raycast.ChangeDirection(0);
         }
+
+        UpdateSound();
     }
 
     public void FlipSprite(int dir)
@@ -99,4 +106,25 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+
+    private void UpdateSound()
+    {
+        // Start footsteps event if the player has a velocity
+        if (rigidBody.linearVelocity.x != 0 || rigidBody.linearVelocity.z != 0)
+        {
+            // Get the playback state
+            PLAYBACK_STATE playbackState;
+            playerFootsteps.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerFootsteps.start();
+            }
+        }
+        // Otherwise, stop the footstep event
+        else
+        {
+            playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+    }
+
 }
