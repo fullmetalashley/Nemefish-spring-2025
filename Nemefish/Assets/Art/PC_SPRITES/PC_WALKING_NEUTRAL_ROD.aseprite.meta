@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cd40ade7805310247af2de5b805d9df7
+guid: d8b25145811459b40b9bac8bee76fcf0
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,19 +123,19 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: PC_WALKING_WOUNDED_ROD-Sheet
+  - name: Frame_0
     originalName: 
-    pivot: {x: 0.51532036, y: 0}
+    pivot: {x: 0.64102566, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4
-      width: 359
+      x: 58
+      y: 75
+      width: 39
       height: 64
-    spriteID: a4a0779c1aedb8646875d44c03a7aa6a
+    spriteID: ee25d8f7964833d4cae587c1c5bf3c54
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,30 +143,150 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: -3, y: 4}
+    uvTransform: {x: 58, y: 75}
+  - name: Frame_1
+    originalName: 
+    pivot: {x: 0.6666667, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 75
+      width: 42
+      height: 63
+    spriteID: add13e5804cec62489d1ae512a1a6370
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 75}
+  - name: Frame_2
+    originalName: 
+    pivot: {x: 0.6956522, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 46
+      height: 63
+    spriteID: 0029f1ff8a131174d81c52c2787916da
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Frame_3
+    originalName: 
+    pivot: {x: 0.6666667, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 146
+      width: 42
+      height: 63
+    spriteID: dfa90bdaa9afe24458fb3e24daab4a59
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 146}
+  - name: Frame_4
+    originalName: 
+    pivot: {x: 0.6666667, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 58
+      y: 4
+      width: 42
+      height: 63
+    spriteID: eda27c509c54704498fd5a596ad990a6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 58, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 2309392606
+      value0: 4123136977
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: PC_WALKING_WOUNDED_ROD-Sheet
+    name: PC_WALKING_NEUTRAL_ROD
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: PC_WALKING_WOUNDED_ROD-Sheet
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 7
+        y: 0
+        width: 39
+        height: 64
+      spriteId: ee25d8f7964833d4cae587c1c5bf3c54
+    - name: Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 0
+        width: 42
+        height: 63
+      spriteId: add13e5804cec62489d1ae512a1a6370
+    - name: Frame_2
+      frameIndex: 2
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
-        width: 384
-        height: 64
-      spriteId: a4a0779c1aedb8646875d44c03a7aa6a
+        width: 46
+        height: 63
+      spriteId: 0029f1ff8a131174d81c52c2787916da
+    - name: Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 0
+        width: 42
+        height: 63
+      spriteId: dfa90bdaa9afe24458fb3e24daab4a59
+    - name: Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 4
+        y: 0
+        width: 42
+        height: 63
+      spriteId: eda27c509c54704498fd5a596ad990a6
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -185,5 +305,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 384, y: 64}
-  previousTextureSize: {x: 512, y: 128}
+  canvasSize: {x: 64, y: 64}
+  previousTextureSize: {x: 128, y: 256}

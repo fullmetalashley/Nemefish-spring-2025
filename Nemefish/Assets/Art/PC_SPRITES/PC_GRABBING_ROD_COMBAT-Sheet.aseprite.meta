@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cd40ade7805310247af2de5b805d9df7
+guid: 8235ae5aaa4fd634f8cda0a9d73c2b55
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,9 +123,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: PC_WALKING_WOUNDED_ROD-Sheet
+  - name: PC_GRABBING_ROD_COMBAT-Sheet
     originalName: 
-    pivot: {x: 0.51532036, y: 0}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 359
-      height: 64
-    spriteID: a4a0779c1aedb8646875d44c03a7aa6a
+      width: 1672
+      height: 77
+    spriteID: 253a8612076fb4d4f9b7d57c93eb2658
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,30 +143,30 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: -3, y: 4}
+    uvTransform: {x: -15, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 2309392606
+      value0: 1391918629
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: PC_WALKING_WOUNDED_ROD-Sheet
+    name: PC_GRABBING_ROD_COMBAT-Sheet
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: PC_WALKING_WOUNDED_ROD-Sheet
+    - name: PC_GRABBING_ROD_COMBAT-Sheet
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
-        width: 384
-        height: 64
-      spriteId: a4a0779c1aedb8646875d44c03a7aa6a
+        width: 1710
+        height: 90
+      spriteId: 253a8612076fb4d4f9b7d57c93eb2658
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -185,5 +185,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 384, y: 64}
-  previousTextureSize: {x: 512, y: 128}
+  canvasSize: {x: 1710, y: 90}
+  previousTextureSize: {x: 2048, y: 128}

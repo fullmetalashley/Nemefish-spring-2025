@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cd40ade7805310247af2de5b805d9df7
+guid: 09e0842d7a8c8e641afd4628a9294cd7
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,9 +123,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: PC_WALKING_WOUNDED_ROD-Sheet
+  - name: PC_WALKING_NEUTRAL_ROD-Sheet
     originalName: 
-    pivot: {x: 0.51532036, y: 0}
+    pivot: {x: 0.5186441, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 359
+      width: 295
       height: 64
-    spriteID: a4a0779c1aedb8646875d44c03a7aa6a
+    spriteID: 2c5659c277434a14b8882f24831d7d71
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -148,25 +148,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 2309392606
+      value0: 332285371
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: PC_WALKING_WOUNDED_ROD-Sheet
+    name: PC_WALKING_NEUTRAL_ROD-Sheet
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: PC_WALKING_WOUNDED_ROD-Sheet
+    - name: PC_WALKING_NEUTRAL_ROD-Sheet
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
-        width: 384
+        width: 320
         height: 64
-      spriteId: a4a0779c1aedb8646875d44c03a7aa6a
+      spriteId: 2c5659c277434a14b8882f24831d7d71
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -185,5 +185,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 384, y: 64}
+  canvasSize: {x: 320, y: 64}
   previousTextureSize: {x: 512, y: 128}
