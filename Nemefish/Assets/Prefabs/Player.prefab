@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 4657393453020599287}
   - component: {fileID: 8165801284435468140}
   - component: {fileID: 1695250478067455375}
+  - component: {fileID: 6495423377165772411}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -271,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6a8e392bb4c2d4384edf204ffee058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 7
   groundDist: 1.25
   terrainLayer:
     serializedVersion: 2
@@ -313,6 +314,19 @@ MonoBehaviour:
     m_Bits: 128
   raycastPoint: {fileID: 4367544623601508672}
   playerDirection: 0
+--- !u!114 &6495423377165772411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6545733837901326833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fbaf198f45d6dd4bbb9ed930ec9bbb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisAnimator: {fileID: 0}
 --- !u!1 &8684796861490399558
 GameObject:
   m_ObjectHideFlags: 0
