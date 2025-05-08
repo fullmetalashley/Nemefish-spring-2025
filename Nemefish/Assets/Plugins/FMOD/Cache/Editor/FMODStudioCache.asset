@@ -43,12 +43,12 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638822994754679934
+  lastModified: 638823059300630038
   FileSizes:
   - Name: Desktop
     Value: 13792
   Exists: 1
---- !u!114 &-7073617996699823667
+--- !u!114 &-6524635394912674337
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,24 +57,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience/ForestWind
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Coastline.bank
   m_EditorClassIdentifier: 
-  Path: event:/Ambience/ForestWind
-  Guid:
-    Data1: 238417635
-    Data2: 1112125841
-    Data3: -1007837012
-    Data4: 2032137617
-  Banks:
-  - {fileID: 2520998592065675057}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 61002
+  Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Coastline.bank
+  Name: Coastline
+  StudioPath: bank:/Coastline
+  lastModified: 638823061810625154
+  FileSizes:
+  - Name: Desktop
+    Value: 532064
+  Exists: 1
 --- !u!114 &-5828535320220176680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,6 +95,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1244351872819746069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/CoastAmb
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/CoastAmb
+  Guid:
+    Data1: -237537350
+    Data2: 1249906407
+    Data3: -2030721907
+    Data4: 688457125
+  Banks:
+  - {fileID: -6524635394912674337}
+  - {fileID: 4760240365992707407}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 40000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,24 +140,28 @@ MonoBehaviour:
   - {fileID: -7786227669709042204}
   - {fileID: 2520998592065675057}
   - {fileID: 4760240365992707407}
+  - {fileID: -6524635394912674337}
   EditorEvents:
   - {fileID: -7868639057075042992}
-  - {fileID: -7073617996699823667}
   - {fileID: -5828535320220176680}
+  - {fileID: -1244351872819746069}
+  - {fileID: 4859843937683928792}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7786227669709042204}
   StringsBanks:
   - {fileID: 397240523185303134}
   cacheVersion: 131847
-  cacheTime: 638822994755036528
+  cacheTime: 638823061810625154
   SerializableEventsDict:
   - key: event:/SFX/PlayerFootsteps
     index: 0
-  - key: event:/Ambience/ForestWind
-    index: 1
   - key: event:/SFX/GunShootStandard
+    index: 1
+  - key: event:/Ambience/CoastAmb
     index: 2
+  - key: event:/Ambience/ForestAmb
+    index: 3
 --- !u!114 &397240523185303134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,10 +177,10 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638822994754690011
+  lastModified: 638823059300640049
   FileSizes:
   - Name: Desktop
-    Value: 988
+    Value: 1078
   Exists: 1
 --- !u!114 &2520998592065675057
 MonoBehaviour:
@@ -172,10 +197,10 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/PTO Forest.bank
   Name: PTO Forest
   StudioPath: bank:/PTO Forest
-  lastModified: 638817256594716298
+  lastModified: 638823059309039010
   FileSizes:
   - Name: Desktop
-    Value: 798976
+    Value: 814080
   Exists: 1
 --- !u!114 &4760240365992707407
 MonoBehaviour:
@@ -192,8 +217,35 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638822994755036528
+  lastModified: 638823061810429189
   FileSizes:
   - Name: Desktop
-    Value: 19744
+    Value: 551072
   Exists: 1
+--- !u!114 &4859843937683928792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/ForestAmb
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/ForestAmb
+  Guid:
+    Data1: 238417635
+    Data2: 1112125841
+    Data3: -1007837012
+    Data4: 2032137617
+  Banks:
+  - {fileID: 2520998592065675057}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 60000

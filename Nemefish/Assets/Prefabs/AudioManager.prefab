@@ -91,11 +91,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <forestWind>k__BackingField:
     Guid:
-      Data1: 238417635
-      Data2: 1112125841
-      Data3: -1007837012
-      Data4: 2032137617
-    Path: event:/Ambience/ForestWind
+      Data1: -237537350
+      Data2: 1249906407
+      Data3: -2030721907
+      Data4: 688457125
+    Path: event:/Ambience/CoastAmb
   <playerFootsteps>k__BackingField:
     Guid:
       Data1: -368846495

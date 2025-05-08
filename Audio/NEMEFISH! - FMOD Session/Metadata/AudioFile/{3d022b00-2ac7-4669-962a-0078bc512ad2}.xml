@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{3d022b00-2ac7-4669-962a-0078bc512ad2}">
 		<property name="assetPath">
-			<value>bg_ColdWindLayer.ogg</value>
+			<value>Ambiences/bg_ColdWindLayer.ogg</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
