@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6c9f4afb7a446a140b882e6ed082d5b0
+guid: eec1ca9fdeddacc448c8f3dae43ba6ef
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,9 +123,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: PC_KNEELING_DEATH_W_ROD-Sheet
+  - name: Frame_0
     originalName: 
-    pivot: {x: 0.50104386, y: 0}
+    pivot: {x: 0.4117647, y: -0.014925373}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 958
-      height: 63
-    spriteID: a1d4fd172b771c041bdc49e616f87ddf
+      width: 51
+      height: 67
+    spriteID: 7d291827ba0a75e4aae124e68bac56f9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,29 +144,179 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Frame_1
+    originalName: 
+    pivot: {x: 0.38636366, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 63
+      y: 79
+      width: 44
+      height: 68
+    spriteID: b7e72fc908292f64c92857a010c532b5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 63, y: 79}
+  - name: Frame_2
+    originalName: 
+    pivot: {x: 0.3409091, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 63
+      y: 155
+      width: 44
+      height: 68
+    spriteID: b952d5a4f671d9240bb8c4232b592bc2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 63, y: 155}
+  - name: Frame_3
+    originalName: 
+    pivot: {x: 0.4042553, y: -0.014925373}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 63
+      y: 4
+      width: 47
+      height: 67
+    spriteID: 799c670bba143b5499ecd5e911b8de89
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 63, y: 4}
+  - name: Frame_4
+    originalName: 
+    pivot: {x: 0.4375, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 79
+      width: 48
+      height: 67
+    spriteID: 0ac611db1648f2b47a91da83e0b84471
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 79}
+  - name: Frame_5
+    originalName: 
+    pivot: {x: 0.4042553, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 154
+      width: 47
+      height: 68
+    spriteID: a6de3e69c815a4244b569253778f8180
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 154}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 933868536
+      value0: 288814718
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: PC_KNEELING_DEATH_W_ROD-Sheet
+    name: PC_WALKING_WOUNDED_FORWARD_ROD
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: PC_KNEELING_DEATH_W_ROD-Sheet
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 0
+        x: 11
+        y: 1
+        width: 51
+        height: 67
+      spriteId: 7d291827ba0a75e4aae124e68bac56f9
+    - name: Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 15
         y: 0
-        width: 960
-        height: 64
-      spriteId: a1d4fd172b771c041bdc49e616f87ddf
+        width: 44
+        height: 68
+      spriteId: b7e72fc908292f64c92857a010c532b5
+    - name: Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 17
+        y: 0
+        width: 44
+        height: 68
+      spriteId: b952d5a4f671d9240bb8c4232b592bc2
+    - name: Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 13
+        y: 1
+        width: 47
+        height: 67
+      spriteId: 799c670bba143b5499ecd5e911b8de89
+    - name: Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 11
+        y: 0
+        width: 48
+        height: 67
+      spriteId: 0ac611db1648f2b47a91da83e0b84471
+    - name: Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 13
+        y: 0
+        width: 47
+        height: 68
+      spriteId: a6de3e69c815a4244b569253778f8180
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -185,5 +335,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 960, y: 64}
-  previousTextureSize: {x: 1024, y: 128}
+  canvasSize: {x: 64, y: 70}
+  previousTextureSize: {x: 128, y: 256}
