@@ -561,6 +561,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - Coastline
   - PTO Forest
   - SFX
   BanksToLoad: []
