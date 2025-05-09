@@ -1,0 +1,6 @@
+# Made in Blockbench 4.12.4
+newmtl m_ee512dfa-d7ee-8f38-6e8a-04cf7726aa21
+map_Kd shack texture.png
+newmtl m_e10d80d3-417b-4af2-a3e3-6d009541e4e6
+map_Kd texture.png
+newmtl none
