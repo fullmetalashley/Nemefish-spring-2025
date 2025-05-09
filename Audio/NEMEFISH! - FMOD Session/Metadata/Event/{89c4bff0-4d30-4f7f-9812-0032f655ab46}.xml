@@ -2,10 +2,10 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{89c4bff0-4d30-4f7f-9812-0032f655ab46}">
 		<property name="name">
-			<value>GunShoot</value>
+			<value>GunShootStandard</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{65dd4c4c-f7f2-48ce-aded-5a4ce3a815ed}</destination>
@@ -84,7 +84,7 @@
 	</object>
 	<object class="MultiSound" id="{b4473750-4910-4a10-afa3-60717eeb00e3}">
 		<relationship name="sounds">
-			<destination>{398b13f4-823f-4db3-a398-174aa87aa66f}</destination>
+			<destination>{bba2a137-d05e-4d09-a754-e708ff3fffc0}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{89fab2ec-3120-46c8-ab80-52fae293b8fb}">
@@ -99,9 +99,12 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{1e4a6e67-3850-416c-a237-9cf17e13a672}" />
-	<object class="SingleSound" id="{398b13f4-823f-4db3-a398-174aa87aa66f}">
+	<object class="SingleSound" id="{bba2a137-d05e-4d09-a754-e708ff3fffc0}">
+		<property name="volume">
+			<value>2</value>
+		</property>
 		<relationship name="audioFile">
-			<destination>{80eb136a-d8da-4d7f-9880-15e33c624cd5}</destination>
+			<destination>{9b60fdb5-9929-4238-8061-59ec21f9d2ad}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{b31a6c68-acd7-454a-8fe0-b1732f975422}" />

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{0e35f6e3-b191-4249-aca0-edc391f51f79}">
 		<property name="name">
-			<value>ForestWind</value>
+			<value>ForestAmb</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -60,7 +60,7 @@
 	<object class="MarkerTrack" id="{316df4d7-886b-4cc1-89e4-09df0dd687c7}" />
 	<object class="GroupTrack" id="{3a2a6bfd-933c-47c2-aaa0-4dd9ce5d6b17}">
 		<relationship name="modules">
-			<destination>{83ebe3a4-90e1-4aa1-add8-65908b0e0855}</destination>
+			<destination>{aec3f0d5-679e-47b6-8b45-957737597173}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{cc104ff5-f1e2-4264-8f4f-ce158fe73ded}</destination>
@@ -68,7 +68,7 @@
 	</object>
 	<object class="Timeline" id="{44fe822b-2a00-430d-b9e1-d9ec5453ace2}">
 		<relationship name="modules">
-			<destination>{83ebe3a4-90e1-4aa1-add8-65908b0e0855}</destination>
+			<destination>{aec3f0d5-679e-47b6-8b45-957737597173}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{35ccf131-d6ad-4916-ba2f-a1aafd1bcf74}</destination>
@@ -91,12 +91,12 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{dcb29ddb-d4d1-4479-bed6-57b00001e00c}" />
-	<object class="SingleSound" id="{83ebe3a4-90e1-4aa1-add8-65908b0e0855}">
+	<object class="SingleSound" id="{aec3f0d5-679e-47b6-8b45-957737597173}">
 		<property name="length">
-			<value>61.00266666666667</value>
+			<value>60</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{3d022b00-2ac7-4669-962a-0078bc512ad2}</destination>
+			<destination>{2154bb0a-c3ba-4c50-a193-a8cffb00cfe3}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{cc104ff5-f1e2-4264-8f4f-ce158fe73ded}">
