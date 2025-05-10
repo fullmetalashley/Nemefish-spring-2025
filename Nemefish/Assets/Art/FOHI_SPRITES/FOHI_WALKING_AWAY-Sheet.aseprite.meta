@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 47caaf2cb59fdfd4aa844af5fb53c163
+guid: 321d14ea0bcbd19479ea2159feaa533e
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,9 +123,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: FOHI_NEUTRAL_SITTING-Sheet
+  - name: FOHI_WALKING_AWAY-Sheet
     originalName: 
-    pivot: {x: 0.5008508, y: -0.375}
+    pivot: {x: 0.5043732, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -133,9 +133,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 1763
-      height: 40
-    spriteID: 7708dc99c6a85b149ae23d0638c8ced7
+      width: 343
+      height: 58
+    spriteID: a1a7cf63839a54c42a0e57b7a66f9ac6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,30 +143,30 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: -9, y: -11}
+    uvTransform: {x: -15, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 3305520745
+      value0: 1917585713
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: FOHI_NEUTRAL_SITTING-Sheet
+    name: FOHI_WALKING_AWAY-Sheet
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: FOHI_NEUTRAL_SITTING-Sheet
+    - name: FOHI_WALKING_AWAY-Sheet
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
-        width: 1792
+        width: 384
         height: 64
-      spriteId: 7708dc99c6a85b149ae23d0638c8ced7
+      spriteId: a1a7cf63839a54c42a0e57b7a66f9ac6
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -185,5 +185,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 1792, y: 64}
-  previousTextureSize: {x: 2048, y: 64}
+  canvasSize: {x: 384, y: 64}
+  previousTextureSize: {x: 512, y: 128}
