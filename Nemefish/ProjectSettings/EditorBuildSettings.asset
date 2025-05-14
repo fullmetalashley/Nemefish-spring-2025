@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Narrative Testing.unity
     guid: 11c743e90f1c22c45bef67705c53f02b
   - enabled: 1
-    path: Assets/Scenes/North Beach.unity
+    path: Assets/Scenes/North Coast.unity
     guid: 9024ec6eb5b0a9a4288a55577a8fb218
   - enabled: 1
     path: Assets/Scenes/North Forest.unity
