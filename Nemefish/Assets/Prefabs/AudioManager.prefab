@@ -89,24 +89,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0d9596e2b1a7f049bd1eca43ce9b07e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <forestWind>k__BackingField:
+  <forestAmbience>k__BackingField:
+    Guid:
+      Data1: 238417635
+      Data2: 1112125841
+      Data3: -1007837012
+      Data4: 2032137617
+    Path: event:/Ambience/ForestAmb
+  <coastAmbience>k__BackingField:
     Guid:
       Data1: -237537350
       Data2: 1249906407
       Data3: -2030721907
       Data4: 688457125
     Path: event:/Ambience/CoastAmb
-  <playerFootsteps>k__BackingField:
+  <playerFootstepsDefault>k__BackingField:
     Guid:
       Data1: -368846495
       Data2: 1077670640
       Data3: -752145484
       Data4: -1968647844
     Path: event:/SFX/PlayerFootsteps
-  <gunShoot>k__BackingField:
+  <injuryGrunt>k__BackingField:
+    Guid:
+      Data1: -342205009
+      Data2: 1115854853
+      Data3: 53788316
+      Data4: 498371144
+    Path: event:/SFX/InjuryGrunt
+  <wormGunStandard>k__BackingField:
     Guid:
       Data1: -1983594512
       Data2: 1333742896
       Data3: 838865560
       Data4: 1185633782
-    Path: event:/SFX/GunShootStandard
+    Path: event:/SFX/WormGunStandard

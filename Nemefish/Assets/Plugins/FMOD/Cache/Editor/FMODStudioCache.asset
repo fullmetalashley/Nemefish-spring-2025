@@ -54,6 +54,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
+--- !u!114 &-1063127449003519184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/WormGunStandard
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/WormGunStandard
+  Guid:
+    Data1: -1983594512
+    Data2: 1333742896
+    Data3: 838865560
+    Data4: 1185633782
+  Banks:
+  - {fileID: 875080821087909637}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-475107427191031941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,11 +96,38 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Coastline.bank
   Name: Coastline
   StudioPath: bank:/Coastline
-  lastModified: 638827561036372302
+  lastModified: 638823295796934892
   FileSizes:
   - Name: Desktop
     Value: 532064
   Exists: 1
+--- !u!114 &-312077130313199644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/InjuryGrunt
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/InjuryGrunt
+  Guid:
+    Data1: -342205009
+    Data2: 1115854853
+    Data3: 53788316
+    Data4: 498371144
+  Banks:
+  - {fileID: 875080821087909637}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,14 +150,15 @@ MonoBehaviour:
   - {fileID: -2722688699240304459}
   - {fileID: -5229721654393249975}
   - {fileID: 2805846517297992435}
-  - {fileID: 6033247623762941972}
+  - {fileID: -312077130313199644}
+  - {fileID: -1063127449003519184}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8084373993632148782}
   StringsBanks:
   - {fileID: 3718546587010763393}
   cacheVersion: 131847
-  cacheTime: 638827561036511945
+  cacheTime: 638828376951262079
   SerializableEventsDict:
   - key: event:/SFX/PlayerFootsteps
     index: 0
@@ -111,8 +166,10 @@ MonoBehaviour:
     index: 1
   - key: event:/Ambience/ForestAmb
     index: 2
-  - key: event:/SFX/GunShootStandard
+  - key: event:/SFX/InjuryGrunt
     index: 3
+  - key: event:/SFX/WormGunStandard
+    index: 4
 --- !u!114 &875080821087909637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,10 +185,10 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638827561036511945
+  lastModified: 638828376951262079
   FileSizes:
   - Name: Desktop
-    Value: 19744
+    Value: 39232
   Exists: 1
 --- !u!114 &2629375749699942474
 MonoBehaviour:
@@ -148,7 +205,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/PTO Forest.bank
   Name: PTO Forest
   StudioPath: bank:/PTO Forest
-  lastModified: 638827561036492328
+  lastModified: 638823295804687865
   FileSizes:
   - Name: Desktop
     Value: 814080
@@ -195,38 +252,11 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638827561036382308
+  lastModified: 638828376950788874
   FileSizes:
   - Name: Desktop
-    Value: 1078
+    Value: 1120
   Exists: 1
---- !u!114 &6033247623762941972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/GunShootStandard
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/GunShootStandard
-  Guid:
-    Data1: -1983594512
-    Data2: 1333742896
-    Data3: 838865560
-    Data4: 1185633782
-  Banks:
-  - {fileID: 875080821087909637}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &8084373993632148782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +272,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638827561036382308
+  lastModified: 638828376950778867
   FileSizes:
   - Name: Desktop
     Value: 1074
