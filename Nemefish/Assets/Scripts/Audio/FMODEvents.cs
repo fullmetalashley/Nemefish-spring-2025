@@ -4,13 +4,15 @@ using FMODUnity;
 public class FMODEvents : MonoBehaviour
 {
     [field: Header("Ambience")]
-    [field: SerializeField] public EventReference forestWind { get; private set; }
+    [field: SerializeField] public EventReference forestAmbience { get; private set; }
+    [field: SerializeField] public EventReference coastAmbience { get; private set; }
     
     [field: Header("Player SFX")]
-    [field: SerializeField] public EventReference playerFootsteps { get; private set; }
+    [field: SerializeField] public EventReference playerFootstepsDefault { get; private set; }
+    [field: SerializeField] public EventReference injuryGrunt { get; private set; }
     
     [field: Header("Gun SFX")]
-    [field: SerializeField] public EventReference gunShoot { get; private set; }
+    [field: SerializeField] public EventReference wormGunStandard { get; private set; }
     public static FMODEvents instance { get; private set; }
 
     private void Awake()

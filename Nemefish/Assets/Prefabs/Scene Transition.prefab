@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1135715859091121329
+--- !u!1 &8631063614234334625
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2397651653786573618}
-  - component: {fileID: 6211611714404165482}
-  - component: {fileID: 520951934964927192}
+  - component: {fileID: 8521785617240050492}
+  - component: {fileID: 2141639581587844689}
+  - component: {fileID: 3237478072664031789}
   m_Layer: 0
   m_Name: Scene Transition
   m_TagString: Untagged
@@ -18,28 +18,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2397651653786573618
+--- !u!4 &8521785617240050492
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135715859091121329}
+  m_GameObject: {fileID: 8631063614234334625}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.296997, y: -6.1417546, z: -9.919322}
+  m_LocalPosition: {x: -31.082317, y: 1.48, z: -21.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6211611714404165482
+--- !u!65 &2141639581587844689
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135715859091121329}
+  m_GameObject: {fileID: 8631063614234334625}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -52,19 +52,18 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.3228874, y: 1, z: 1.869587}
-  m_Center: {x: 0.025247574, y: 0, z: 0.023488045}
---- !u!114 &520951934964927192
+  m_Size: {x: 2.5398865, y: 1, z: 2.3485317}
+  m_Center: {x: 0.76994324, y: 0, z: -0.67426586}
+--- !u!114 &3237478072664031789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135715859091121329}
+  m_GameObject: {fileID: 8631063614234334625}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 830752a9396ccc148bcc2b7be0c91b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: 
-  autoTransition: 0

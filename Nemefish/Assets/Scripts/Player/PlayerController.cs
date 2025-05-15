@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         rigidBody = this.gameObject.GetComponent<Rigidbody>();
         _gun = this.gameObject.GetComponent<Gun>();
         raycast = this.gameObject.GetComponent<PlayerRaycasting>();
-        playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootsteps);
+        playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootstepsDefault);
     }
 
     // Update is called once per frame

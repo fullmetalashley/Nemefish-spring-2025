@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{8cf2c776-1d9a-49f8-877f-c6294e6781ea}">
+		<property name="assetPath">
+			<value>Player Character/pc_grunt_v3_shot.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.94299999999999995</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e7020341-c902-470a-b004-c3ceda7517ca}</destination>
+		</relationship>
+	</object>
+</objects>
