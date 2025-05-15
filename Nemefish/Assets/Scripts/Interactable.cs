@@ -6,6 +6,7 @@ public class Interactable : MonoBehaviour
 {
     public bool playerWithinRange;
     public bool dialogueRunning;
+    public bool autoInteract;
 
     private DialogueRunner _dialogueRunner;
 
@@ -35,6 +36,11 @@ public class Interactable : MonoBehaviour
         {
             //This is the player character, and this object is now interactable. 
             this.playerWithinRange = true;
+            if (autoInteract)
+            {
+                dialogueRunning = true;
+                CallYarn();
+            }
         }
     }
 
