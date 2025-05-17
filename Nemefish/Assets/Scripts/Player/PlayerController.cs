@@ -25,6 +25,13 @@ public class PlayerController : MonoBehaviour
 
     // Audio
     private EventInstance playerFootsteps;
+    public bool withinInteractionSpace;
+
+    public bool canFish;
+
+    public GameObject interactionFlag;
+
+    public int playerHealth;
 
     private void Awake()
     {
@@ -37,12 +44,13 @@ public class PlayerController : MonoBehaviour
         rigidBody = this.gameObject.GetComponent<Rigidbody>();
         _gun = this.gameObject.GetComponent<Gun>();
         raycast = this.gameObject.GetComponent<PlayerRaycasting>();
-        playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootstepsDefault);
+        //playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootstepsDefault);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!canFish) return;
         RaycastHit hit;
         Vector3 castPos = transform.position;
         castPos.y += 1;
@@ -62,9 +70,6 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDir = new Vector3(x, 0, y);
         rigidBody.linearVelocity = moveDir * speed;
         
-        
-        
-        
         if (x != 0 && x < 0)
         {
             //West
@@ -76,7 +81,6 @@ public class PlayerController : MonoBehaviour
             //East
             FlipSprite(1);
             raycast.ChangeDirection(1);
-
         }
 
         if (y != 0 && y < 0)
@@ -107,6 +111,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void SetInteractionIcon(bool status)
+    {
+        interactionFlag.SetActive(status);
+    }
+    
     private void UpdateSound()
     {
         // Start footsteps event if the player has a velocity
