@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2220990877961903912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9162483451159299081}
+  - component: {fileID: 7799586129103623410}
+  m_Layer: 0
+  m_Name: Combat Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9162483451159299081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2220990877961903912}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 142.99242, y: 79.53799, z: -1.1383533}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7799586129103623410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2220990877961903912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaadc428a9b3ef44981ae8b7746bb8ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fish:
+  - {fileID: 11400000, guid: 818d10c387efffd41bee71a7d980f9bf, type: 2}
+  - {fileID: 11400000, guid: 054765686a6b33046aaffa0672987da8, type: 2}
+  mutantFish:
+  - {fileID: 11400000, guid: 0d0e235c5fcbeea43babe94d35ad7ec2, type: 2}
+  spawnPosition: {fileID: 0}
+  mutantPrefab: {fileID: 7587193303307050287, guid: ec478304c9c05724da86182f8b82637d, type: 3}
+  spawnTimerBase: 10
+  spawnTimer: 10
+  mutantActive: 0
+  damageTimerBase: 5
+  damageTimer: 5
+  _currentBounds: {fileID: 0}
