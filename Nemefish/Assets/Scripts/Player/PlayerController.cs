@@ -14,7 +14,12 @@ public class PlayerController : MonoBehaviour
     public LayerMask terrainLayer;
 
     public Rigidbody rigidBody;
-
+    
+    //UI Access
+    [Header("UI Access")] public bool withinInteractionSpace;
+    public GameObject interactionIcon;
+    public bool canFish;
+    
     public SpriteRenderer spriteRendererStandStill;
     public SpriteRenderer spriteRendererStandUp;
     public SpriteRenderer spriteRendererStandDown;
@@ -241,4 +246,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void SetInteractionIcon(bool state)
+    {
+        interactionIcon.SetActive(state);
+    }
 }
