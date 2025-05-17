@@ -3,65 +3,76 @@ using UnityEngine;
 
 public class CombatController : MonoBehaviour
 {
+    [Header("Fish lists")]
+    public List<FishScriptable> fish;
+    public List<FishScriptable> mutantFish;
+    
+    public GameObject spawnPosition;
+    public GameObject mutantPrefab;
 
-    public int rounds;
-
-    public GameObject mutantFish;
-    public GameObject position;
-
+    [Header("Spawn metrics")]
     public float spawnTimerBase;
     public float spawnTimer;
-
     public bool mutantActive;
 
+    [Header("Damage metrics")]
     public float damageTimerBase;
     public float damageTimer;
 
-    public int damageDealt;
+    private FishingRod _fishingRod;
 
-    public List<GameObject> mutants;
-    
+    public BoundsDetection _currentBounds;
+  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        
+        _fishingRod = FindAnyObjectByType<FishingRod>();
     }
-
+    
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (!mutantActive)
         {
             spawnTimer -= Time.deltaTime;
-            if (spawnTimer <= 0)
-            {
-                mutantActive = true;
-                var newMutant = Instantiate(mutantFish, new Vector3(0, 0, 0), Quaternion.identity);
-                mutants.Add(newMutant);
-                spawnTimer = spawnTimerBase;
-            }
+            if (!(spawnTimer <= 0)) return;
+            
+            //If we hit spawn time, instantiate the mutant prefab. Only one prefab for now. 
+            //TODO: Make this a list of mutants, and spawn them at random?
+            var newMutant = Instantiate(mutantPrefab, spawnPosition.transform);
+            newMutant.transform.position = spawnPosition.transform.position;
+
+            //Add the detection spot to the list
+            _fishingRod.fishingSpots.Add(newMutant.GetComponent<BoundsDetection>());
+            _currentBounds = newMutant.GetComponent<BoundsDetection>();
+            mutantActive = true;
+            spawnTimer = spawnTimerBase;
         }
         else
         {
             damageTimer -= Time.deltaTime;
-            if (damageTimer <= 0)
-            {
-                FindAnyObjectByType<UIManager>().playerHP -= 10;
-                FindAnyObjectByType<UIManager>().UpdateUIText();
-                damageTimer = damageTimerBase;
-            }
+            if (!(damageTimer <= 0)) return;
+            
+            //Timer has ended, and player takes damage.
+            FindAnyObjectByType<UIManager>().playerHealth -= _currentBounds.fish._damageDealt;
+            FindAnyObjectByType<UIManager>().UpdateUIText();
+            damageTimer = damageTimerBase;
         }
     }
-
+    
+    //Mutant has been shot and can be removed from the list. 
     public void RemoveMutant(GameObject mutant)
     {
         mutantActive = false;
-        mutants.Remove(mutant);
+        _fishingRod.fishingSpots.Remove(mutant.GetComponent<BoundsDetection>());
         Destroy(mutant);
     }
-    
-    public void CheckTarget()
+
+    //Reset all of this once the UI has closed
+    public void UIClose()
     {
-        Vector2 checkPoint = (Vector2)Input.mousePosition;
+        mutantActive = false;
+        spawnTimer = spawnTimerBase;
+        damageTimer = damageTimerBase;
     }
-}
+  }

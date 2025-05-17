@@ -22,19 +22,12 @@ public class FilletManager : MonoBehaviour
         currentList = gutFishSprites;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void AdvanceFrame()
     {
         index++;
         if (index >= currentList.Count)
         {
             index = 0;
-            //FindAnyObjectByType<UIManager>().ToggleFillet();
         }
 
         activeImage.sprite = currentList[index];

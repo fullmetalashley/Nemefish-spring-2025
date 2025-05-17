@@ -5,21 +5,8 @@ public class PlayerInventory : MonoBehaviour
 {
     public List<Item> _inventory;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void AddItem(Item toAdd)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void AddItem(Fish fishToAdd)
-    {
-        Item toAdd = fishToAdd._successItem;
         if (CheckForItem(toAdd))
         {
             //Don't add it, get the index and add to the quantity.
@@ -31,6 +18,8 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    //Does this item exist in the inventory?
+    //Not entirely needed to do it this way, but it's a safety measure. 
     private bool CheckForItem(Item itemToAdd)
     {
         foreach (var t in _inventory)
@@ -40,10 +29,10 @@ public class PlayerInventory : MonoBehaviour
                 return true;
             }
         }
-
         return false;
     }
 
+    //Where is this item in the inventory?
     private int ItemIndex(Item itemToAdd)
     {
         for (int i = 0; i < _inventory.Count; i++)

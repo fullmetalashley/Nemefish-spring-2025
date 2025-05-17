@@ -5,89 +5,65 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    [Header("UI Elements")]
     public GameObject fishingPanel;
     public bool inUI;
-
     public Slider chargeBar;
     public Image sliderFill;
-
-    public GameObject fishingMap;
-
-    public GameObject fishingRod;
-    private FishingRod _fishingRod;
-
     public TextMeshProUGUI playerHPText;
-    public int playerHP;
 
-    public GameObject filletPanel;
-
+    [Header("Animators")]
     public Animator rodAnimator;
-
-    private PlayerController _playerController;
-
+    
+    //TODO: Figure this stupid thing out
     private UILineRenderer _uiLineRenderer;
 
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    //TODO: Get this out of here and into the player controller
+    public int playerHealth = 10;
+
+    //Script refs
+    private CombatController _combatController;
+    private FishingRod _fishingRod;
+    private PlayerController _playerController;
+
+    private void Start()
     {
         _fishingRod = FindAnyObjectByType<FishingRod>();
         _playerController = FindAnyObjectByType<PlayerController>();
-        playerHPText.text = "HP: " + _playerController.playerHealth;
+        playerHPText.text = "HP: " + playerHealth;
         _uiLineRenderer = FindAnyObjectByType<UILineRenderer>();
-//        _uiLineRenderer.SetAllDirty();
+        _combatController = FindAnyObjectByType<CombatController>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _playerController.withinInteractionSpace)
+        if (Input.GetKeyDown(KeyCode.E) && _playerController.withinInteractionSpace)
         {
             ToggleFishing();
             _playerController.canFish = false;
         }
         
-        
-        if (chargeBar.value >= 0 && chargeBar.value <= 3)
+        sliderFill.color = chargeBar.value switch
         {
-            sliderFill.color = Color.green;
-        }
-
-        if (chargeBar.value > 3 && chargeBar.value <= 4)
-        {
-            sliderFill.color = Color.yellow;
-        }
-        
-        if (chargeBar.value > 4 && chargeBar.value <= 5)
-        {
-            sliderFill.color = Color.red;
-        }
+            >= 0 and <= 500 => Color.green,
+            > 500 and <= 800 => Color.yellow,
+            > 800 and <= 1000 => Color.red,
+            _ => sliderFill.color
+        };
     }
 
     public void UpdateUIText()
     {
-        playerHPText.text = "HP: " + +_playerController.playerHealth;
+        playerHPText.text = "HP: " + playerHealth;
     }
-
- /*   public void ToggleFillet()
-    {
-        ToggleFishing();
-        inUI = true;
-        filletPanel.SetActive(!filletPanel.activeSelf);
-    }
-    */
     
+    //Turn the panel on and off, generally based on button clicks.
     public void ToggleFishing()
     {
-//        rodAnimator.enabled = false;
         fishingPanel.SetActive(!fishingPanel.activeSelf);
-        Debug.Log("in UI: " + inUI);
         inUI = !inUI;
-        Debug.Log("in UI pt 2: " + inUI);
         _playerController.canFish = !fishingPanel.activeSelf;
-        //       fishingRod.SetActive(!fishingRod.activeSelf);
-        //       fishingMap.SetActive(!fishingMap.activeSelf);
-
-
+        _combatController.UIClose();
     }
 }

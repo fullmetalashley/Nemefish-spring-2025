@@ -13,22 +13,21 @@ public class FishingRod : MonoBehaviour
     public float marginOfError;
     [SerializeField] private float maxCharge;
     
-    [Header("UI Elements")]
+    [Header("Targeting Elements")]
     public GameObject bobber;
     public GameObject castTarget;   //This is the crosshair position
     public GameObject cursor;   //This is the crosshair object
     public GameObject lineStart;
-
-    
-    public BoundsDetection actualFishSpot;
-
+    public GameObject shotTarget;
     public GameObject fishingRodObject;
 
+    [Header("Fish spots")]
     public List<BoundsDetection> fishingSpots;
 
     //Script refs
     private UIManager _uiManager;
     private QuicktimeManager _quicktimeManager;
+    private CombatController _combatController;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,7 +35,7 @@ public class FishingRod : MonoBehaviour
     {
         _uiManager = FindAnyObjectByType<UIManager>();
         _quicktimeManager = FindAnyObjectByType<QuicktimeManager>();
-        
+        _combatController = FindAnyObjectByType<CombatController>();
     }
     
     // Update is called once per frame
@@ -46,7 +45,8 @@ public class FishingRod : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            //CalculateGunshot();
+            shotTarget.transform.position = Input.mousePosition;
+            CalculateGunshotDistance();
         }
         
         if (Input.GetMouseButtonDown(1))
@@ -72,6 +72,22 @@ public class FishingRod : MonoBehaviour
         }
     }
 
+    public void CalculateGunshotDistance()
+    {
+        //Check the fishing spots to see if the bobber landed in one of them. 
+        foreach (BoundsDetection fishSpot in fishingSpots)
+        {
+            if (fishSpot.fish._fishType == "Mutant")
+            {
+                if (fishSpot.PointWithinCorners(shotTarget.transform.position))
+                {
+                    _combatController.RemoveMutant(fishSpot.gameObject);
+                    return;
+                }
+            }
+        }
+    }
+    
     //See how far between the cast point and the bobber, and check if we've landed on something
     public void CalculateDistance()
     {
@@ -96,8 +112,14 @@ public class FishingRod : MonoBehaviour
         //Check the fishing spots to see if the bobber landed in one of them. 
         foreach (BoundsDetection fishSpot in fishingSpots)
         {
-            fishSpot.PointWithinCorners(bobber.transform.position);
+            if (fishSpot.PointWithinCorners(bobber.transform.position))
+            {
+                //This means that we are within bounds of the fish. 
+                _quicktimeManager.currentBounds = fishSpot;
+                _quicktimeManager.TriggerQuicktime(true);
+            }
         }
+        CanCastAgain();
     }
 
     //Set things to cast again. 
@@ -113,28 +135,4 @@ public class FishingRod : MonoBehaviour
         charge = 0f;
         _uiManager.chargeBar.value = charge;
     }
-
-    
-    /*
-    public void CalculateGunshot()
-    {
-        CombatController combatController = FindAnyObjectByType<CombatController>();
-        foreach (GameObject mutantSpot in combatController.mutants)
-        {
-            //mutantSpot.GetComponent<BoundsDetection>().CheckShootingPointInBounds(Camera.main.ScreenToWorldPoint(shootTarget.transform.position));
-        }
-    }
-
-    public void CaughtFishEffect(int hpEffect)
-    {
-        _uiManager.playerHP += hpEffect;
-        _uiManager.UpdateUIText();
-                
-        //Destroy that fish
-        fishingSpots.Remove(actualFishSpot);
-        Destroy(actualFishSpot.gameObject);
-
-        actualFishSpot = null;
-    }
-    */
 }
