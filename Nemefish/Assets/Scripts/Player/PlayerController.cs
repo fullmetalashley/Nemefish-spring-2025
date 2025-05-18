@@ -229,7 +229,7 @@ public class PlayerController : MonoBehaviour
     private void UpdateSound()
     {
         // Start footsteps event if the player has a velocity
-        if (rigidBody.linearVelocity.x != 0 || rigidBody.linearVelocity.z != 0)
+        if (rigidBody.linearVelocity.x != 0 || rigidBody.linearVelocity.y != 0)
         {
             // Get the playback state
             PLAYBACK_STATE playbackState;

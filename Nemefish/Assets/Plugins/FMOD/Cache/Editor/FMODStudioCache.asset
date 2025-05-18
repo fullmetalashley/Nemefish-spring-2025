@@ -145,7 +145,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Coastline.bank
   Name: Coastline
   StudioPath: bank:/Coastline
-  lastModified: 638831130631862460
+  lastModified: 638831137182174305
   FileSizes:
   - Name: Desktop
     Value: 532768
@@ -207,7 +207,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 3718546587010763393}
   cacheVersion: 131847
-  cacheTime: 638831130642803628
+  cacheTime: 638831137182216378
   SerializableEventsDict:
   - key: event:/SFX/PlayerFootsteps
     index: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638828376951262079
+  lastModified: 638829319724704537
   FileSizes:
   - Name: Desktop
     Value: 39232
@@ -254,7 +254,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/PTO Forest.bank
   Name: PTO Forest
   StudioPath: bank:/PTO Forest
-  lastModified: 638831130642803628
+  lastModified: 638831137182216378
   FileSizes:
   - Name: Desktop
     Value: 814784
@@ -302,7 +302,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638831130631887572
+  lastModified: 638831137182177388
   FileSizes:
   - Name: Desktop
     Value: 1178
@@ -322,7 +322,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638831130631887572
+  lastModified: 638824007263912329
   FileSizes:
   - Name: Desktop
     Value: 1074
