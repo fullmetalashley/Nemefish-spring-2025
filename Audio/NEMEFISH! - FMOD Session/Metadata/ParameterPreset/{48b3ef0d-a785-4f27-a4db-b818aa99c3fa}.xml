@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{48b3ef0d-a785-4f27-a4db-b818aa99c3fa}">
+		<property name="name">
+			<value>amb_intensity_mix</value>
+		</property>
+		<relationship name="folder">
+			<destination>{0bb0d41d-5214-4d01-a57b-4380f5a0a9f3}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{044d8570-b253-465c-bc65-c6862dae0a42}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{044d8570-b253-465c-bc65-c6862dae0a42}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
