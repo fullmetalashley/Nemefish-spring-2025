@@ -1,0 +1,17 @@
+title: Find_Payment
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "Find_Payment" after mousedown on the Exterminator’s pack.
+<<if $FindPayment == true>>
+    <<stop>>  
+<<else>>
+    <<jump Find_Payment_Dialogue>>
+<<endif>>
+===
+
+
+title: Find_Payment_Dialogue
+---
+<<set $FindPayment = true>>
+You: At least now we've got the first half! Hopefully we live to see the second.
+===

@@ -1,0 +1,17 @@
+title: Find_NightCrawler9MM
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "Find_Journal" after mousedown on exterminator's journal.
+<<if $FindNightCrawler9MM == true>>
+    <<stop>>  
+<<else>>
+    <<jump Find_NightCrawler9MM_Dialogue>>
+<<endif>>
+===
+
+title: Find_NightCrawler9MM_Dialogue
+---
+<<set $FindNightCrawler9MM = true>>
+You: A NightCrawler 9MM! Where'd she get this kind of wormpower? A whole new world of fishing has opened up to us, Theodore!
+Theodore: Ack ack ack!
+===
