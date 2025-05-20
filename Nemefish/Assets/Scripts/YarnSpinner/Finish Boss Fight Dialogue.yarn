@@ -1,0 +1,7 @@
+title: Post_Boss_Fight_Dialogue
+---
+//play immediately upon end of boss fight combat
+-> We did it, Whiskers! So long as we have everything we need, we can now head back to Point No Point Dock.
+Whiskers: About <i>time</i>. This humidity has done a number on my fur.
+<<set $KilledNemefish1 = true>>
+===

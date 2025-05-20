@@ -1,0 +1,8 @@
+title: LandedSafe_Dialogue
+---
+//run when past a certain section of Southeast Coast.
+You: Nixer Inc.'s Guide to Nemefish Extermination suggests finding a place to camp immediately upon arrival to a hostile area. 
+Theodore: Meow.
+//<<showNotification "Your Quest Log has been updated.">>
+//<<questUpdate "MakeCamp">>
+===

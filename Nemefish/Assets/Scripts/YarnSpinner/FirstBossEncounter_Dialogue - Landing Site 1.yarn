@@ -1,0 +1,22 @@
+title: FirstBossEncounter_Dialogue
+---
+//Will need to access logic for player location in-game.
+//will play upon entry to "Player Camp"
+<<if $LandedSafe == true>>
+    <<stop>>  // End the node immediately if it has already played
+<<else>>
+    You: Geez, that was some chop. Seasick, Theodore?
+    Theodore: Mrowr.
+    //<<pose SHARK_WITH_LEGS_FIN>>
+    <<wait .1>>
+    //<<pose FOHI_STANDING_HISSING>>
+    You: What is that?
+    Theodore: Ack ack ack!
+    //<<pose SHARK_WITH_LEGS_GNASHING>>
+    //<<pose SHARK_WITH_LEGS_FIN>>
+    //Move Shark with Legs off screen
+    You: Crikey! I bet that was our nemefish!
+<<set $LandedSafe = true>>
+<<endif>>
+<<stop>>
+===

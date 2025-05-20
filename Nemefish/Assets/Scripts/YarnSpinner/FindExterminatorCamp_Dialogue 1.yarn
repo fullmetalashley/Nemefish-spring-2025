@@ -1,0 +1,40 @@
+title: FindExterminatorCamp
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "FindExterminatorCamp" after mousedown on exterminator's camp entrance/area is unlocked.
+<<if $FindExterminatorCamp == true>>
+    <<stop>>  
+<<else>>
+    <<jump FindExterminatorCamp_Dialogue>>
+<<endif>>
+===
+
+
+title: FindExterminatorCamp_Dialogue
+---
+<<set $FindExterminatorCamp = true>>
+
+
+<<if $BloomLevel1 == false>>
+    //<<pose FOHI_STANDING_HISSING>>
+    //<<pose PC_STANDING_FORWARD_SURPRISED>>
+    //<<pose FOHI_NEUTRAL_STANDING_IDLE>>
+    //<<pose PC_STANDING_FORWARD_NEUTRAL>>
+    You: The Exterminator... she must've barely made it back from the beach.
+    Theodore: Brrt.
+    You: We should look around, Theodore.
+    Theodore: Mrrrow.
+    //<<pose FOHI_NEUTRAL_SITTING>>
+
+<<else>>
+    //<<pose FOHI_STANDING_HISSING>>
+    //<<pose PC_STANDING_FORWARD_SURPRISED>>
+    //<<pose FOHI_NEUTRAL_STANDING_IDLE>>
+    //<<pose PC_STANDING_FORWARD_NEUTRAL>>
+    You: The Exterminator... she must've barely made it back from the beach. We should look around, Whiskers.
+    Whiskers: I'll hang back here, if you don't mind. It would take <i>ages</i> to get that stink from my coat.
+    //<<pose FOHI_NEUTRAL_SITTING>>
+
+
+<<endif>>
+===

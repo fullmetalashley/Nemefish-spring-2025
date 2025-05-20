@@ -1,0 +1,24 @@
+title: ExterminatorBloodTrail_Dialogue
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "ExterminatorBloodTrail_Dialogue" after mousedown on blood
+//Will need to access logic for player location in-game.
+<<set $blood = floor(random_range(1, 4))>>
+<<if $blood == 1>>
+    You: This doesn't bode well...
+    <<stop>>
+    <<endif>>
+<<if $blood == 2>>
+    You: Blood.
+    <<stop>>
+    <<endif>>
+<<if $blood == 3>>
+    You: How has the blood lasted in all this rain?
+    <<stop>>
+    <<endif>>
+<<if $blood == 4>>
+    You: Mind where you step—there's blood here.
+    <<stop>>
+<<endif>>
+<<set $BloodTrailCampSeen = true>>
+===

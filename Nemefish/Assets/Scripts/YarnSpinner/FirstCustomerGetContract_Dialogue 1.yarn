@@ -1,0 +1,454 @@
+title: FirstCustomerGetContract_Dialogue_Start_Tree
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "FirstCustomerGetContract_Dialogue_Start_Tree" after mousedown on customer.
+<<if $FirstCustomerVisited == false>>
+    <<jump FirstCustomerGetContract_Dialogue>>
+<<else>>
+    <<jump FirstCustomer_More_Start_Tree>>
+<<endif>>
+===
+
+
+title: FirstCustomerGetContract_Dialogue
+---
+//<<pose FIRST_CUSTOMER_TALKS>>
+//<<pose FOHI_NEUTRAL_SITTING>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+<<set $FirstCustomerVisited = true>>
+Customer: Hey there! You with Nixer Inc.?
+ -> Expecting anyone else? It sure is empty out here...
+    <<jump EmptyOutHere>>
+ -> At your service, sir!
+    <<jump Polite>>
+===
+
+
+title: EmptyOutHere
+---
+Customer: Wasn't always this deserted—or this soggy. <i>Ha</i>! This your first time visiting Swallowed Strait?
+-> Sure is! And I'm looking forward to separating fact from fiction.
+    <<jump BrassTacks>>
+===
+
+
+title: Polite
+---
+//<<pose FIRST_CUSTOMER_OTHER>>
+//<<pose PC_STANDING_FORWARD_SHRUG_SMILE_ROD>>
+Customer: Sir! Haha <i>sir</i>! Please, I'm just a customer. But, your accent— you're Inlander, right?
+-> Born and raised.
+Customer: Well, Inlander, you'll find us locals aren't quite so formal. Scruffy and kind-hearted—that's us. Blame nature, nurture, or both.
+-> Noted. So, how can I help?
+    <<jump BrassTacks>>
+-> According to the Nixer Inc.'s Guide to Nemefish Extermination I keep in my pack, every customer is a sir, sir. So, what can I do for you, sir?
+    <<jump BrassTacks>>
+===
+
+
+title: BrassTacks
+---
+//<<pose FIRST_CUSTOMER_WORRIED>>
+Customer: Well, I'm sure you've heard nature has a bite out here. See, I was preparing to move to that island with my family. Then, I got word from my aunt that there was some kind of <i>nemefish</i> living offshore from the town.  Now, if it was just me, I'd risk it. But I've got two kids, a wife... Without her, who'd tell me I had crumbs in my beard, you know?
+//<<pose PC_STANDING_FORWARD_SHRUG_ROD>>
+-> You're brave to even consider it. This sort of thing is my specialty.
+    <<jump Specialty>>
+-> It's best civilians don't get involved with nemefish, sir. You did the right thing seeking help!
+    <<jump Civilians>>
+===
+
+
+title: Specialty
+---
+//<<pose FIRST_CUSTOMER_TALKS>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+Customer: I don't feel very brave, truth be told. Hence, my admiration for folks like you! Speaking of which, who's your sidekick? Hey, kitty-kitty! Pspsps!
+//<<pose FOHI_STANDING_HISSING>>
+//<<pose PC_STANDING_FORWARD_SHRUG_SMILE_ROD>>
+-> Sidekick? You give him too much credit. Theodore here is a LapWarmer 5000. Standard issue.
+    <<jump LapWarmer>>
+-> Sidekick? Not a chance. You might think I keep him just for his looks, but Theodore is a C.O.H.I.— a Creature of Human Intelligence.
+    <<jump Crucial>>
+===
+
+
+title: Civilians
+---
+<<set $Relate2FirstCustomer = $Relate2FirstCustomer + 1>>
+    //<<ShowNotification "The Customer appreciated that.">>
+    //UI script commandhandler cue
+//<<pose FIRST_CUSTOMER_TALKS>>
+//<<pose PC_IDLE_NEUTRAL_W_ROD>>
+Customer: I'm glad you think so. It wasn't an easy decision, calling Nixer Inc.. I sure admire what you folks do! Speaking of which, who's your sidekick? Hey, kitty-kitty! Pspsps!
+//<<pose FOHI_STANDING_HISSING>>
+//<<pose PC_STANDING_FORWARD_SHRUG_SMILE_ROD>>
+Theodore: Mrrrow.
+-> Sidekick? You give him too much credit. Theodore here is a LapWarmer 5000. Standard issue.
+    <<jump LapWarmer>>
+-> Sidekick? Hardly. Theodore's got wiles. He's a C.O.H.I.— a Creature of Human Intelligence.
+    <<jump Crucial>>
+===
+
+
+title: LapWarmer
+---
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+//<<pose FOHI_STANDING_HISSING>>
+<<set $LapWarmer = true>>
+<<set $Relate2FOHI = $Relate2FOHI - 1>>
+    //<<ShowNotification "Theodore didn't appreciate that.">>
+    //UI script commandhandler cue
+Theodore: Hiss.
+Customer: You'd better watch out! I'm no expert, but I don't think he likes being teased.
+//<<pose PC_IDLE_NEUTRAL_W_ROD>>
+//<<pose FOHI_NEUTRAL_SITTING>>
+<<jump HalfUpFront>>
+===
+
+
+title: Crucial
+---
+//<<pose COMBINED_PC_PETS_FOHI>>
+<<set $Relate2FOHI = $Relate2FOHI + 1>>
+    //<<ShowNotification "Theodore appreciated that.">>
+    //UI script commandhandler cue
+Theodore: Merp.
+Customer: A C.O.H.I., huh? I've heard of those. Makes sense critters would need to smarten up to change with these times of ours.
+//<<pose FOHI_NEUTRAL_SITTING>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+Never made sense to me that C.O.H.I. are only found in the cities, though.
+    -> Well, that's what they say.
+//<<pose FIRST_CUSTOMER_OTHER>>
+Customer: "They" oughtta come out to the Strait sometime. See what trouble the carp are getting up to, now they've all sprouted thumbs.
+<<jump HalfUpFront>>
+===
+
+title: HalfUpFront
+---
+<<set $AskHalfUpFront = true>>
+<<set $NoQuestionsAsked = true>>
+//<<pose FIRST_CUSTOMER_WORRIED>>
+//<<pose PC_STANDING_FORWARD_SHRUG_ROD>>
+-> Now, about my pay...
+Customer: I thought your dispatcher would've told you! You're not the first they sent. There was another Exterminator. She left around a month ago. I'm afraid she never came back.
+//<<pose FOHI_STANDING_HISSING>>
+<<set $LearnedofExterminator = true>>
+-> I wasn't told about this!
+    <<jump NotTold>>
+-> Clearly there was a miscommunication, sir.
+    <<jump NotTold>>
+===
+
+
+title: NotTold
+---
+//<<pose PC_STANDING_FORWARD_SHRUG_ROD>>
+//<<pose FIRST_CUSTOMER_OTHER>>
+<<if $Relate2FirstCustomer < 1>>
+Customer: Nixer Inc. should do a better job keeping you in the loop.
+<<else>>
+Customer: I hope you don't think I'm withholding the facts from you! I wouldn't do that. Not ever.
+<<endif>>
+-> The issue still stands—Theodore and I don't risk our lives for free!
+    <<jump NotFree>>
+-> I'll have to check what's the protocol in Nixer Inc.'s Guide to Nemefish Extermination.
+    <<jump Consult>>
+===
+
+
+title: NotFree
+---
+<<set $Relate2FirstCustomer = $Relate2FirstCustomer - 1>>
+    //<<ShowNotification "The Customer didn't appreciate that.">>
+    //UI script commandhandler cue
+<<set $Relate2FOHI = $Relate2FOHI + 1>>
+   // <<ShowNotification "Theodore appreciated that.">>
+    //UI script commandhandler cue
+//<<pose FIRST_CUSTOMER_WORRIED>>
+//<<pose FOHI_NEUTRAL_SITTING>>
+Theodore: Ack ack ack.
+Customer: I wouldn't ask you to!
+<<jump Consult>>
+===
+
+
+title: Consult
+---
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+//<<pose FIRST_CUSTOMER_TALKS>>
+//<<pose FOHI_NEUTRAL_SITTING>>
+Customer: Customer Service said you should retrieve the deposit for yourself. You can find it wherever the other Exterminator made her camp. It was in her pack.
+-> With any luck, I'll find her alive and we'll each get half.
+    <<jump BestCase>>
+-> I suppose none of us get into this line of work for the pension. Or the clams.
+    <<jump Closing>>
+===
+
+
+title: BestCase
+---
+Customer: Gosh, that would be a relief.
+<<jump Closing>>
+===
+
+
+title: Closing
+---
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+Customer: Anyway, I'll be right here if you have any questions before heading off. Good luck, friend!
+-> Thanks! We could all do with a little luck nowadays, huh?
+    <<set $hasContract = true>>
+    //<<showNotification "You've received your contract.">>
+    //UI script commandhandler cue
+    //<<inventoryAdd "Contract">>
+-> No luck required, sir. Whatever's out there, I guarantee you, Theodore and I have faced worse.
+    <<set $hasContract = true>>
+    //<<showNotification "You've received your contract.">>
+    //UI script commandhandler cue
+    //<<inventoryAdd "Contract">>
+    <<set $Relate2FOHI = $Relate2FOHI + 1>>
+   // <<ShowNotification "Theodore appreciated that.">>
+    //UI script commandhandler cue
+===
+
+
+
+title: FirstCustomer_More_Start_Tree
+---
+//<<pose FIRST_CUSTOMER_TALKS>>
+//<<pose FOHI_NEUTRAL_SITTING>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+<<set $greet = floor(random_range(1, 6))>>
+<<if $greet == 1>>
+Customer: Dressed for the weather?
+    <<endif>>
+<<if $greet == 2>>
+Customer: My aunt always says, "Mackerel skies and mares' tails, make tall ships carry their low sails."
+    <<endif>>
+<<if $greet == 3>>
+Customer: Hope you've not caught a cold!
+    <<endif>>
+<<if $greet == 4>>
+Customer: My son insists you Exterminators walk on water. Where do kids get this stuff?!
+    <<endif>>
+<<if $greet == 5>>
+Customer: Fish not biting?
+    <<endif>>
+<<if $greet == 6>>
+Customer: Now I've got that Nixer Inc. jingle stuck in my head. <i>We make the Unknowable Killable</i>! So catchy!
+<<endif>>
+
+
+
+
+-> I have a question for you. <<if $NoQuestionsAsked == false>>
+    <<jump Questions>>
+-> I'd like to ask something else. <<if $NoQuestionsAsked == true>>
+    <<jump Questions>>
+-> Nevermind.
+    <<jump Goodbye>>
+===
+
+
+
+
+title: Questions
+---
+<<set $question = floor(random_range(1, 4))>>
+<<if $question == 1>>
+Customer: Shoot!
+    <<endif>>
+<<if $question == 2>>
+Customer: I'm all ears!
+    <<endif>>
+<<if $question == 3>>
+Customer: I appreciate your curiosity.
+    <<endif>>
+<<if $question == 4>>
+Customer: As my wife always says, "To assume makes an ass out of you <i>and</i> me!"
+    <<endif>>
+
+
+
+
+-> What can you tell me about the Swallowed Strait? <<if $AskSwallowedStrait == false>>
+    <<jump SwallowedStrait>>
+-> Tell me again about the Swallowed Strait. <<if $AskSwallowedStrait == true>>
+    <<jump SwallowedStrait_Again>>
+-> Do you have any information about the nemefish? <<if $AskDismalNotchNemefish == false>>
+    <<jump DismalNotchNemefish>>
+-> Where does your aunt live? Maybe I could ask her. <<if $AskDismalNotchNemefish == true>>
+    <<jump DismalNotchNemefish_Again>>
+-> I'd like to know more about my destination. <<if $AskDismalNotchIsland == false>>
+    <<jump DismalNotchIsland>>
+-> Anything else you can tell me about Dismal Notch Island? <<if $AskDismalNotchIsland == true>>
+    <<jump DismalNotchIsland_Again>>
+-> Any idea where the other Exterminator might have made her camp? 
+    <<jump HalfUpFront_Again>>
+-> Nevermind, I know everything I need.
+    <<jump Goodbye>>
+===
+
+
+
+
+title: SwallowedStrait
+---
+<<set $AskSwallowedStrait = true>>
+<<set $NoQuestionsAsked = true>>
+Customer: You'd be surprised how many folks love this Strait—myself included. I'd go so far as to say it's the prettiest spot on the Drowned Coast—even with its mysteries.
+-> If so many people love it, why doesn't anyone live here?
+    <<jump NooneHere>>
+-> I can't imagine loving a place that's so inhospitable.
+    <<jump Inhospitable>>
+===
+
+
+
+
+title: NooneHere
+---
+Customer: People leave places they love all the time if they can't afford to stay. The storms? The floods? These nemefish? They aren't the only prices of calling this strait home.
+    <<jump FirstCustomer_More_Start_Tree>>
+===
+
+
+
+
+title: Inhospitable
+---
+<<set $Relate2FirstCustomer = $Relate2FirstCustomer - 1>>
+    //<<ShowNotification "The Customer didn't appreciate that.">>
+    //UI script commandhandler cue
+//<<pose FIRST_CUSTOMER_OTHER>>
+Customer: Perhaps an Inlander couldn't understand. We Drowners think the relationship a person has with where they're from is just like any other—It ebbs and flows.
+    <<jump FirstCustomer_More_Start_Tree>>
+===
+
+
+
+
+title: SwallowedStrait_Again
+---
+Customer: What more can I say? Some, like me, believe the flooding will stop someday. Other folks—my aunt included—think the seas will rise forever.
+    <<jump FirstCustomer_More_Start_Tree>>
+===
+
+
+
+
+title: DismalNotchNemefish
+---
+<<set $AskDismalNotchNemefish = true>>
+<<set $NoQuestionsAsked = true>>
+//<<pose FIRST_CUSTOMER_WORRIED>>
+Customer: Wish I did. My aunt heard about it through a friend. A friend of a friend. And of course, no one fancies doing the reconnaissance for themselves. I mean, <i>what if it was a barnacle-seal</i>?
+<<jump FirstCustomer_More_Start_Tree>>
+===
+
+
+
+
+title: DismalNotchNemefish_Again
+---
+//<<pose FIRST_CUSTOMER_WORRIED>>
+Customer: Oh, no. That shouldn't be necessary. And anyway, isn't Nixer Inc.'s jingle, <i>"We Make the Unknowable Killable"</i>? I always liked that.
+<<jump FirstCustomer_More_Start_Tree>>
+===
+
+
+
+
+title: DismalNotchIsland
+---
+<<set $AskDismalNotchIsland = true>>
+<<set $NoQuestionsAsked = true>>
+Customer: See that blotch on the horizon? That's Dismal Notch Island. I grew up there. It's got a little town right on the waterfront. A very nice boardwalk, too. I used to run down it back when I was my daughter's age. I'd a funny rhyme about landing just right on the boards...  
+-> The old, "Don't step on a crack or you'll break your mother's back?"
+    <<jump Relatable>>
+-> I don't know it.
+    <<jump FirstCustomer_More_Start_Tree>>
+===
+
+
+
+
+title: Relatable
+---
+<<set $Relate2FirstCustomer = $Relate2FirstCustomer + 1>>
+    //<<ShowNotification "The Customer appreciated that.">>
+    //UI script commandhandler cue
+//<<pose FIRST_CUSTOMER_OTHER>>
+Customer: That's it! They must say the same thing Inland. I always felt it was an odd thing to teach kids. I mean, why make children feel it was up to them—who lived and died?
+//<<pose FIRST_CUSTOMER_WORRIED>>
+I'm sorry, excuse me. What use is there in combing over the past these days?
+-> Hey, one man's past is another man's presents.
+    <<jump GetsIt>>
+-> I prefer keeping my eyes on the horizon, sir.
+    <<jump DoesntGetIt>>
+===
+
+
+
+
+title: GetsIt
+---
+//<<pose FIRST_CUSTOMER_TALKS>>
+Customer: With that attitude, you'll blend in with us Drowners in no time!
+<<jump FirstCustomer_More_Start_Tree>>
+===
+
+
+
+
+title: DoesntGetIt
+---
+//<<pose FIRST_CUSTOMER_TALKS>>
+Customer: Yes, you Inlanders are a forward-looking people.
+<<jump FirstCustomer_More_Start_Tree>>
+===
+
+
+
+
+title: DismalNotchIsland_Again
+---
+Customer: Hmm... If I remember right, there's some great fishing along the North Beach!
+<<jump FirstCustomer_More_Start_Tree>>
+===
+
+
+title: HalfUpFront_Again
+---
+<<set $AskHalfUpFront_Again = true>>
+Customer: Now that you mention it, she had a local accent. She'd know to set herself up in the woods.
+<<jump FirstCustomer_More_Start_Tree>>
+===
+
+
+title: Goodbye
+---
+<<set $bye = floor(random_range(1, 4))>>
+<<if $bye == 1>>
+Customer: Stay dry!
+    <<endif>>
+<<if $bye == 2>>
+Customer: Don't let the geoducks get you down!
+    <<endif>>
+<<if $bye == 3>>
+Customer: I'll see you soon!
+    <<endif>>
+<<if $bye == 4>>
+Customer: Keep your chin up!
+    <<endif>>
+<<stop>>
+===
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+title: Fishing_Location_Dialogue_Stab
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "Fishing_Location_Dialogue_Stab" after mousedown on the fishing area.
+<<set $fishingarea = floor(random_range(1, 4))>>
+<<if $fishingarea == 1>>
+    You: That looks promising.
+    <<stop>>
+    <<endif>>
+<<if $fishingarea == 2>>
+    You: I think I saw something jump!
+    <<stop>>
+    <<endif>>
+<<if $fishingarea == 3>>
+    You: That's a classic fishing hole!
+    <<stop>>
+    <<endif>>
+<<if $fishingarea == 4>>
+    You: Fancy fish for dinner?
+    <<stop>>
+    <<endif>>
+<<stop>>
+===

@@ -1,0 +1,44 @@
+title: Firing_NightCrawler9MM_Dialogue_Stabs
+---
+<<if $WormDominationAgreed == true>>
+    <<jump WormStabs>>
+<<else>>
+    <<stop>>
+<<endif>>
+===
+
+title: WormStabs
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "Firing_NightCrawler9MM_Dialogue_Stabs" after firing NightCrawler
+<<set $WormNightCrawlerStab = floor(random_range(1, 7))>>
+<<if $WormNightCrawlerStab == 1>>
+    Worm: TELL MY SEGMENTS I LOVED THEM!
+    <<stop>>
+    <<endif>>
+<<if $WormNightCrawlerStab == 2>>
+    Worm: SPLIT ME, MOTHERGLORY!
+    <<stop>>
+    <<endif>>
+<<if $WormNightCrawlerStab == 3>>
+    Worm: DEATH IS BUT DIVISION!
+    <<stop>>
+    <<endif>>
+<<if $WormNightCrawlerStab == 4>>
+    Worm: IF I LAND IN A MOUTH, AVENGE ME!
+    <<stop>>
+    <<endif>>
+<<if $WormNightCrawlerStab == 5>>
+    Worm: CUT ME CLEAN, COWARD!
+    <<stop>>
+    <<endif>>
+<<if $WormNightCrawlerStab == 6>>
+    Worm: THE WORMS WILL ALWAYS WIN!
+    <<stop>>
+    <<endif>>
+<<if $WormNightCrawlerStab == 7>>
+    Worm: I AM DEATH!
+    <<stop>>
+    <<endif>>
+<<stop>>
+===

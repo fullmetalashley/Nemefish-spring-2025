@@ -1,0 +1,103 @@
+title: ReturntoPointNoPoint_Dialogue
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "ReturntoPointNoPoint_Dialogue" after mousedown on boat.
+<<if $KilledNemefish1 == false>> 
+    <<jump UnfinishedBusiness>>
+<<elseif $FindPayment == false>>
+    <<jump NeedDeposit>>
+<<else>>
+    <<jump ReadyOrNot>>
+<<endif>>
+===
+
+title: NeedDeposit
+---
+Whiskers: Forgetting something, Human? Like... payment?
+-> What?
+Whiskers: The first half of our payment!
+-> Right! The customer said it was in the other Exterminator's pack. We'd better return to her camp. <<if $FindExterminatorCamp == true>>
+-> Right! The customer said it was in the other Exterminator's pack. We'd better find her camp. <<if $FindExterminatorCamp == false>>
+-> Right! The customer said it was in the other Exterminator's pack. I think he mentioned she would've set her camp up in the woods? We'd better find it! <<if $FindExterminatorCamp == false and $AskHalfUpFront_Again == true>>
+<<stop>>
+===
+
+title: ReadyOrNot
+---
+-> I guess it's time we returned to Point No Point Dock, huh?
+    <<jump QuickQuestion>>
+===
+
+title: QuickQuestion
+---
+Whiskers: Quick question. We're about to be among humans again... and I now possess the gift of speech. Exceptional speech. 
+-> And?
+Whiskers: Well, do you think it's wise for me to speak in... <i>mixed company</i>?
+-> Perhaps it's better that we keep your new ability between us for now. 
+    <<jump BetweenUs>>
+-> Of course! If a talking C.O.H.I. is the strangest thing someone's seen in this day and age, they've been living in la la land, not the Swallowed Strait. Whiskers, I insist you don't hide what you're capable of.
+    <<jump LaLaLand>>
+===
+
+
+title: BetweenUs
+---
+Whiskers: Good. I abhor attention. Being ignored suits me far better.
+-> Really? Because whenever I ignore you, you make that whiny——
+    <<jump Whiny>>
+-> You do your best work out of sight.
+    <<jump BestWork>>
+===
+
+title: Whiny
+---
+Whiskers: <i>Mrowr</i>.
+-> That's it!
+Whiskers: When you least expect it, Human, I'll seek my revenge.
+-> I'll keep my head on a swivel. Just let me know if you decide you'd like to speak after all.
+<<set $FOHISpeaks = false>>
+//Autodirects to Point-No-Point Dock
+<<stop>>
+===
+
+title: BestWork
+---
+ <<set $Relate2FOHI = $Relate2FOHI + 1>>
+    //<<ShowNotification "Theodore appreciated that.">>
+    //UI script commandhandler cue
+Whiskers: You've never <i>seen</i> my best work, Human.
+-> Well, that's settled. Just let me know if you decide you'd like to speak after all.
+<<set $FOHISpeaks = false>>
+//Autodirects to Point-No-Point Dock
+<<stop>>
+===
+
+title: LaLaLand
+---
+Whiskers: I feared you'd say that. The curse of a feline: worshipped when one only seeks the shadows.
+Whiskers: No wonder my dignity feels... <i>compromised</i>.
+<<set $FOHISpeaks = true>>
+//Autodirects to Point-No-Point Dock
+<<stop>>
+===
+
+title: UnfinishedBusiness
+---
+<<set $leaveearly = floor(random_range(1, 4))>>
+<<if $leaveearly == 1>>
+    You: I've still got business to settle.
+    <<stop>>
+    <<endif>>
+<<if $leaveearly == 2>>
+    You: Even if I wanted to leave, I still need the clams.
+    <<stop>>
+    <<endif>>
+<<if $leaveearly == 3>>
+    You: No. I finish what I start.
+    <<stop>>
+    <<endif>>
+<<if $leaveearly == 4>>
+    You: Not a chance I'm leaving yet.
+    <<stop>>
+<<endif>>
+===

@@ -1,0 +1,23 @@
+title: Discover_Waterfront_Town
+---
+//Will need to access logic for player location in-game.
+//will play upon entry to "Waterfront Town"
+<<if $FindWaterfrontTown == true>>
+    <<stop>>  
+<<else>>
+    <<jump Discover_Waterfront_Town_Dialogue>>
+<<endif>>
+===
+
+title: Discover_Waterfront_Town_Dialogue
+---
+<<set $FindWaterfrontTown = true>>
+<<if $AskDismalNotchIsland == true>>
+    You: This must be the town our customer mentioned!
+<<else>>
+    You: What's this? 
+<<endif>>
+=== 
+
+
+

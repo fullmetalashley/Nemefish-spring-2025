@@ -1,0 +1,11 @@
+title: Dark_Is_Dangerous
+---
+<<if $FindExterminatorCamp == true and $FindNightCrawler9MM == true and $FindJournal == true and $FindPayment == true and $FindWaterfrontTown == true>>
+    Theodore: Mrowr.
+    You: You're right, Theodore. We'd better head back to our camp for the night.
+    Theodore: Prrt.
+    <<set $DarkIsDangerous = true>>
+<<else>>
+    <<stop>>
+<<endif>>
+===

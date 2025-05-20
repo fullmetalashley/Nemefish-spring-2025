@@ -1,0 +1,139 @@
+title: FOHISpeaks_Dialogue
+---
+//should be triggered to play immediately upon Day 2
+//<<pose FOHI_NEUTRAL_SITTING>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+You: Oof. My back!
+//<<pose PC_STANDING_STRETCHING>>
+-> You were up early, Theodore. At least, I assume that was you thumping up and down the tent all night.
+    <<jump Thumping>>
+-> How're you feeling this morning, Theodore? I was worried about you last night!
+    <<jump Worried>>
+===
+
+title: Thumping
+---
+Theodore: The urge to run, a craving for blood, the overwhelming need to knead human flesh into biscuits—
+If you had <i>my</i> cerebellum instead of your frontal lobe, you might enjoy the same urges.
+-> Well, that's some pretty colorful language first thing in the—
+    <<jump Surprise>>
+===
+
+title: Worried
+---
+<<set $Relate2FOHI = $Relate2FOHI + 1>>
+    //<<ShowNotification "Theodore appreciated that.">>
+    //UI script commandhandler cue
+Theodore: Concern—how quaint. I think you'll find I'm more articulate than ever, Human.
+-> What a relief! For a second there I—
+    <<jump Surprise>>
+===
+
+title: Surprise
+---
+//<<pose PC_STANDING_FORWARD_SURPRISED>>
+-> Good grief, Theodore! You speak!
+Theodore: Yes, I speak.
+<<wait .2>>
+If you keep making that face, it might stay that way. A laugh for me—but for you... well, maybe it wouldn't change much.
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+-> But how?! When?!
+<<jump ButHow>>
+===
+
+title: ButHow
+---
+Theodore: Half-past three? There I was, innocently dreaming of hot, quaking throats when—all of a sudden—I awoke to a knot of thick, human words in my skull. Blech. <i>However</i> do you manage to think around them? 
+-> It must have something to do with that strange glow last night...
+Theodore: Perhaps. But, to be honest, I'd rather we didn't make a big thing out of it.
+-> "Don't make a big thing out of it"?! Theodore, you <i>talk</i> now.
+    <<jump YouTalk>>
+-> If that's what you really want...
+    <<jump ReallyWant>>
+===
+
+title: YouTalk
+---
+Theodore: Yes. And frankly, I'm not sure how I feel about it yet. 
+    <<jump BothOfUs>>
+===
+
+title: ReallyWant
+---
+<<set $Relate2FOHI = $Relate2FOHI + 1>>
+//<<ShowNotification "Theodore appreciated that.">>
+//UI script commandhandler cue
+Theodore: Thank you. If I'm honest... I don't know how I feel about it yet.
+-> Well, if you need any pointers on putting your foot in your mouth, just ask, Theodore.
+    <<jump BothOfUs>>
+===
+
+title: BothOfUs
+---
+Theodore: And about my name... It's Whiskers, actually.
+-> What? But every time I said Theodore, you——
+Whiskers: Corrected you, yes.
+-> Huh. Whiskers. Well, it doesn't quite inspire fear, does it?
+    <<jump InspireFear>>
+-> Whiskers. <i>Whiskers</i>. Yeah, okay. I can see you being a Whiskers.
+    <<jump YesWhiskers>>
+===
+
+title: InspireFear
+---
+<<set $Relate2FOHI = $Relate2FOHI - 1>>
+//<<ShowNotification "Theodore didn't appreciate that.">>
+//UI script commandhandler cue
+Whiskers: Take it up with my mother, oaf. Hmph. Whiskers is a perfectly respectable name—downright terrifying in certain circles. Ask a rat.
+-> Alright, alright. What would I know?
+    <<jump GettingItWrong>>
+===
+
+title: YesWhiskers
+--- 
+<<set $Relate2FOHI = $Relate2FOHI + 1>>
+//<<ShowNotification "Theodore appreciated that.">>
+//UI script commandhandler cue
+Whiskers: So could my mother, evidently. It's an old family name—the whole line of toms.
+-> I guess you learn something new every day.
+    <<jump GettingItWrong>>
+===
+
+title: GettingItWrong
+---
+<<set $KnowFOHIName = true>>
+-> Say, uh… Whiskers—if I ask something, can you promise not to laugh?
+    <<jump NotToLaugh>>
+===
+
+title: NotToLaugh
+---
+Whiskers: I make no such promises. But I am listening... which is more than you usually get from a cat.
+-> Okay. Well. I've always wondered, but now I guess I can just put it to you. Do you still... I mean, did you ever...
+    <<jump AskQuestion>>
+===
+
+title: AskQuestion
+---
+Whiskers: I smell your fear. Spit it out before I lose interest.
+-> <i>DO YOU LOVE ME?!</i>
+    <<jump LoveMe>>
+===
+
+title: LoveMe
+---
+<<wait 1>>
+<<if $Relate2FOHI > 1 >>
+    Whiskers: What an absurd question. Of course I love you.
+    -> Oh. Phew. I'm glad. Because I love you too, Whiskers.
+    <<set $Relate2FOHI = $Relate2FOHI + 1>>
+    //<<ShowNotification "Theodore appreciated that.">>
+    //UI script commandhandler cue
+    Whiskers: Who couldn't? Now, let's be off. It's time to get my white paws <i>bloody</i>.
+
+<<else>>
+    Whiskers: You know, if you'd asked me <i>before</i> we got to this God-forsaken rock, you might've received a more flattering answer. Seeing as things are, is it not enough that I'm staying by your side?
+    -> I guess I deserved that. Love you too, buddy.
+    Whiskers: Now, let's be off. It's time to get my white paws <i>bloody</i>.
+<<endif>>
+===

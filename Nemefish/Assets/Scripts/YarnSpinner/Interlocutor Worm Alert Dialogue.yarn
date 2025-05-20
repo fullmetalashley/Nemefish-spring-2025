@@ -1,0 +1,18 @@
+title: Interlocutor_Worm_Alert_Tree
+---
+<<if $BloomSeen == true and $KnowFOHIName == true>>
+//Will need to access logic for player location in-game.
+//will play "Interlocutor_Worm_Alert_Tree" after PC exits "Player Camp" on Day 2 and passes through 2 locations
+    <<jump Interlocutor_Worm_Alert>>
+<<endif>>
+<<if $InterlocutorWorm == true>>
+    <<stop>> 
+<<endif>>
+===
+
+title: Interlocutor_Worm_Alert
+---
+Worm: Psst! Hey, Two-Legs! Over here—in your pack!
+<<wait 1>>
+Worm: Come on, mister! We've got business to discuss!
+===
