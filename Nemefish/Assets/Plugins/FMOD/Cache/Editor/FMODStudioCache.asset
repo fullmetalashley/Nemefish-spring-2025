@@ -76,7 +76,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 40000
---- !u!114 &-2722688699240304459
+--- !u!114 &-4652999430892662749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,9 +86,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/PlayerFootsteps
+  m_Name: event:/SFX/PlayerFootstepsDefault
   m_EditorClassIdentifier: 
-  Path: event:/SFX/PlayerFootsteps
+  Path: event:/SFX/PlayerFootstepsDefault
   Guid:
     Data1: -368846495
     Data2: 1077670640
@@ -103,6 +103,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
+--- !u!114 &-4619764117753968569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/PTOWalla
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/PTOWalla
+  Guid:
+    Data1: -987828124
+    Data2: 1131924591
+    Data3: 791721129
+    Data4: -774962204
+  Banks:
+  - {fileID: 2629375749699942474}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 52486
 --- !u!114 &-1063127449003519184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +172,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Coastline.bank
   Name: Coastline
   StudioPath: bank:/Coastline
-  lastModified: 638833352915952120
+  lastModified: 638831130631862460
   FileSizes:
   - Name: Desktop
     Value: 532768
@@ -196,29 +223,32 @@ MonoBehaviour:
   - {fileID: 875080821087909637}
   - {fileID: -475107427191031941}
   EditorEvents:
-  - {fileID: -2722688699240304459}
   - {fileID: -5229721654393249975}
   - {fileID: 2805846517297992435}
   - {fileID: -312077130313199644}
   - {fileID: -1063127449003519184}
+  - {fileID: -4619764117753968569}
+  - {fileID: -4652999430892662749}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8084373993632148782}
   StringsBanks:
   - {fileID: 3718546587010763393}
   cacheVersion: 131847
-  cacheTime: 638833352915994953
+  cacheTime: 638833431959452421
   SerializableEventsDict:
-  - key: event:/SFX/PlayerFootsteps
-    index: 0
   - key: event:/Ambience/CoastAmb
-    index: 1
+    index: 0
   - key: event:/Ambience/ForestAmb
-    index: 2
+    index: 1
   - key: event:/SFX/InjuryGrunt
-    index: 3
+    index: 2
   - key: event:/SFX/WormGunStandard
+    index: 3
+  - key: event:/Ambience/PTOWalla
     index: 4
+  - key: event:/SFX/PlayerFootstepsDefault
+    index: 5
 --- !u!114 &875080821087909637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +264,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638829319724704537
+  lastModified: 638833431959452421
   FileSizes:
   - Name: Desktop
     Value: 39232
@@ -254,10 +284,10 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/PTO Forest.bank
   Name: PTO Forest
   StudioPath: bank:/PTO Forest
-  lastModified: 638833352915994953
+  lastModified: 638833421067323567
   FileSizes:
   - Name: Desktop
-    Value: 814784
+    Value: 1494048
   Exists: 1
 --- !u!114 &2805846517297992435
 MonoBehaviour:
@@ -302,10 +332,10 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638833352915954984
+  lastModified: 638833422807651116
   FileSizes:
   - Name: Desktop
-    Value: 1178
+    Value: 1224
   Exists: 1
 --- !u!114 &8084373993632148782
 MonoBehaviour:
@@ -322,7 +352,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638824007263912329
+  lastModified: 638833422807651116
   FileSizes:
   - Name: Desktop
     Value: 1074

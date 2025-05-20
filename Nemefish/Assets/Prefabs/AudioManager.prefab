@@ -103,13 +103,20 @@ MonoBehaviour:
       Data3: -2030721907
       Data4: 688457125
     Path: event:/Ambience/CoastAmb
+  <ptoWalla>k__BackingField:
+    Guid:
+      Data1: -987828124
+      Data2: 1131924591
+      Data3: 791721129
+      Data4: -774962204
+    Path: event:/Ambience/PTOWalla
   <playerFootstepsDefault>k__BackingField:
     Guid:
       Data1: -368846495
       Data2: 1077670640
       Data3: -752145484
       Data4: -1968647844
-    Path: event:/SFX/PlayerFootsteps
+    Path: event:/SFX/PlayerFootstepsDefault
   <injuryGrunt>k__BackingField:
     Guid:
       Data1: -342205009
