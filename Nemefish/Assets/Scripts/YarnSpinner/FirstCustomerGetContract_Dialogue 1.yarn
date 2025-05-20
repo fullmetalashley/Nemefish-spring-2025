@@ -209,6 +209,7 @@ Customer: Anyway, I'll be right here if you have any questions before heading of
     <<set $Relate2FOHI = $Relate2FOHI + 1>>
    // <<ShowNotification "Theodore appreciated that.">>
     //UI script commandhandler cue
+<<leap InteractablePointCustomer>>
 ===
 
 
@@ -441,6 +442,7 @@ Customer: I'll see you soon!
 <<if $bye == 4>>
 Customer: Keep your chin up!
     <<endif>>
+<<leap InteractablePointCustomer>>
 <<stop>>
 ===
 

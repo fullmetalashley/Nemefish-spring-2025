@@ -51,8 +51,12 @@ title: Start_Dialogue
 <<declare $InterlocutorWorm = false>>
 <<declare $WormDominationAgreed = false>>
 
+<<if $Relate2FOHI == 0>>
 //<<pose FIRST_CUSTOMER_GREETS>>
 You: That's our customer, alright. Over or under he stiffs us, Theodore?
 	Theodore: Mrrp.
 -> Just what I was thinking.
+<<set $Relate2FOHI = 1>>
+<<endif>>
+<<leap InteractablePoint>>
 ===
