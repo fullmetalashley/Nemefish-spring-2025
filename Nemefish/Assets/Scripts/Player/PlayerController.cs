@@ -65,7 +65,11 @@ public class PlayerController : MonoBehaviour
         rigidBody = this.gameObject.GetComponent<Rigidbody>();
         _gun = this.gameObject.GetComponent<Gun>();
         raycast = this.gameObject.GetComponent<PlayerRaycasting>();
-        playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootstepsDefault);
+
+        if (AudioManager.instance != null)
+        {
+            playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootstepsDefault);
+        }
 
         spriteRendererStandStill.enabled = true;
         spriteRendererStandUp.enabled = false;
