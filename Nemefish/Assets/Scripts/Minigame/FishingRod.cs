@@ -145,7 +145,7 @@ public class FishingRod : MonoBehaviour
     //Set things to cast again. 
     public void CanCastAgain()
     {
-        //Reset UI elements
+        /*//Reset UI elements
         cursor.GetComponent<CrosshairFollow>().enabled = true;
         fishingRodObject.SetActive(true);
         bobber.SetActive(true);
@@ -154,5 +154,6 @@ public class FishingRod : MonoBehaviour
         //Reset the charge value
         charge = 0f;
         _uiManager.chargeBar.value = charge;
+        */
     }
 }
