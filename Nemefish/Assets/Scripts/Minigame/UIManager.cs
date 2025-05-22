@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Radishmouse;
 using TMPro;
 using UnityEngine;
@@ -11,6 +12,13 @@ public class UIManager : MonoBehaviour
     public Slider chargeBar;
     public Image sliderFill;
     public TextMeshProUGUI playerHPText;
+
+    public float moveSpeed;
+    public float horizontalMovement = 0f; // Allow for movement in horizontal direction
+    public GameObject moveableBackground;
+
+    public float leftX;
+    public float rightX;
 
     [Header("Animators")]
     public Animator rodAnimator;
@@ -38,12 +46,14 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        //This is if the player character is in the world space
         if (Input.GetKeyDown(KeyCode.E) && _playerController.withinInteractionSpace)
         {
             ToggleFishing();
             _playerController.canFish = false;
         }
         
+        /*
         sliderFill.color = chargeBar.value switch
         {
             >= 0 and <= 500 => Color.green,
@@ -51,6 +61,34 @@ public class UIManager : MonoBehaviour
             > 800 and <= 1000 => Color.red,
             _ => sliderFill.color
         };
+        */
+        // Check for horizontal movement (Left and Right arrow keys)
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            if (moveableBackground.transform.position.x >= leftX)
+            {
+                return;
+            }
+            horizontalMovement = 1f;
+        }
+        
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            if (moveableBackground.transform.position.x <= rightX)
+            {
+                return;
+            }
+            horizontalMovement = -1f;
+        }
+        else {
+            horizontalMovement = 0f;
+        }
+
+        
+        // Update the UI object's position
+        Vector3 newPosition = moveableBackground.transform.position;
+        newPosition.x += horizontalMovement * moveSpeed * Time.deltaTime;
+        moveableBackground.transform.position = newPosition;
     }
 
     public void UpdateUIText()

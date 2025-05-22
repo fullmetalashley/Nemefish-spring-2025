@@ -34,6 +34,6 @@ public class QuicktimeManager : MonoBehaviour
         {
             _playerInventory.AddItem(currentBounds.fish._successItem);
         }
-        _fishingRod.CanCastAgain();
+        //_fishingRod.CanCastAgain();
     }
 }

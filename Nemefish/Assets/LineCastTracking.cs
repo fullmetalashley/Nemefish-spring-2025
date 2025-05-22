@@ -13,10 +13,12 @@ public class LineCastTracking : MonoBehaviour
     public Image lineImage; // The Image component for color gradient
 
     private FishingRod _fishingRod;
+    private SlingshotCast _slingshotCast;
 
     void Start()
     {
         _fishingRod = FindAnyObjectByType<FishingRod>();
+        _slingshotCast = FindAnyObjectByType<SlingshotCast>();
     }
 
     void Update()
@@ -41,6 +43,7 @@ public class LineCastTracking : MonoBehaviour
         // Set length
         lineRectTransform.sizeDelta = new Vector2(distance, lineRectTransform.sizeDelta.y);
         
+        /*
         // Set color based on charge
         lineImage.color = Color.Lerp(Color.green, Color.red, _fishingRod.charge * 2f); // Green → Yellow → Red
         if (_fishingRod.charge < 500f)
@@ -51,6 +54,7 @@ public class LineCastTracking : MonoBehaviour
         {
             lineImage.color = Color.Lerp(Color.yellow, Color.red, (_fishingRod.charge - 0.5f) * 2f);
         }
+        */
     }
 
 }
