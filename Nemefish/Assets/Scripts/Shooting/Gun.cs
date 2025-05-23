@@ -29,6 +29,7 @@ public class Gun : MonoBehaviour
         {
             if (_fishSpawner.CalculateDistance(crosshair))
             {
+                Debug.Log("Fish in bounds");
                 _fishSpawner.ShotFish(_fishSpawner._currentBounds);
             }
         }

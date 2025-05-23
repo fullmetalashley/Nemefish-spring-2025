@@ -44,19 +44,19 @@ public class FishMovement : MonoBehaviour
                 waitTimer = waitTimerBase;
                 waiting = false;
                 direction *= -1;
-                
-                //Rotation is messing up the bounds! 
             }
         }
     }
 
     public void SetMovementPoints(List<GameObject> newPoints)
     {
-        Debug.Log("Setting movement points");
         movementPoints = new List<GameObject>();
         for (int i = 0; i < newPoints.Count; i++)
         {
             movementPoints.Add(newPoints[i]);
         }
+        
+        //Also set the fish's moveSpeed to match their scriptable object
+        moveSpeed = this.GetComponent<BoundsDetection>().fish._swimSpeed;
     }
 }

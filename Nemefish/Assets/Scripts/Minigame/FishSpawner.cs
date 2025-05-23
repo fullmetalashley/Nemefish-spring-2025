@@ -35,7 +35,15 @@ public class FishSpawner : MonoBehaviour
     public List<GameObject> allFishMovementPoints;
 
     public GameObject regularFishPrefab;
-    
+
+    public GameObject environment;
+
+    //These need to be set based on the area they're in
+    public bool regularFishSpawningAllowed;
+    public bool mutantFishSpawningAllowed;
+
+    public float regularSpawnTimer;
+    public float regularSpawnTimerBase;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -47,11 +55,6 @@ public class FishSpawner : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SpawnFish();
-        }
-        
         if (!mutantActive)
         {
             spawnTimer -= Time.deltaTime;
@@ -59,8 +62,8 @@ public class FishSpawner : MonoBehaviour
             
             //If we hit spawn time, instantiate the mutant prefab. Only one prefab for now. 
             //TODO: Make this a list of mutants, and spawn them at random?
-            var newMutant = Instantiate(mutantPrefab, spawnPosition.transform);
-            newMutant.transform.position = spawnPosition.transform.position;
+            var newMutant = Instantiate(mutantPrefab, environment.transform);
+            newMutant.transform.position = environment.transform.position;
 
             //Add the detection spot to the list
             fishBounds.Add(newMutant.GetComponent<BoundsDetection>());
@@ -118,7 +121,8 @@ public class FishSpawner : MonoBehaviour
     public void SpawnFish()
     {
         int randomSpawnSpot = Random.Range(0, spawnPositions.Count);
-        var newFish = Instantiate(regularFishPrefab, spawnPositions[randomSpawnSpot].gameObject.transform);
+        var newFish = Instantiate(regularFishPrefab, environment.transform);
+        newFish.transform.position = spawnPositions[randomSpawnSpot].gameObject.transform.position;
 
         int randomFish = Random.Range(0, fish.Count);
         newFish.GetComponent<BoundsDetection>().fish = fish[randomFish];

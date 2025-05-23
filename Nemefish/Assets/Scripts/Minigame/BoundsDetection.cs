@@ -33,10 +33,6 @@ public class BoundsDetection : MonoBehaviour
 
     }
 
-    void Update()
-    {
-    }
-
     public void UpdatingCorners()
     {
         _rectTransform.GetWorldCorners(_corners);
@@ -46,11 +42,10 @@ public class BoundsDetection : MonoBehaviour
     public bool PointWithinCorners(Vector2 pointToCheck)
     {
         UpdatingCorners();
-      
-        //First, check the x. 
-        if (!(pointToCheck.x >= _corners[1].x) && !(pointToCheck.x <= _corners[2].x)) return false;
         
-        //We are within the X if we've made it here. 
-        return pointToCheck.y >= _corners[0].y && pointToCheck.y <= _corners[1].y;
+        if (!(pointToCheck.x >= _corners[0].x)) return false;
+        if (!(pointToCheck.x <= _corners[3].x)) return false;
+        if (!(pointToCheck.y >= _corners[0].y)) return false;
+        return pointToCheck.y <= _corners[1].y;
     }
 }
