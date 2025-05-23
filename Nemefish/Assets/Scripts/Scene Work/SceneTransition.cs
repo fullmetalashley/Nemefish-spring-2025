@@ -7,6 +7,7 @@ public class SceneTransition : MonoBehaviour
 
     public void LoadNext()
     {
+        System.Console.WriteLine("Transitioning to scene " + sceneToLoad);
         SceneManager.LoadScene(sceneToLoad);
     }
 }
