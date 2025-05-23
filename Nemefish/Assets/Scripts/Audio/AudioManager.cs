@@ -3,6 +3,8 @@ using FMODUnity;
 using FMOD.Studio;
 using System.Dynamic;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -24,8 +26,14 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        var activeScene = SceneManager.GetActiveScene();
+        // string sceneName = activeScene.name;
         InitializeAmbience(FMODEvents.instance.coastAmbience);
         InitializeAmbience(FMODEvents.instance.forestAmbience);
+        if (activeScene.name == "Player Camp")
+        {
+            InitializeAmbience(FMODEvents.instance.ptoWalla);
+        }
     }
 
     private void InitializeAmbience(EventReference ambienceEventReference)
