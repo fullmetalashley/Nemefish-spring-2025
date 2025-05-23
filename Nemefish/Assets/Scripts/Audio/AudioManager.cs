@@ -27,10 +27,9 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         var activeScene = SceneManager.GetActiveScene();
-        string sceneName = activeScene.name;
         InitializeAmbience(FMODEvents.instance.coastAmbience);
         InitializeAmbience(FMODEvents.instance.forestAmbience);
-        if (sceneName == "Player Camp")
+        if (activeScene.name == "Player Camp")
         {
             InitializeAmbience(FMODEvents.instance.ptoWalla);
         }

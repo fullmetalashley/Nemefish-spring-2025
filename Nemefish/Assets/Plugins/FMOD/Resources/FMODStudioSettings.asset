@@ -561,8 +561,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
-  - Coastline
-  - PTO Forest
+  - Ambience
   - SFX
   BanksToLoad: []
   LiveUpdatePort: 9264
