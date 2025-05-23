@@ -28,7 +28,7 @@ public class FishingRod : MonoBehaviour
     //Script refs
     private UIManager _uiManager;
     private QuicktimeManager _quicktimeManager;
-    private CombatController _combatController;
+    private FishSpawner _fishSpawner;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,7 +36,7 @@ public class FishingRod : MonoBehaviour
     {
         _uiManager = FindAnyObjectByType<UIManager>();
         _quicktimeManager = FindAnyObjectByType<QuicktimeManager>();
-        _combatController = FindAnyObjectByType<CombatController>();
+        _fishSpawner = FindAnyObjectByType<FishSpawner>();
     }
     
     // Update is called once per frame
@@ -101,7 +101,7 @@ public class FishingRod : MonoBehaviour
             {
                 if (fishSpot.PointWithinCorners(shotTarget.transform.position))
                 {
-                    _combatController.RemoveMutant(fishSpot.gameObject);
+                    //_fishSpawner.RemoveMutant(fishSpot.gameObject);
                     return;
                 }
             }

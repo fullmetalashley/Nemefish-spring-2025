@@ -4,27 +4,33 @@ public class Gun : MonoBehaviour
 {
     public Transform bulletSpawnPoint;
     public GameObject bulletPrefab;
+    
+    public float zoomSpeed = 0.1f;
+    public float scrollSpeed = 10f;
     public float bulletSpeed = 10;
 
     public Vector3 direction;
 
-    void Update()
-    {
- /*       if (Input.GetKeyDown(KeyCode.Space))
-        {
-            var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-//            AudioManager.instance.PlayOneShot(FMODEvents.instance.wormGunStandard, this.transform.position);
-            direction = bulletSpawnPoint.forward;
-            bullet.GetComponent<Rigidbody>().linearVelocity = direction * bulletSpeed;
+    public bool gunActive;
 
-            
-        }
-    */
+    private FishSpawner _fishSpawner;
+
+    public GameObject crosshair;
+
+    void Start()
+    {
+        _fishSpawner = FindAnyObjectByType<FishSpawner>();
     }
 
-    public void SetSpawnPoint(Transform spawnPoint, int dir)
+    void Update()
     {
-        bulletSpawnPoint = spawnPoint;
-        direction = bulletSpawnPoint.forward * dir;
+        if (!gunActive) return;
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (_fishSpawner.CalculateDistance(crosshair))
+            {
+                _fishSpawner.ShotFish(_fishSpawner._currentBounds);
+            }
+        }
     }
 }

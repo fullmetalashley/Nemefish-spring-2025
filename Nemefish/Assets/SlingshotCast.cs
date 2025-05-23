@@ -4,19 +4,12 @@ using UnityEngine;
 public class SlingshotCast : MonoBehaviour
 {
     [Header("Rod Metrics")]
-    public float charge;
-    public float baseRodDistance;
-    public float chargeMod;
-    public float marginOfError;
     [SerializeField] private float maxCharge;
     private int directional = 1;
     
     [Header("Targeting Elements")]
     public GameObject castTarget;   //This is the crosshair position
     public GameObject cursor;   //This is the crosshair object
-    public GameObject lineStart;
-    public GameObject shotTarget;
-    public GameObject fishingRodObject;
 
     [Header("Fish spots")]
     public List<BoundsDetection> fishingSpots;
@@ -24,7 +17,7 @@ public class SlingshotCast : MonoBehaviour
     //Script refs
     private UIManager _uiManager;
     private QuicktimeManager _quicktimeManager;
-    private CombatController _combatController;
+    private FishSpawner _fishSpawner;
 
     public GameObject pullStart;
     private Vector2 pullCurrent;
@@ -38,18 +31,21 @@ public class SlingshotCast : MonoBehaviour
 
     public float castDestination;
 
+    public bool rodActive;
+
     void Start()
     {
         bobber.transform.position = pullStart.transform.position;
         castTarget.transform.position = pullStart.transform.position;
 
         _quicktimeManager = FindAnyObjectByType<QuicktimeManager>();
-        _combatController = FindAnyObjectByType<CombatController>();
+        _fishSpawner = FindAnyObjectByType<FishSpawner>();
         _uiManager = FindAnyObjectByType<UIManager>();
     }
     
     public void Update()
     {
+        if (!rodActive) return;
         //At the start of RMB, we begin the charge
         if (Input.GetMouseButtonDown(1))
         {
@@ -122,17 +118,12 @@ public class SlingshotCast : MonoBehaviour
     //See how far between the cast point and the bobber, and check if we've landed on something
     public void CalculateDistance()
     {
-        //Check the fishing spots to see if the bobber landed in one of them. 
-        foreach (BoundsDetection fishSpot in fishingSpots)
+        if (_fishSpawner.CalculateDistance(bobber))
         {
-            
-            if (fishSpot.PointWithinCorners(bobber.transform.position))
-            {
-                Debug.Log("In bounds");
-                //This means that we are within bounds of the fish. 
-                _quicktimeManager.currentBounds = fishSpot;
-                _quicktimeManager.TriggerQuicktime(true);
-            }
+            Debug.Log("In bounds");
+            //This means that we are within bounds of the fish. 
+            _quicktimeManager.currentBounds = _fishSpawner._currentBounds;
+            _quicktimeManager.TriggerQuicktime(true);
         }
     }
 

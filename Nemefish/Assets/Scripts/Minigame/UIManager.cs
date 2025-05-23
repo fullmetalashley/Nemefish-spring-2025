@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
     public int playerHealth = 10;
 
     //Script refs
-    private CombatController _combatController;
+    private FishSpawner _fishSpawner;
     private FishingRod _fishingRod;
     private PlayerController _playerController;
 
@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
         _playerController = FindAnyObjectByType<PlayerController>();
         playerHPText.text = "HP: " + playerHealth;
         _uiLineRenderer = FindAnyObjectByType<UILineRenderer>();
-        _combatController = FindAnyObjectByType<CombatController>();
+        _fishSpawner = FindAnyObjectByType<FishSpawner>();
     }
 
     // Update is called once per frame
@@ -102,6 +102,6 @@ public class UIManager : MonoBehaviour
         fishingPanel.SetActive(!fishingPanel.activeSelf);
         inUI = !inUI;
         _playerController.canFish = !fishingPanel.activeSelf;
-        _combatController.UIClose();
+        _fishSpawner.UIClose();
     }
 }

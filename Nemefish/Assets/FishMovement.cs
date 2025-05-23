@@ -18,6 +18,7 @@ public class FishMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (movementPoints == null || movementPoints.Count == 0) return;
         if (!waiting)
         {
             this.gameObject.transform.position = Vector2.MoveTowards(this.gameObject.transform.position,
@@ -43,11 +44,19 @@ public class FishMovement : MonoBehaviour
                 waitTimer = waitTimerBase;
                 waiting = false;
                 direction *= -1;
-                Vector3 currentRotation = this.GetComponent<RectTransform>().eulerAngles;
-                currentRotation.y = (180 * direction);
-                this.GetComponent<RectTransform>().eulerAngles = currentRotation;
-                this.GetComponent<BoundsDetection>().UpdatingCorners();
+                
+                //Rotation is messing up the bounds! 
             }
+        }
+    }
+
+    public void SetMovementPoints(List<GameObject> newPoints)
+    {
+        Debug.Log("Setting movement points");
+        movementPoints = new List<GameObject>();
+        for (int i = 0; i < newPoints.Count; i++)
+        {
+            movementPoints.Add(newPoints[i]);
         }
     }
 }
