@@ -55,6 +55,10 @@ public class FishSpawner : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            SpawnFish();
+        }
         if (!mutantActive)
         {
             spawnTimer -= Time.deltaTime;
@@ -120,6 +124,8 @@ public class FishSpawner : MonoBehaviour
     //Spawn a regular fish
     public void SpawnFish()
     {
+        if (fishBounds.Count == activeFishLimit) return;
+        
         int randomSpawnSpot = Random.Range(0, spawnPositions.Count);
         var newFish = Instantiate(regularFishPrefab, environment.transform);
         newFish.transform.position = spawnPositions[randomSpawnSpot].gameObject.transform.position;
