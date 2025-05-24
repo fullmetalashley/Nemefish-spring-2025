@@ -30,6 +30,10 @@ public class FishSpawner : MonoBehaviour
     private QuicktimeManager _quicktimeManager;
 
     public int activeFishLimit;
+    public int activeMutantLimit;
+
+    public int spawnedFish;
+    public int spawnedMutants;
 
     public List<SpawnPoint> spawnPositions;
     public List<GameObject> allFishMovementPoints;
@@ -41,9 +45,6 @@ public class FishSpawner : MonoBehaviour
     //These need to be set based on the area they're in
     public bool regularFishSpawningAllowed;
     public bool mutantFishSpawningAllowed;
-
-    public float regularSpawnTimer;
-    public float regularSpawnTimerBase;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -55,25 +56,11 @@ public class FishSpawner : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SpawnFish();
-        }
         if (!mutantActive)
         {
             spawnTimer -= Time.deltaTime;
             if (!(spawnTimer <= 0)) return;
-            
-            //If we hit spawn time, instantiate the mutant prefab. Only one prefab for now. 
-            //TODO: Make this a list of mutants, and spawn them at random?
-            var newMutant = Instantiate(mutantPrefab, environment.transform);
-            newMutant.transform.position = environment.transform.position;
-
-            //Add the detection spot to the list
-            fishBounds.Add(newMutant.GetComponent<BoundsDetection>());
-            _currentBounds = newMutant.GetComponent<BoundsDetection>();
-            mutantActive = true;
-            spawnTimer = spawnTimerBase;
+            SpawnMutant();
         }
         else
         {
@@ -86,6 +73,22 @@ public class FishSpawner : MonoBehaviour
             damageTimer = damageTimerBase;
         }
         
+    }
+
+    public void SpawnMutant()
+    {
+        if (!CheckFishLimit("Mutant")) return;    //We have hit the limit of fish on the screen, so we will not spawn more.
+
+        //If we hit spawn time, instantiate the mutant prefab. Only one prefab for now. 
+        //TODO: Make this a list of mutants, and spawn them at random?
+        var newMutant = Instantiate(mutantPrefab, environment.transform);
+        newMutant.transform.position = environment.transform.position;
+
+        //Add the detection spot to the list
+        fishBounds.Add(newMutant.GetComponent<BoundsDetection>());
+        _currentBounds = newMutant.GetComponent<BoundsDetection>();
+        mutantActive = true;
+        spawnTimer = spawnTimerBase;
     }
     
     public bool CalculateDistance(GameObject thingToCheck)
@@ -120,11 +123,42 @@ public class FishSpawner : MonoBehaviour
         CheckForMutants();
         Destroy(shotFish.gameObject);
     }
+
+    public bool CheckFishLimit(string fishType)
+    {
+        int count = 0;
+        for (int i = 0; i < fishBounds.Count; i++)
+        {
+            if (fishBounds[i].fish._fishType == fishType)
+            {
+                count++;
+            }
+        }
+
+        if (fishType == "Mutant")
+        {
+            return (count < activeMutantLimit);
+        }
+        return (count < activeFishLimit);
+    }
+
+    public int CheckFishCount(string fishType)
+    {
+        int count = 0;
+        for (int i = 0; i < fishBounds.Count; i++)
+        {
+            if (fishBounds[i].fish._fishType == fishType)
+            {
+                count++;
+            }
+        }
+        return count;
+    }
     
     //Spawn a regular fish
     public void SpawnFish()
     {
-        if (fishBounds.Count == activeFishLimit) return;
+        if (!CheckFishLimit("Normal")) return;    //We have hit the limit of fish on the screen, so we will not spawn more.
         
         int randomSpawnSpot = Random.Range(0, spawnPositions.Count);
         var newFish = Instantiate(regularFishPrefab, environment.transform);
