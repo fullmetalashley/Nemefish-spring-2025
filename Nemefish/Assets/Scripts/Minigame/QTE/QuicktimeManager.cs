@@ -10,12 +10,14 @@ public class QuicktimeManager : MonoBehaviour
     private PlayerInventory _playerInventory;
     private FishingRod _fishingRod;
     private TugOfWarController _qteBar;
+    private FishSpawner _fishSpawner;
 
     private void Start()
     {
         _playerInventory = FindAnyObjectByType<PlayerInventory>();
         _fishingRod = FindAnyObjectByType<FishingRod>();
         _qteBar = quicktimeBar.GetComponent<TugOfWarController>();
+        _fishSpawner = FindAnyObjectByType<FishSpawner>();
     }    
     
     //Trigger this to toggle the QTE on and off
@@ -33,7 +35,11 @@ public class QuicktimeManager : MonoBehaviour
         if (victory)
         {
             _playerInventory.AddItem(currentBounds.fish._successItem);
+            _fishSpawner.RemoveFish(currentBounds);
         }
-        //_fishingRod.CanCastAgain();
+        else
+        {
+            _fishSpawner.FishScatter(); //Fish need to scatter on a miss
+        }
     }
 }

@@ -28,12 +28,10 @@ public class FishSpawner : MonoBehaviour
     public BoundsDetection _currentBounds;
 
     private QuicktimeManager _quicktimeManager;
+    private UIManager _uiManager;
 
     public int activeFishLimit;
     public int activeMutantLimit;
-
-    public int spawnedFish;
-    public int spawnedMutants;
 
     public List<SpawnPoint> spawnPositions;
     public List<GameObject> allFishMovementPoints;
@@ -51,11 +49,33 @@ public class FishSpawner : MonoBehaviour
     {
         _fishingRod = FindAnyObjectByType<FishingRod>();
         _quicktimeManager = FindAnyObjectByType<QuicktimeManager>();
+        _uiManager = FindAnyObjectByType<UIManager>();
+        
+        if (regularFishSpawningAllowed)
+        {
+            SpawnFish();
+        }
     }
     
     // Update is called once per frame
     private void Update()
     {
+        if (!_uiManager.inUI) return;   //If we're not in the UI, we can't do it
+        //If we can spawn fish, keep doing it until we can't.
+        if (regularFishSpawningAllowed)
+        {
+            if (CheckFishLimit("Normal"))
+            {
+                SpawnFish();
+            }
+            else
+            {
+                regularFishSpawningAllowed = false;
+            }
+        }
+
+        if (!mutantFishSpawningAllowed) return; //If we can't spawn mutants, don't spawn them.
+        
         if (!mutantActive)
         {
             spawnTimer -= Time.deltaTime;
@@ -72,7 +92,6 @@ public class FishSpawner : MonoBehaviour
             FindAnyObjectByType<UIManager>().UpdateUIText();
             damageTimer = damageTimerBase;
         }
-        
     }
 
     public void SpawnMutant()
@@ -109,11 +128,16 @@ public class FishSpawner : MonoBehaviour
     //Reset all of this once the UI has closed
     public void UIClose()
     {
-        /*
         mutantActive = false;
         spawnTimer = spawnTimerBase;
         damageTimer = damageTimerBase;
-        */
+        
+        //Erase the lists of active fish
+        for (int i = 0; i < fishBounds.Count; i++)
+        {
+            Destroy(fishBounds[i].gameObject);
+        }
+        fishBounds.Clear();
     }
 
     //A fish has been shot! We need to handle mutants a little different, so check for mutants
@@ -122,6 +146,17 @@ public class FishSpawner : MonoBehaviour
         fishBounds.Remove(shotFish);
         CheckForMutants();
         Destroy(shotFish.gameObject);
+
+        FishScatter();
+    }
+
+    public void FishScatter()
+    {
+        for (int i = 0; i < fishBounds.Count; i++)
+        {
+            if (fishBounds[i].fish._fishType == "Mutant") break; 
+            fishBounds[i].gameObject.GetComponent<FishMovement>().scatter = true;
+        }
     }
 
     public bool CheckFishLimit(string fishType)
@@ -168,7 +203,7 @@ public class FishSpawner : MonoBehaviour
         newFish.GetComponent<BoundsDetection>().fish = fish[randomFish];
 
         //We need to set some random movement points 
-        int movementPoints = Random.Range(0, allFishMovementPoints.Count);
+        int movementPoints = Random.Range(2, allFishMovementPoints.Count);
 
         List<GameObject> newPoints = new List<GameObject>();
         for (int i = 0; i < movementPoints; i++)
@@ -208,23 +243,10 @@ public class FishSpawner : MonoBehaviour
         mutantActive = false;
     }
 
-    public void RoomToSpawn()
+    public void RemoveFish(BoundsDetection fishToRemove)
     {
-        /*
-        int fishCount = 0;
-        for (int i = 0; i < spawnPositions.Count; i++)
-        {
-            if (spawnPositions[i]._currentBounds.fish != null)
-            {
-                //We have a fish here. Up the count.
-                fishCount++;
-            }
-        }
-
-        if (fishCount < activeFishLimit)
-        {
-            Debug.Log("We can spawn another fish");
-        }
-        */
+        fishBounds.Remove(fishToRemove);
+        CheckForMutants();
+        Destroy(fishToRemove.gameObject);
     }
   }

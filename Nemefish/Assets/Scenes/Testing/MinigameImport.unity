@@ -8060,10 +8060,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 5000
-  field of view: 40
+  far clip plane: 1000
+  field of view: 38.9
   orthographic: 0
-  orthographic size: 1.69
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8087,8 +8087,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175305556}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.31730467, y: 0, z: 0, w: 0.9483237}
-  m_LocalPosition: {x: -45.89, y: 11.225, z: -42.39791}
+  m_LocalRotation: {x: 0.5236613, y: -1.5183215e-14, z: 3.110638e-15, w: 0.85192657}
+  m_LocalPosition: {x: -46.03, y: 7.373229, z: -34.624546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9579,7 +9579,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Data
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15825,7 +15825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7799586129103623410, guid: e1de8d529ad1d764daafdefe7d99c4e6, type: 3}
       propertyPath: spawnTimer
-      value: 500
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7799586129103623410, guid: e1de8d529ad1d764daafdefe7d99c4e6, type: 3}
       propertyPath: environment
@@ -15841,11 +15841,15 @@ PrefabInstance:
       objectReference: {fileID: 7861187101985640710}
     - target: {fileID: 7799586129103623410, guid: e1de8d529ad1d764daafdefe7d99c4e6, type: 3}
       propertyPath: spawnTimerBase
-      value: 500
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7799586129103623410, guid: e1de8d529ad1d764daafdefe7d99c4e6, type: 3}
       propertyPath: activeFishLimit
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799586129103623410, guid: e1de8d529ad1d764daafdefe7d99c4e6, type: 3}
+      propertyPath: activeMutantLimit
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7799586129103623410, guid: e1de8d529ad1d764daafdefe7d99c4e6, type: 3}
       propertyPath: regularFishPrefab
@@ -15858,6 +15862,10 @@ PrefabInstance:
     - target: {fileID: 7799586129103623410, guid: e1de8d529ad1d764daafdefe7d99c4e6, type: 3}
       propertyPath: 'fishBounds.Array.data[0]'
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799586129103623410, guid: e1de8d529ad1d764daafdefe7d99c4e6, type: 3}
+      propertyPath: mutantFishSpawningAllowed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7799586129103623410, guid: e1de8d529ad1d764daafdefe7d99c4e6, type: 3}
       propertyPath: spawnPositions.Array.size

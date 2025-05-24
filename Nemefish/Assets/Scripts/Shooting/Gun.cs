@@ -32,6 +32,10 @@ public class Gun : MonoBehaviour
                 Debug.Log("Fish in bounds");
                 _fishSpawner.ShotFish(_fishSpawner._currentBounds);
             }
+            else
+            {
+                _fishSpawner.FishScatter();
+            }
         }
     }
 }

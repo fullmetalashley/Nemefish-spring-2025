@@ -110,6 +110,8 @@ MonoBehaviour:
   waitTimerBase: 5
   waiting: 0
   direction: 1
+  scatter: 0
+  scatterTimer: 8
 --- !u!95 &5103229731750280770
 Animator:
   serializedVersion: 7

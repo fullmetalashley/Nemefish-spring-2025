@@ -125,6 +125,10 @@ public class SlingshotCast : MonoBehaviour
             _quicktimeManager.currentBounds = _fishSpawner._currentBounds;
             _quicktimeManager.TriggerQuicktime(true);
         }
+        else
+        {
+            _fishSpawner.FishScatter(); //Fish need to scatter if it's a miss
+        }
     }
 
     public void CanCastAgain()
