@@ -26,6 +26,13 @@ public class FishMovement : MonoBehaviour
         doubleSpeed = moveSpeed * 1.5f;
         baseSpeed = moveSpeed;
         scatterTimerBase = scatterTimer;
+
+        targetIndex = CheckForOpening();
+        Debug.Log(gameObject.name + " and their target is " + targetIndex);
+        if (targetIndex != -1)
+        {
+            movementPoints[targetIndex].GetComponent<FishMovementTarget>().currentFish = this.GetComponent<BoundsDetection>();
+        }
     }
     
 
@@ -61,8 +68,7 @@ public class FishMovement : MonoBehaviour
                 1)
            {
                //We have hit our target, so we can set the bounds to this object! 
-               movementPoints[targetIndex].GetComponent<FishMovementTarget>().currentFish =
-                   this.GetComponent<BoundsDetection>();
+
                 this.GetComponent<BoundsDetection>().UpdatingCorners();
                 prevTarget = targetIndex;
                 waiting = true;
@@ -82,10 +88,11 @@ public class FishMovement : MonoBehaviour
                 targetIndex = CheckForOpening();
                 if (targetIndex == -1) targetIndex = 0; //If we have a fish here, don't go there. 
                 
+                //Set the next target so no other fish goes there
+                movementPoints[targetIndex].GetComponent<FishMovementTarget>().currentFish =
+                    this.GetComponent<BoundsDetection>();
                 waitTimer = waitTimerBase;
                 waiting = false;
-                direction *= -1;
-                //We can tell this movement spot that it's not occupied anymore
             }
         }
     }

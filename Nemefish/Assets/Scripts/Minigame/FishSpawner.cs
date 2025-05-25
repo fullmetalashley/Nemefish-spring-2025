@@ -171,7 +171,6 @@ public class FishSpawner : MonoBehaviour
                 count++;
             }
         }
-
         if (fishType == "Mutant")
         {
             return (count < activeMutantLimit);
