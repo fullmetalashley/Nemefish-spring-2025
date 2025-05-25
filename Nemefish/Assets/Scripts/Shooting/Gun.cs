@@ -9,6 +9,8 @@ public class Gun : MonoBehaviour
     public float scrollSpeed = 10f;
     public float bulletSpeed = 10;
 
+    public int ammo;
+
     public Vector3 direction;
 
     public bool gunActive;
@@ -36,6 +38,7 @@ public class Gun : MonoBehaviour
             {
                 _fishSpawner.FishScatter();
             }
+            ammo--;
         }
     }
 }

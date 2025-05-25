@@ -51,10 +51,13 @@ public class FishSpawner : MonoBehaviour
         _quicktimeManager = FindAnyObjectByType<QuicktimeManager>();
         _uiManager = FindAnyObjectByType<UIManager>();
         
+        
         if (regularFishSpawningAllowed)
         {
             SpawnFish();
         }
+        
+        _uiManager.UpdateUIText();
     }
     
     // Update is called once per frame
@@ -146,8 +149,7 @@ public class FishSpawner : MonoBehaviour
         fishBounds.Remove(shotFish);
         CheckForMutants();
         Destroy(shotFish.gameObject);
-
-        FishScatter();
+        _uiManager.UpdateUIText();
     }
 
     public void FishScatter()

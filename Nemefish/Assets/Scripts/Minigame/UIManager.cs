@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public Slider chargeBar;
     public Image sliderFill;
     public TextMeshProUGUI playerHPText;
+    public TextMeshProUGUI gunAmmo;
 
     public float moveSpeed;
     public float horizontalMovement = 0f; // Allow for movement in horizontal direction
@@ -34,6 +35,7 @@ public class UIManager : MonoBehaviour
     private FishingRod _fishingRod;
     private PlayerController _playerController;
     private ScreenDetection _screenDetection;
+    private Gun _gun;
 
     private void Start()
     {
@@ -43,6 +45,7 @@ public class UIManager : MonoBehaviour
         _uiLineRenderer = FindAnyObjectByType<UILineRenderer>();
         _fishSpawner = FindAnyObjectByType<FishSpawner>();
         _screenDetection = FindAnyObjectByType<ScreenDetection>();
+        _gun = FindAnyObjectByType<Gun>();
         
         _screenDetection.SetCorners(moveableBackground);
     }
@@ -81,6 +84,11 @@ public class UIManager : MonoBehaviour
     public void UpdateUIText()
     {
         playerHPText.text = "HP: " + playerHealth;
+        if (_gun == null)
+        {
+            _gun = FindAnyObjectByType<Gun>();
+        }
+        gunAmmo.text = "Ammo: " + _gun.ammo;
     }
     
     //Turn the panel on and off, generally based on button clicks.
@@ -90,5 +98,10 @@ public class UIManager : MonoBehaviour
         inUI = !inUI;
         _playerController.canFish = !fishingPanel.activeSelf;
         _fishSpawner.UIClose();
+
+        if (fishingPanel.activeSelf)
+        {
+            UpdateUIText();
+        }
     }
 }
