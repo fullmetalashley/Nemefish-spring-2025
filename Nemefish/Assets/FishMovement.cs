@@ -19,6 +19,7 @@ public class FishMovement : MonoBehaviour
     public float scatterTimer;
     private float scatterTimerBase;
 
+    private int prevTarget;
     void Start()
     {
         scatter = false;
@@ -52,26 +53,21 @@ public class FishMovement : MonoBehaviour
         
         if (!waiting)
         {
+            //This means our target is the index we are MOVING to. We have not yet hit our target.
             this.gameObject.transform.position = Vector2.MoveTowards(this.gameObject.transform.position,
                 movementPoints[targetIndex].transform.position, moveSpeed);
             
            if (Vector2.Distance(this.gameObject.transform.position, movementPoints[targetIndex].transform.position) <=
                 1)
            {
+               //We have hit our target, so we can set the bounds to this object! 
                movementPoints[targetIndex].GetComponent<FishMovementTarget>().currentFish =
                    this.GetComponent<BoundsDetection>();
                 this.GetComponent<BoundsDetection>().UpdatingCorners();
-
-                targetIndex = Random.Range(0, movementPoints.Count);
+                prevTarget = targetIndex;
                 waiting = true;
 
-                if (movementPoints[targetIndex].GetComponent<FishMovementTarget>().currentFish != null)
-                {
-                    //TODO: We need to check the entire list, and see if anything is clear first. 
-                }
                 
-                movementPoints[targetIndex].GetComponent<FishMovementTarget>().currentFish =
-                    this.GetComponent<BoundsDetection>();
             }
         }
         else
@@ -79,7 +75,12 @@ public class FishMovement : MonoBehaviour
             waitTimer -= Time.deltaTime;
             if (waitTimer <= 0)
             {
-                movementPoints[targetIndex].GetComponent<FishMovementTarget>().currentFish = null;
+                //We are leaving, so tell this movement spot it's unoccupied. 
+                movementPoints[prevTarget].GetComponent<FishMovementTarget>().currentFish = null;
+                
+                //Now, we need to pick our next target. 
+                targetIndex = CheckForOpening();
+                if (targetIndex == -1) targetIndex = 0; //If we have a fish here, don't go there. 
                 
                 waitTimer = waitTimerBase;
                 waiting = false;
@@ -87,6 +88,26 @@ public class FishMovement : MonoBehaviour
                 //We can tell this movement spot that it's not occupied anymore
             }
         }
+    }
+
+    private int CheckForOpening()
+    {
+        List<int> openIndex = new List<int>();
+        for (int i = 0; i < movementPoints.Count; i++)
+        {
+            if (movementPoints[i].GetComponent<FishMovementTarget>().currentFish == null)
+            {
+                //This is an open spot. We can add it to the list. 
+                openIndex.Add(i);
+            }
+        }
+
+        if (openIndex.Count >= 1)
+        {
+            int randomOpenIndex = Random.Range(0, openIndex.Count);
+            return openIndex[randomOpenIndex];
+        }
+        return -1;
     }
 
     public void SetMovementPoints(List<GameObject> newPoints)

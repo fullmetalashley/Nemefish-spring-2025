@@ -16323,7 +16323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7799586129103623410, guid: e1de8d529ad1d764daafdefe7d99c4e6, type: 3}
       propertyPath: activeFishLimit
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7799586129103623410, guid: e1de8d529ad1d764daafdefe7d99c4e6, type: 3}
       propertyPath: activeMutantLimit
