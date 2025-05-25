@@ -4,70 +4,88 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using NUnit.Framework;
+using UnityEditor;
 
 
 
 public class bookmanager_script : MonoBehaviour
 {
-    private int curr_page = 0;
-    public Button backBtn, fwdBtn;
-    public List<Pagesmanager_script> pages;
-    private bool is_Open = false;
-    UnityEvent<bool> bookOpen;
-    UnityEvent<int>  pageOpen, pageClose;
-    public Pagesmanager_script testPage;
-    
-    
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        curr_page = 0; //set to first page on load 
-        pages.Add(testPage);
-    }
+    public List<GameObject> pages = new List<GameObject>();
+    private int index = 0;
 
-    void Open()
+
+    public void Open()
     {
-        curr_page = 0;
-        enabled = true;
-        is_Open = true;
-        OpenPage(curr_page);
-        bookOpen.Invoke(true);
+        Debug.Log("Open Triggered!");
+        pages[index].SetActive(true);
     }
     
     void Close()
     {
-        is_Open = false;
-        pages[curr_page].closePageStupid();
+        pages[index].SetActive(false);
     }
 
-
-
-    public void OpenPage(int page_offset)
+    void ClosePrev(int prev_i)
     {
-        if (is_Open)
-        {
-            try
-            {
-                pages[curr_page + page_offset].openThisFuckingPage();
-                pages[curr_page].closePageStupid();
-                curr_page += page_offset;
-            }
-            catch
-            {
-                //do nothing bc this code is bad
-            }
-        }
-    } 
- 
+        pages[prev_i].SetActive(false);
+    }
 
+    public void NextPage()
+    {
+        int prev_i = index;
+        try
+        {  
+            index++;
+            Open();
+            ClosePrev(prev_i);
+        }
+        catch
+        {
+            Debug.Log("End of Book");
+            index = prev_i;
+        }
+    }
+
+    public void BackPage()
+    {
+        int prev_i = index;
+        try
+        {
+            index--;
+            Open();
+            ClosePrev(prev_i);
+        }
+        catch
+        {
+            Debug.Log("End of Book");
+            index = prev_i;
+        }
+    }
+
+    public void PreviousPage()
+    {
+        int prev_i = index;
+        try
+        {
+            index--;
+            Open();
+            ClosePrev(prev_i);
+        }
+        catch
+        {
+            Debug.Log("Start");
+            index = prev_i;
+        }
+    }
+
+    void Start()
+    {
+    }
     // Update is called once per frame
     void Update()
     {
-        if (!is_Open)
-        {
-            enabled = false;
-        }
 
     }
 }
