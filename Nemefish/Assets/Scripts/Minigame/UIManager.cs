@@ -33,6 +33,7 @@ public class UIManager : MonoBehaviour
     private FishSpawner _fishSpawner;
     private FishingRod _fishingRod;
     private PlayerController _playerController;
+    private ScreenDetection _screenDetection;
 
     private void Start()
     {
@@ -41,6 +42,9 @@ public class UIManager : MonoBehaviour
         playerHPText.text = "HP: " + playerHealth;
         _uiLineRenderer = FindAnyObjectByType<UILineRenderer>();
         _fishSpawner = FindAnyObjectByType<FishSpawner>();
+        _screenDetection = FindAnyObjectByType<ScreenDetection>();
+        
+        _screenDetection.SetCorners(moveableBackground);
     }
 
     // Update is called once per frame
@@ -52,33 +56,16 @@ public class UIManager : MonoBehaviour
             ToggleFishing();
             _playerController.canFish = false;
         }
-        
-        /*
-        sliderFill.color = chargeBar.value switch
-        {
-            >= 0 and <= 500 => Color.green,
-            > 500 and <= 800 => Color.yellow,
-            > 800 and <= 1000 => Color.red,
-            _ => sliderFill.color
-        };
-        */
+
         // Check for horizontal movement (Left and Right arrow keys)
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            if (moveableBackground.transform.position.x >= leftX)
-            {
-                return;
-            }
-            horizontalMovement = 1f;
-        }
-        
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            if (moveableBackground.transform.position.x <= rightX)
-            {
-                return;
-            }
+            if (!_screenDetection.CanMove(moveableBackground, -1)) return;
             horizontalMovement = -1f;
+        }else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            if(!_screenDetection.CanMove(moveableBackground, 1)) return;
+            horizontalMovement = 1f;
         }
         else {
             horizontalMovement = 0f;
