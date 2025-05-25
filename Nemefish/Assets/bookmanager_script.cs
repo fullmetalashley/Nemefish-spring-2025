@@ -13,18 +13,30 @@ public class bookmanager_script : MonoBehaviour
 {
 
     public List<GameObject> pages = new List<GameObject>();
+    public List<GameObject> btns = new List<GameObject>();
     private int index = 0;
-
 
     public void Open()
     {
         Debug.Log("Open Triggered!");
         pages[index].SetActive(true);
+        foreach (GameObject b in btns)
+        {
+            b.SetActive(true);
+        }
     }
     
-    void Close()
+    public void CloseAll()
     {
-        pages[index].SetActive(false);
+       foreach (GameObject page in pages)
+       {
+            page.SetActive(false);
+       }
+       foreach (GameObject b in btns)
+        {
+            b.gameObject.SetActive(false);
+        }
+        index = 0;
     }
 
     void ClosePrev(int prev_i)
@@ -48,21 +60,7 @@ public class bookmanager_script : MonoBehaviour
         }
     }
 
-    public void BackPage()
-    {
-        int prev_i = index;
-        try
-        {
-            index--;
-            Open();
-            ClosePrev(prev_i);
-        }
-        catch
-        {
-            Debug.Log("End of Book");
-            index = prev_i;
-        }
-    }
+
 
     public void PreviousPage()
     {
@@ -80,12 +78,9 @@ public class bookmanager_script : MonoBehaviour
         }
     }
 
-    void Start()
+    public void AddPage(GameObject newPage)
     {
+        pages.Add(newPage);
     }
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 }
