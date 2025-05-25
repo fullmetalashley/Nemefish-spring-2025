@@ -13,13 +13,15 @@ public class FishMovement : MonoBehaviour
     public float waitTimerBase;
 
     public bool waiting;
-    public int direction = 1;
+    public int direction = -1;
 
     public bool scatter;
     public float scatterTimer;
     private float scatterTimerBase;
 
     private int prevTarget;
+
+    public SpriteRenderer fishSprite;
     void Start()
     {
         scatter = false;
@@ -32,8 +34,10 @@ public class FishMovement : MonoBehaviour
         if (targetIndex != -1)
         {
             movementPoints[targetIndex].GetComponent<FishMovementTarget>().currentFish = this.GetComponent<BoundsDetection>();
+            SetSpriteDirection();
         }
     }
+    
     
 
 
@@ -93,6 +97,8 @@ public class FishMovement : MonoBehaviour
                     this.GetComponent<BoundsDetection>();
                 waitTimer = waitTimerBase;
                 waiting = false;
+                
+                SetSpriteDirection();
             }
         }
     }
@@ -115,6 +121,21 @@ public class FishMovement : MonoBehaviour
             return openIndex[randomOpenIndex];
         }
         return -1;
+    }
+
+    public void SetSpriteDirection()
+    {
+        if (this.gameObject.transform.position.x <= movementPoints[targetIndex].transform.position.x)
+        {
+            direction = 1;
+        }
+        else
+        {
+            direction = -1;
+        }
+        
+        RectTransform rectTransform = GetComponent<RectTransform>();
+        rectTransform.localScale = new Vector3(-direction, 1, 1); // Flip horizontally
     }
 
     public void SetMovementPoints(List<GameObject> newPoints)

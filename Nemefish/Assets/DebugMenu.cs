@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,10 @@ public class DebugMenu : MonoBehaviour
     public TextMeshProUGUI data;
 
     private FishSpawner _fishSpawner;
+
+    public List<GameObject> environments;
+    private int areaTracker;
+    
     
     void Start()
     {
@@ -33,7 +38,19 @@ public class DebugMenu : MonoBehaviour
 
     public void SwapArea()
     {
-        data.text += "Changing area to [area]\n";
+        areaTracker++;
+        
+        data.text += "Changing area to [area] " + areaTracker;
+
+        if (areaTracker >= environments.Count)
+        {
+            areaTracker = 0;
+        }
+
+        for (int i = 0; 0 < environments.Count; i++)
+        {
+            environments[i].SetActive(i == areaTracker);
+        }
     }
 
     public void SpawnMutant()

@@ -6286,7 +6286,7 @@ GameObject:
   - component: {fileID: 960325466}
   - component: {fileID: 960325468}
   m_Layer: 5
-  m_Name: Environment
+  m_Name: Environment - Placeholder River
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15363,6 +15363,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 1408351199}
+  environments:
+  - {fileID: 960325464}
 --- !u!224 &212011600505823684
 RectTransform:
   m_ObjectHideFlags: 0
