@@ -57,14 +57,21 @@ public class FishMovement : MonoBehaviour
             
            if (Vector2.Distance(this.gameObject.transform.position, movementPoints[targetIndex].transform.position) <=
                 1)
-            {
+           {
+               movementPoints[targetIndex].GetComponent<FishMovementTarget>().currentFish =
+                   this.GetComponent<BoundsDetection>();
                 this.GetComponent<BoundsDetection>().UpdatingCorners();
-                targetIndex++;
-                if (targetIndex >= movementPoints.Count)
-                {
-                    targetIndex = 0;
-                }
+
+                targetIndex = Random.Range(0, movementPoints.Count);
                 waiting = true;
+
+                if (movementPoints[targetIndex].GetComponent<FishMovementTarget>().currentFish != null)
+                {
+                    //TODO: We need to check the entire list, and see if anything is clear first. 
+                }
+                
+                movementPoints[targetIndex].GetComponent<FishMovementTarget>().currentFish =
+                    this.GetComponent<BoundsDetection>();
             }
         }
         else
@@ -72,9 +79,12 @@ public class FishMovement : MonoBehaviour
             waitTimer -= Time.deltaTime;
             if (waitTimer <= 0)
             {
+                movementPoints[targetIndex].GetComponent<FishMovementTarget>().currentFish = null;
+                
                 waitTimer = waitTimerBase;
                 waiting = false;
                 direction *= -1;
+                //We can tell this movement spot that it's not occupied anymore
             }
         }
     }

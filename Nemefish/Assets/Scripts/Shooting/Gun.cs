@@ -39,6 +39,7 @@ public class Gun : MonoBehaviour
                 _fishSpawner.FishScatter();
             }
             ammo--;
+            FindAnyObjectByType<UIManager>().UpdateUIText();
         }
     }
 }

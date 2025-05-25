@@ -41,12 +41,12 @@ public class UIManager : MonoBehaviour
     {
         _fishingRod = FindAnyObjectByType<FishingRod>();
         _playerController = FindAnyObjectByType<PlayerController>();
-        playerHPText.text = "HP: " + playerHealth;
         _uiLineRenderer = FindAnyObjectByType<UILineRenderer>();
         _fishSpawner = FindAnyObjectByType<FishSpawner>();
         _screenDetection = FindAnyObjectByType<ScreenDetection>();
         _gun = FindAnyObjectByType<Gun>();
         
+        UpdateUIText();
         _screenDetection.SetCorners(moveableBackground);
     }
 

@@ -5884,6 +5884,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 909199603}
+  - component: {fileID: 909199604}
   m_Layer: 5
   m_Name: Fish Movement Target 4
   m_TagString: Untagged
@@ -5910,6 +5911,19 @@ RectTransform:
   m_AnchoredPosition: {x: 699, y: 95}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &909199604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909199602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1628bed846673294cac2f08a357784a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentFish: {fileID: 0}
 --- !u!4 &910213820 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7620926201198774110, guid: 674da0dba751e594f97b4c61e017fb64, type: 3}
@@ -7347,6 +7361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1079986327}
+  - component: {fileID: 1079986328}
   m_Layer: 5
   m_Name: Fish Movement Target 3
   m_TagString: Untagged
@@ -7373,6 +7388,19 @@ RectTransform:
   m_AnchoredPosition: {x: -268, y: 386}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1079986328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079986326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1628bed846673294cac2f08a357784a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentFish: {fileID: 0}
 --- !u!1001 &1084076719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11568,6 +11596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1642177938}
+  - component: {fileID: 1642177939}
   m_Layer: 5
   m_Name: Fish Movement Target 2
   m_TagString: Untagged
@@ -11594,6 +11623,19 @@ RectTransform:
   m_AnchoredPosition: {x: -590, y: 87}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1642177939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642177937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1628bed846673294cac2f08a357784a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentFish: {fileID: 0}
 --- !u!1001 &1649905565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13904,6 +13946,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1953592596}
+  - component: {fileID: 1953592597}
   m_Layer: 5
   m_Name: Fish Movement Target 1
   m_TagString: Untagged
@@ -13930,6 +13973,19 @@ RectTransform:
   m_AnchoredPosition: {x: -1174, y: 159}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1953592597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953592595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1628bed846673294cac2f08a357784a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentFish: {fileID: 0}
 --- !u!1001 &1954042860
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16267,11 +16323,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7799586129103623410, guid: e1de8d529ad1d764daafdefe7d99c4e6, type: 3}
       propertyPath: activeFishLimit
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7799586129103623410, guid: e1de8d529ad1d764daafdefe7d99c4e6, type: 3}
       propertyPath: activeMutantLimit
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7799586129103623410, guid: e1de8d529ad1d764daafdefe7d99c4e6, type: 3}
       propertyPath: regularFishPrefab
