@@ -1,0 +1,6 @@
+# Made in Blockbench 4.12.4
+newmtl m_5dc9e99b-39fc-fbf8-f50d-57492940bf6b
+map_Kd texture.png
+newmtl m_8a06bdb8-fc57-89de-3f84-04ff2702bd77
+map_Kd second to top ocean tile.png
+newmtl none

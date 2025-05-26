@@ -1,0 +1,6 @@
+# Made in Blockbench 4.12.4
+newmtl m_d1b779e0-bc26-35fb-dc62-67619d923978
+map_Kd texture.png
+newmtl m_578df1ed-438d-473b-d600-76eaaab1a21c
+map_Kd lowest ocean tile.png
+newmtl none

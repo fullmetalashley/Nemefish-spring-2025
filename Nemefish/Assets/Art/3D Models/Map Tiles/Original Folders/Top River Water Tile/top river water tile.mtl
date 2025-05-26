@@ -1,0 +1,6 @@
+# Made in Blockbench 4.12.4
+newmtl m_e6241ecf-fd06-27df-fdb5-c9ac8dd902b5
+map_Kd texture.png
+newmtl m_c5e0e6e8-abf6-0290-df2b-0ba42f31dd4a
+map_Kd Top River Water Tile.png
+newmtl none
