@@ -8512,7 +8512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175305556}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5236613, y: -1.5183215e-14, z: 3.110638e-15, w: 0.85192657}
+  m_LocalRotation: {x: 0.4291195, y: 2.8224292e-22, z: -2.6737932e-23, w: 0.9032478}
   m_LocalPosition: {x: -46.03, y: 7.373229, z: -34.624546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10662,6 +10662,7 @@ MonoBehaviour:
   maxPullDistance: 1000
   castDestination: 0
   rodActive: 1
+  rodAnimator: {fileID: 8682157403396463748}
 --- !u!114 &1480124332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13896,7 +13897,7 @@ MonoBehaviour:
       Size: {x: 0.8, y: 0.8}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
-  TargetOffset: {x: -0.14, y: 0.33, z: 0}
+  TargetOffset: {x: -0.14, y: 1.97, z: 0}
   Damping: {x: 0, y: 0}
   Lookahead:
     Enabled: 0
@@ -13954,7 +13955,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948686067}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.52366126, y: -1.6178622e-14, z: 4.730032e-15, w: 0.8519266}
+  m_LocalRotation: {x: 0.42911947, y: 3.5207407e-22, z: -1.7372463e-22, w: 0.9032478}
   m_LocalPosition: {x: -46.03, y: 7.373229, z: -34.624546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13975,9 +13976,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrackerSettings:
     BindingMode: 0
-    PositionDamping: {x: 0.05, y: 0.05, z: 0.05}
+    PositionDamping: {x: 0.93, y: 0.21, z: 0.05}
     AngularDampingMode: 0
-    RotationDamping: {x: 0.05, y: 0.05, z: 0.05}
+    RotationDamping: {x: 1.75, y: 0.05, z: 0.05}
     QuaternionDamping: 1
   FollowOffset: {x: -0.14, y: 4.84, z: -4.81}
 --- !u!1001 &1949781024
@@ -16746,6 +16747,7 @@ GameObject:
   - component: {fileID: 8682157403396463747}
   - component: {fileID: 4950790442885786991}
   - component: {fileID: 330263887987931227}
+  - component: {fileID: 8682157403396463748}
   m_Layer: 5
   m_Name: Rod
   m_TagString: Untagged
@@ -17285,6 +17287,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0.95807, y: -324}
   m_SizeDelta: {x: 15, y: 63}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &8682157403396463748
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714179104373057372}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: afaf56d86b806f84bb1a47fd8810bf98, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8857035679518272146
 GameObject:
   m_ObjectHideFlags: 0

@@ -33,6 +33,8 @@ public class SlingshotCast : MonoBehaviour
 
     public bool rodActive;
 
+    public Animator rodAnimator;
+
     void Start()
     {
         bobber.transform.position = pullStart.transform.position;
@@ -55,6 +57,8 @@ public class SlingshotCast : MonoBehaviour
             
             castTarget.SetActive(true);
             bobber.SetActive(false);
+
+            rodAnimator.SetBool("isReeling", true);
         }
         //While holding the RMB down, we're charging
         if (Input.GetMouseButton(1) && isCharging)
@@ -68,6 +72,7 @@ public class SlingshotCast : MonoBehaviour
             Cast(pullVector);
             isCasting = true;
             isCharging = false;
+            rodAnimator.SetBool("isReeling", false);
         }
 
         if (isCharging)

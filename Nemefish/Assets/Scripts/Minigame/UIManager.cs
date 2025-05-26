@@ -47,7 +47,10 @@ public class UIManager : MonoBehaviour
         _gun = FindAnyObjectByType<Gun>();
         
         UpdateUIText();
-        _screenDetection.SetCorners(moveableBackground);
+        if (_screenDetection != null)
+        {
+            _screenDetection.SetCorners(moveableBackground);
+        }
     }
 
     // Update is called once per frame
@@ -58,8 +61,12 @@ public class UIManager : MonoBehaviour
         {
             ToggleFishing();
             _playerController.canFish = false;
+            _screenDetection = FindAnyObjectByType<ScreenDetection>();
+            _screenDetection.SetCorners(moveableBackground);
         }
 
+        if (!inUI) return;
+        
         // Check for horizontal movement (Left and Right arrow keys)
         if (Input.GetKey(KeyCode.LeftArrow))
         {
