@@ -12,14 +12,15 @@ using UnityEditor;
 public class bookmanager_script : MonoBehaviour
 {
 
-    public List<GameObject> pages = new List<GameObject>();
-    public List<GameObject> btns = new List<GameObject>();
+    public List<GameObject> activePages = new ();
+    public List<GameObject> btns = new ();
+    public List<GameObject> hiddenPages = new ();
     private int index = 0;
 
     public void Open()
     {
         Debug.Log("Open Triggered!");
-        pages[index].SetActive(true);
+        activePages[index].SetActive(true);
         foreach (GameObject b in btns)
         {
             b.SetActive(true);
@@ -28,7 +29,7 @@ public class bookmanager_script : MonoBehaviour
     
     public void CloseAll()
     {
-       foreach (GameObject page in pages)
+       foreach (GameObject page in activePages)
        {
             page.SetActive(false);
        }
@@ -41,7 +42,7 @@ public class bookmanager_script : MonoBehaviour
 
     void ClosePrev(int prev_i)
     {
-        pages[prev_i].SetActive(false);
+        activePages[prev_i].SetActive(false);
     }
 
     public void NextPage()
@@ -78,10 +79,21 @@ public class bookmanager_script : MonoBehaviour
         }
     }
 
-    public void AddPage(GameObject newPage)
+    public void AddPage(string pageName)
     {
-        Debug.Log($"{newPage.name} added");
-        pages.Add(newPage);
+        Debug.Log($"Get Page Triggered. Looking for {pageName}");
+
+ 
+        for (int i = 0; i < hiddenPages.Count; i++)
+        {
+            if (hiddenPages[i].name == pageName)
+            {
+                Debug.Log($"{pageName} found");
+                activePages.Add(hiddenPages[i]);
+                break;
+            }
+        }
+        Debug.Log($"{pageName} added");
     }
 
 }

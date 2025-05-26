@@ -309,10 +309,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 821404207}
-        m_TargetAssemblyTypeName: Quest_Manager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 5
+      - m_Target: {fileID: 11400000, guid: 2afbd96a76b4b9b4aa30524aade0b3cf, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: TiggerEvent
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -393,8 +393,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   book: {fileID: 2135961481}
   variableStorage: {fileID: 598045020}
+  Day1Over: {fileID: 11400000, guid: 7186626a9b7cf1444a98f6fb5285e70f, type: 2}
   questLog: {fileID: 1550565129}
-  testPageAdd: 0
 --- !u!1 &1012506654
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,6 +771,37 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1480962140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1480962141}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1480962141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480962140}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 958.0138, y: 421.12827, z: 114.87301}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1550565128 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1924112615802107814, guid: 7248ea6c0374f0e47b3cb4863ecfbe05, type: 3}
@@ -788,8 +819,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a9f8377e588987408b3a4e0031f7c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pages:
-  - {fileID: 1987787151}
   variableStorage: {fileID: 598045020}
 --- !u!4 &1550565130 stripped
 Transform:
@@ -1552,6 +1581,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a051d9cfcc0964a9947cd10f6ca6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2135961485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135961481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 936e965ffce4625408fd8d79e114e28f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 2afbd96a76b4b9b4aa30524aade0b3cf, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2135961483}
+        m_TargetAssemblyTypeName: bookmanager_script, Assembly-CSharp
+        m_MethodName: AddPage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Cover
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2735083260466308309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1590,6 +1647,22 @@ PrefabInstance:
       objectReference: {fileID: 2135961481}
     - target: {fileID: 8851323646612060887, guid: edeaf18fac820f04e913b227678801d4, type: 3}
       propertyPath: 'pages.Array.data[0]'
+      value: 
+      objectReference: {fileID: 690062530}
+    - target: {fileID: 8851323646612060887, guid: edeaf18fac820f04e913b227678801d4, type: 3}
+      propertyPath: activePages.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851323646612060887, guid: edeaf18fac820f04e913b227678801d4, type: 3}
+      propertyPath: hiddenPages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851323646612060887, guid: edeaf18fac820f04e913b227678801d4, type: 3}
+      propertyPath: 'activePages.Array.data[0]'
+      value: 
+      objectReference: {fileID: 690062530}
+    - target: {fileID: 8851323646612060887, guid: edeaf18fac820f04e913b227678801d4, type: 3}
+      propertyPath: 'hiddenPages.Array.data[0]'
       value: 
       objectReference: {fileID: 690062530}
     - target: {fileID: 9042022597098808403, guid: edeaf18fac820f04e913b227678801d4, type: 3}
@@ -1635,7 +1708,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4114189019517362641, guid: edeaf18fac820f04e913b227678801d4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2135961485}
   m_SourcePrefab: {fileID: 100100000, guid: edeaf18fac820f04e913b227678801d4, type: 3}
 --- !u!1001 &6487772625947706714
 PrefabInstance:
@@ -1814,7 +1890,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7690843815607696398, guid: a2538724ff5bf7b4c943f8d0cc9c3d3c, type: 3}
       propertyPath: m_Name
-      value: Page
+      value: Cover
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690843815607696398, guid: a2538724ff5bf7b4c943f8d0cc9c3d3c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1834,3 +1914,4 @@ SceneRoots:
   - {fileID: 2735083260466308309}
   - {fileID: 7577205617183474243}
   - {fileID: 6487772625947706714}
+  - {fileID: 1480962141}
