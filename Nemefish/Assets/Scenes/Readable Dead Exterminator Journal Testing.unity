@@ -1290,6 +1290,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2919277297829131081, guid: 0a0bf32ec9825e84d84836ead43183d9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3119155325081020267, guid: 0a0bf32ec9825e84d84836ead43183d9, type: 3}
       propertyPath: m_Name
       value: Inspectable Book
