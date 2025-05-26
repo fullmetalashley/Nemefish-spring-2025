@@ -1,10 +1,13 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class page_script : MonoBehaviour
 {
     public Canvas canvas;
-    void Start()
-    {
+    public GameObject[] journalEntries;
+    public List<GameObject> hiddenJournalEntries = new();
 
-    }
+
+
 }

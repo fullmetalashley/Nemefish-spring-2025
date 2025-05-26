@@ -61,8 +61,6 @@ public class bookmanager_script : MonoBehaviour
         }
     }
 
-
-
     public void PreviousPage()
     {
         int prev_i = index;
