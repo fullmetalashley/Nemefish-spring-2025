@@ -80,6 +80,7 @@ public class bookmanager_script : MonoBehaviour
 
     public void AddPage(GameObject newPage)
     {
+        Debug.Log($"{newPage.name} added");
         pages.Add(newPage);
     }
 
