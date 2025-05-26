@@ -1,0 +1,6 @@
+# Made in Blockbench 4.12.4
+newmtl m_e792f839-f973-c169-9770-1b0afc131fd5
+map_Kd texture.png
+newmtl m_b303a38b-10c3-4d6a-1a49-84de6ed9f13e
+map_Kd Worm Dirt Core w Worm.png
+newmtl none

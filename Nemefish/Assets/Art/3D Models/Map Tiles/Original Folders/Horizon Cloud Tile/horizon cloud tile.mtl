@@ -1,0 +1,6 @@
+# Made in Blockbench 4.12.4
+newmtl m_1388622f-2277-7426-ac64-28a0e29435f7
+map_Kd texture.png
+newmtl m_0b4965ff-2193-1a8a-8b75-6797022171d4
+map_Kd horizon cloud tile.png
+newmtl none
