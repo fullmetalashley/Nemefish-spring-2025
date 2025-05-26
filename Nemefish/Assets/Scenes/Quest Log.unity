@@ -194,6 +194,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553183115}
   m_CullTransparentMesh: 1
+--- !u!1 &598045019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 598045021}
+  - component: {fileID: 598045020}
+  m_Layer: 0
+  m_Name: InMemoryVariableStorage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &598045020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598045019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610c541718d694070a21327d1ae62e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showDebug: 0
+  debugTextView: {fileID: 0}
+--- !u!4 &598045021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598045019}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1550565130}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &690062530 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7690843815607696398, guid: a2538724ff5bf7b4c943f8d0cc9c3d3c, type: 3}
@@ -213,7 +259,7 @@ GameObject:
   - component: {fileID: 821404203}
   - component: {fileID: 821404207}
   m_Layer: 5
-  m_Name: Add PAge Button
+  m_Name: Set Day 1 True
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,18 +309,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1550565129}
+      - m_Target: {fileID: 821404207}
         m_TargetAssemblyTypeName: Quest_Manager, Assembly-CSharp
-        m_MethodName: GetPage
+        m_MethodName: 
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: '"Journal Page 1"'
+          m_StringArgument: Page1
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &821404204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,6 +392,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   book: {fileID: 2135961481}
+  variableStorage: {fileID: 598045020}
+  questLog: {fileID: 1550565129}
+  testPageAdd: 0
 --- !u!1 &1012506654
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,6 +790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pages:
   - {fileID: 1987787151}
+  variableStorage: {fileID: 598045020}
 --- !u!4 &1550565130 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6861061921426070238, guid: 7248ea6c0374f0e47b3cb4863ecfbe05, type: 3}
@@ -1193,7 +1243,7 @@ GameObject:
   - component: {fileID: 1987787152}
   - component: {fileID: 1987787153}
   m_Layer: 0
-  m_Name: Page1
+  m_Name: Day1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1228,7 +1278,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1206682226}
-  name: Journal Page 1
 --- !u!1 &2044673699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,6 +1565,10 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4114189019517362641, guid: edeaf18fac820f04e913b227678801d4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4114189019517362641, guid: edeaf18fac820f04e913b227678801d4, type: 3}
       propertyPath: m_TagString
       value: Journal
       objectReference: {fileID: 0}
@@ -1529,7 +1582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296061884268334791, guid: edeaf18fac820f04e913b227678801d4, type: 3}
       propertyPath: m_TagString
-      value: Journal
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6972116623586939656, guid: edeaf18fac820f04e913b227678801d4, type: 3}
       propertyPath: inspectable
@@ -1639,6 +1692,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6861061921426070238, guid: 7248ea6c0374f0e47b3cb4863ecfbe05, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 598045021}
     - targetCorrespondingSourceObject: {fileID: 6861061921426070238, guid: 7248ea6c0374f0e47b3cb4863ecfbe05, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1987787152}
