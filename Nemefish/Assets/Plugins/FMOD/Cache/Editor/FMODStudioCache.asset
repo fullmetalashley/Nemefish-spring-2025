@@ -172,7 +172,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638839385657079609
+  lastModified: 638839447457874893
   FileSizes:
   - Name: Desktop
     Value: 1346560
@@ -206,7 +206,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 3718546587010763393}
   cacheVersion: 131847
-  cacheTime: 638839385657091329
+  cacheTime: 638839447457874893
   SerializableEventsDict:
   - key: event:/SFX/PlayerFootsteps
     index: 0
@@ -233,7 +233,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638839385657091329
+  lastModified: 638839447457874893
   FileSizes:
   - Name: Desktop
     Value: 39232
@@ -281,7 +281,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638839385657085131
+  lastModified: 638839447457874893
   FileSizes:
   - Name: Desktop
     Value: 1136
@@ -301,7 +301,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638836147039188911
+  lastModified: 638839444224665445
   FileSizes:
   - Name: Desktop
     Value: 1074

@@ -8,9 +8,10 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
+
     private List<EventInstance> eventInstances;
     private List<StudioEventEmitter> eventEmitters;
-   
+
     private EventInstance ambienceEventInstance;
     public static AudioManager instance { get; private set; }
 
@@ -19,15 +20,19 @@ public class AudioManager : MonoBehaviour
         if (instance != null)
         {
             Debug.LogError("Found more than one Audio Manager in the scene.");
+            Destroy(gameObject);
         }
-        instance = this;
-
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        
     }
 
     private void Start()
     {
         var activeScene = SceneManager.GetActiveScene();
-        // string sceneName = activeScene.name;
         InitializeAmbience(FMODEvents.instance.coastAmbience);
         InitializeAmbience(FMODEvents.instance.forestAmbience);
         if (activeScene.name == "Player Camp")
@@ -58,4 +63,5 @@ public class AudioManager : MonoBehaviour
         return eventInstance;
     }
 
+    
 }

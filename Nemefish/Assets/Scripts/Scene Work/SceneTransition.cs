@@ -20,7 +20,7 @@ public class SceneTransition : MonoBehaviour
     }
     public void LoadNext()
     {
-        ambienceBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        // ambienceBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         System.Console.WriteLine("Transitioning to scene " + sceneToLoad);
         SceneManager.LoadScene(sceneToLoad);
     }
