@@ -12,21 +12,22 @@ public class AudioManager : MonoBehaviour
     private List<EventInstance> eventInstances;
     private List<StudioEventEmitter> eventEmitters;
 
-    private EventInstance ambienceEventInstance;
+    public EventInstance ambienceEventInstance;
     public static AudioManager instance { get; private set; }
 
     private void Awake()
     {
-        if (instance != null)
-        {
-            Debug.LogError("Found more than one Audio Manager in the scene.");
-            Destroy(gameObject);
-        }
-        else
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        else
+        {
+            Debug.LogError("Found more than one Audio Manager in the scene.");
+            Destroy(gameObject);
+        }
+
         
     }
 
@@ -35,13 +36,13 @@ public class AudioManager : MonoBehaviour
         var activeScene = SceneManager.GetActiveScene();
         InitializeAmbience(FMODEvents.instance.coastAmbience);
         InitializeAmbience(FMODEvents.instance.forestAmbience);
-        if (activeScene.name == "Player Camp")
+        /*/if (activeScene.name == "Player Camp")
         {
             InitializeAmbience(FMODEvents.instance.ptoWalla);
-        }
+        }/*/
     }
 
-    private void InitializeAmbience(EventReference ambienceEventReference)
+    public void InitializeAmbience(EventReference ambienceEventReference)
     {
         ambienceEventInstance = CreateEventInstance(ambienceEventReference);
         ambienceEventInstance.start();

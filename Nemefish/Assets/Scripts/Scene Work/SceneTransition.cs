@@ -1,15 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using FMOD.Studio;
 
 public class SceneTransition : MonoBehaviour
 {
     public string sceneToLoad;
-    FMOD.Studio.Bus ambienceBus;
+
+    private EventInstance ptoWalla;
+    // private AudioManager audioManager;
 
     public void Start()
     {
-        // Stops all ambience events currently playing - needs to be updated once buses are added
-        ambienceBus = FMODUnity.RuntimeManager.GetBus("Bus:/");
+        // audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        ptoWalla = AudioManager.instance.CreateEventInstance(FMODEvents.instance.ptoWalla);
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -17,10 +20,23 @@ public class SceneTransition : MonoBehaviour
         {
             LoadNext();
         }
+        if (sceneToLoad == "Player Camp")
+        {
+            // audioManager.InitializeAmbience(FMODEvents.instance.ptoWalla);
+            PLAYBACK_STATE playbackState;
+            ptoWalla.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                ptoWalla.start();
+            }
+        }
+        else
+        {
+            ptoWalla.stop(STOP_MODE.ALLOWFADEOUT);
+        }
     }
     public void LoadNext()
     {
-        // ambienceBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         System.Console.WriteLine("Transitioning to scene " + sceneToLoad);
         SceneManager.LoadScene(sceneToLoad);
     }

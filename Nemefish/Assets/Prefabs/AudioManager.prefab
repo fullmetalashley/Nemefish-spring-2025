@@ -103,6 +103,13 @@ MonoBehaviour:
       Data3: -2030721907
       Data4: 688457125
     Path: event:/Ambience/CoastAmb
+  <ptoWalla>k__BackingField:
+    Guid:
+      Data1: -1983594512
+      Data2: 1333742896
+      Data3: 838865560
+      Data4: 1185633782
+    Path: event:/SFX/WormGunStandard
   <playerFootstepsDefault>k__BackingField:
     Guid:
       Data1: -368846495

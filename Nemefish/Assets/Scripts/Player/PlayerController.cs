@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
         rigidBody = this.gameObject.GetComponent<Rigidbody>();
         _gun = this.gameObject.GetComponent<Gun>();
         raycast = this.gameObject.GetComponent<PlayerRaycasting>();
-        //playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootstepsDefault);
+        // playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootstepsDefault);
 
         spriteRendererStandStill.enabled = true;
         spriteRendererStandUp.enabled = false;
@@ -229,7 +229,7 @@ public class PlayerController : MonoBehaviour
     private void UpdateSound()
     {
         // Start footsteps event if the player has a velocity
-        if (rigidBody.linearVelocity.x != 0 || rigidBody.linearVelocity.y != 0)
+        if (rigidBody.linearVelocity.x != 0 || rigidBody.linearVelocity.z != 0)
         {
             // Get the playback state
             PLAYBACK_STATE playbackState;
