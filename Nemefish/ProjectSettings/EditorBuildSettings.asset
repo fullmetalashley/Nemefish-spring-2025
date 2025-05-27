@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: eff0a61a8b728134f8428729e4e2a98a
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
@@ -59,6 +62,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Southeast Coast.unity
     guid: 1f7b4ba5291e01f469ccc2c57637aaa6
+  - enabled: 1
+    path: Assets/Scenes/Testing/MinigameImport.unity
+    guid: b964b2f265fb78647aa33371ef7001ce
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
