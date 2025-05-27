@@ -109,6 +109,13 @@ public class UIManager : MonoBehaviour
         if (fishingPanel.activeSelf)
         {
             UpdateUIText();
+            FindAnyObjectByType<AdditiveSceneLoad>().LoadSpecific("MinigameUI");
         }
+        else
+        {
+            FindAnyObjectByType<AdditiveSceneLoad>().UnloadSpecific("MinigameUI");
+        }
+
+        _playerController.canMove = !fishingPanel.activeSelf;
     }
 }

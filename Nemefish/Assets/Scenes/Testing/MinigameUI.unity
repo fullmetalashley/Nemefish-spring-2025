@@ -4520,7 +4520,7 @@ PrefabInstance:
     - target: {fileID: 7704121788475816729, guid: 15cf9c96ec6d3e84394a86cca1c40669, type: 3}
       propertyPath: fishingPanel
       value: 
-      objectReference: {fileID: 4200310968604671736}
+      objectReference: {fileID: 8470092481832344291}
     - target: {fileID: 7704121788475816729, guid: 15cf9c96ec6d3e84394a86cca1c40669, type: 3}
       propertyPath: leftBoundary
       value: 
