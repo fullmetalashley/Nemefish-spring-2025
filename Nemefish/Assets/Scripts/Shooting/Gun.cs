@@ -27,19 +27,17 @@ public class Gun : MonoBehaviour
     void Update()
     {
         if (!gunActive) return;
-        if (Input.GetMouseButtonDown(0))
+        if (!Input.GetMouseButtonDown(0)) return;
+        if (_fishSpawner.CalculateDistance(crosshair))
         {
-            if (_fishSpawner.CalculateDistance(crosshair))
-            {
-                Debug.Log("Fish in bounds");
-                _fishSpawner.ShotFish(_fishSpawner._currentBounds);
-            }
-            else
-            {
-                _fishSpawner.FishScatter();
-            }
-            ammo--;
-            FindAnyObjectByType<UIManager>().UpdateUIText();
+            Debug.Log("Fish in bounds");
+            _fishSpawner.ShotFish(_fishSpawner._currentBounds);
         }
+        else
+        {
+            _fishSpawner.FishScatter();
+        }
+        ammo--;
+        FindAnyObjectByType<UIManager>().UpdateUIText();
     }
 }
