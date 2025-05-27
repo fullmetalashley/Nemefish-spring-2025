@@ -17,6 +17,7 @@ public class AdditiveSceneLoad : MonoBehaviour
 
     public void LoadSpecific(string _specificScene)
     {
+        Debug.Log("Loading a scene: " + _specificScene);
         SceneManager.LoadScene(_specificScene, LoadSceneMode.Additive);
     }
 
