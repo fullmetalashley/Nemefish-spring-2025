@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+//This is the UI Manager for the MINIGAME. Not the Main HUD. 
 public class UIManager : MonoBehaviour
 {
     [Header("UI Elements")]
@@ -18,15 +19,9 @@ public class UIManager : MonoBehaviour
     public float horizontalMovement = 0f; // Allow for movement in horizontal direction
     public GameObject moveableBackground;
 
-    public float leftX;
-    public float rightX;
-
     [Header("Animators")]
     public Animator rodAnimator;
     
-    //TODO: Figure this stupid thing out
-    private UILineRenderer _uiLineRenderer;
-
     //TODO: Get this out of here and into the player controller
     public int playerHealth = 10;
 
@@ -41,7 +36,6 @@ public class UIManager : MonoBehaviour
     {
         _fishingRod = FindAnyObjectByType<FishingRod>();
         _playerController = FindAnyObjectByType<PlayerController>();
-        _uiLineRenderer = FindAnyObjectByType<UILineRenderer>();
         _fishSpawner = FindAnyObjectByType<FishSpawner>();
         _screenDetection = FindAnyObjectByType<ScreenDetection>();
         _gun = FindAnyObjectByType<Gun>();
