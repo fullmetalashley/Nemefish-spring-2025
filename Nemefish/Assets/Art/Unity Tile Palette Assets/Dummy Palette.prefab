@@ -34,6 +34,7 @@ Transform:
   - {fileID: 8425872669193973630}
   - {fileID: 2880894582382371485}
   - {fileID: 2953328940442114520}
+  - {fileID: 5172469799471737959}
   m_Father: {fileID: 4124747966226211407}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1839735485 &3893707089012863744
@@ -179,9 +180,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6873002198436902306}
     m_Modifications:
+    - target: {fileID: 3528691614072794690, guid: 674da0dba751e594f97b4c61e017fb64, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528691614072794690, guid: 674da0dba751e594f97b4c61e017fb64, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6455194300038889270, guid: 674da0dba751e594f97b4c61e017fb64, type: 3}
       propertyPath: m_Name
       value: 16 rock cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995276893191707982, guid: 674da0dba751e594f97b4c61e017fb64, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6995276893191707982, guid: 674da0dba751e594f97b4c61e017fb64, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7620926201198774110, guid: 674da0dba751e594f97b4c61e017fb64, type: 3}
       propertyPath: m_LocalPosition.x
@@ -373,7 +390,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5826213178655736704, guid: 5e8300e4c7a8a554fabd6b2709230d0e, type: 3}
   m_PrefabInstance: {fileID: 8583896484733657373}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2981788483531643509
+--- !u!1001 &9212307126443797155
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6873002198436902306}
+    m_Modifications:
+    - target: {fileID: 4040007478023915204, guid: a112eb084cafeaf4596315feaee68163, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040007478023915204, guid: a112eb084cafeaf4596315feaee68163, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040007478023915204, guid: a112eb084cafeaf4596315feaee68163, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040007478023915204, guid: a112eb084cafeaf4596315feaee68163, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040007478023915204, guid: a112eb084cafeaf4596315feaee68163, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040007478023915204, guid: a112eb084cafeaf4596315feaee68163, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040007478023915204, guid: a112eb084cafeaf4596315feaee68163, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040007478023915204, guid: a112eb084cafeaf4596315feaee68163, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040007478023915204, guid: a112eb084cafeaf4596315feaee68163, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040007478023915204, guid: a112eb084cafeaf4596315feaee68163, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7157641014749211989, guid: a112eb084cafeaf4596315feaee68163, type: 3}
+      propertyPath: m_Name
+      value: Horizon Cloud Tile
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a112eb084cafeaf4596315feaee68163, type: 3}
+--- !u!4 &5172469799471737959 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4040007478023915204, guid: a112eb084cafeaf4596315feaee68163, type: 3}
+  m_PrefabInstance: {fileID: 9212307126443797155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3805913195733148284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
