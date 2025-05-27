@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private PlayerRaycasting raycast;
 
 
+    public bool canMove;
     // Audio
     private EventInstance playerFootsteps;
 
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour
         rigidBody = this.gameObject.GetComponent<Rigidbody>();
         _gun = this.gameObject.GetComponent<Gun>();
         raycast = this.gameObject.GetComponent<PlayerRaycasting>();
+        
 
         if (AudioManager.instance != null)
         {
@@ -56,6 +58,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canMove) return;
         RaycastHit hit;
         Vector3 castPos = transform.position;
         castPos.y += 1;

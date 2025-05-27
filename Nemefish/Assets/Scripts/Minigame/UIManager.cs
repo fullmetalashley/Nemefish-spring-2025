@@ -110,5 +110,7 @@ public class UIManager : MonoBehaviour
         {
             UpdateUIText();
         }
+
+        _playerController.canMove = !fishingPanel.activeSelf;
     }
 }
