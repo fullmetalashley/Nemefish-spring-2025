@@ -63,10 +63,30 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638838898147507743
+  lastModified: 638839428132160721
   FileSizes:
   - Name: Desktop
-    Value: 2025760
+    Value: 2025824
+  Exists: 1
+--- !u!114 &-6030717058706180211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Overworld.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Overworld.bank
+  Name: Overworld
+  StudioPath: bank:/Overworld
+  lastModified: 638839444225092079
+  FileSizes:
+  - Name: Desktop
+    Value: 1128640
   Exists: 1
 --- !u!114 &-5229721654393249975
 MonoBehaviour:
@@ -204,6 +224,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-56764746907982896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/OverworldTheme
+  m_EditorClassIdentifier: 
+  Path: event:/Music/OverworldTheme
+  Guid:
+    Data1: 464873375
+    Data2: 1276282946
+    Data3: -800424277
+    Data4: -1304846434
+  Banks:
+  - {fileID: -6030717058706180211}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 102857
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +268,7 @@ MonoBehaviour:
   - {fileID: 8084373993632148782}
   - {fileID: 875080821087909637}
   - {fileID: -6241553406895685801}
+  - {fileID: -6030717058706180211}
   EditorEvents:
   - {fileID: -5229721654393249975}
   - {fileID: 2805846517297992435}
@@ -228,13 +276,14 @@ MonoBehaviour:
   - {fileID: -1063127449003519184}
   - {fileID: -4619764117753968569}
   - {fileID: -4652999430892662749}
+  - {fileID: -56764746907982896}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8084373993632148782}
   StringsBanks:
   - {fileID: 3718546587010763393}
   cacheVersion: 131847
-  cacheTime: 638838898147517752
+  cacheTime: 638839444225092079
   SerializableEventsDict:
   - key: event:/Ambience/CoastAmb
     index: 0
@@ -248,6 +297,8 @@ MonoBehaviour:
     index: 4
   - key: event:/SFX/PlayerFootstepsDefault
     index: 5
+  - key: event:/Music/OverworldTheme
+    index: 6
 --- !u!114 &875080821087909637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,10 +314,10 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638838898147517752
+  lastModified: 638839428133023605
   FileSizes:
   - Name: Desktop
-    Value: 39264
+    Value: 39232
   Exists: 1
 --- !u!114 &2805846517297992435
 MonoBehaviour:
@@ -311,10 +362,10 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638838898147507743
+  lastModified: 638839444224665445
   FileSizes:
   - Name: Desktop
-    Value: 1182
+    Value: 1274
   Exists: 1
 --- !u!114 &8084373993632148782
 MonoBehaviour:
@@ -331,7 +382,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638837052841142730
+  lastModified: 638839444224665445
   FileSizes:
   - Name: Desktop
     Value: 1074

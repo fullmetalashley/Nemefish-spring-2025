@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{affd1b5f-6372-429a-b9c8-751ad7c2bca8}">
+		<property name="name">
+			<value>Map Area</value>
+		</property>
+		<relationship name="folder">
+			<destination>{0bb0d41d-5214-4d01-a57b-4380f5a0a9f3}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{9f4f549c-983d-4350-b85a-afd7cf659e33}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{9f4f549c-983d-4350-b85a-afd7cf659e33}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Overworld</value>
+			<value>PTO Forest</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

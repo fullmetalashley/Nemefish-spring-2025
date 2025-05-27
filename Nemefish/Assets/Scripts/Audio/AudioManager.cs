@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     private List<StudioEventEmitter> eventEmitters;
    
     private EventInstance ambienceEventInstance;
+    private EventInstance musicEventInstance;
     public static AudioManager instance { get; private set; }
 
     private void Awake()
@@ -27,6 +28,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         var activeScene = SceneManager.GetActiveScene();
+        InitializeScore(FMODEvents.instance.score);
         InitializeAmbience(FMODEvents.instance.coastAmbience);
         InitializeAmbience(FMODEvents.instance.forestAmbience);
         if (activeScene.name == "Player Camp")
@@ -39,6 +41,12 @@ public class AudioManager : MonoBehaviour
     {
         ambienceEventInstance = CreateEventInstance(ambienceEventReference);
         ambienceEventInstance.start();
+    }
+
+    private void InitializeScore(EventReference musicEventReference)
+    {
+        musicEventInstance = CreateEventInstance(musicEventReference);
+        musicEventInstance.start();
     }
 
     public void SetAmbienceParameter(string parameterName, float parameterValue)

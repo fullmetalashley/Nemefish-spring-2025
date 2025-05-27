@@ -110,6 +110,13 @@ MonoBehaviour:
       Data3: 791721129
       Data4: -774962204
     Path: event:/Ambience/PTOWalla
+  <score>k__BackingField:
+    Guid:
+      Data1: 464873375
+      Data2: 1276282946
+      Data3: -800424277
+      Data4: -1304846434
+    Path: event:/Music/OverworldTheme
   <playerFootstepsDefault>k__BackingField:
     Guid:
       Data1: -368846495
