@@ -1307,6 +1307,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1206682226}
+  journalEntries: []
+  hiddenJournalEntries: []
 --- !u!1 &2044673699
 GameObject:
   m_ObjectHideFlags: 0
