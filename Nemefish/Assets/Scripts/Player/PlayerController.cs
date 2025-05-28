@@ -2,52 +2,63 @@ using System;
 using UnityEngine;
 using Yarn.Compiler;
 using FMOD.Studio;
+using UnityEngine.EventSystems;
 
+[SelectionBase]
 public class PlayerController : MonoBehaviour
 {
-    public static PlayerController instance;
-    
-    public float speed;
+    #region Enums
+    private enum Directions { UP, DOWN, LEFT, RIGHT }
+    #endregion
 
+    #region Editor Data
+    [Header("Dependencies")]
+    [SerializeField] Animator animator;
+    [SerializeField] SpriteRenderer spriteRenderer;
+    public static PlayerController instance;
+
+    [Header("Attributes")]
+    public float speed;
     public float groundDist;
+    public bool canMove;
+    public bool canFish;
 
     public LayerMask terrainLayer;
 
     public Rigidbody rigidBody;
-    
-    //UI Access
+
+    // UI Access
     [Header("UI Access")] public bool withinInteractionSpace;
     public GameObject interactionIcon;
-    public bool canFish;
-    
-  
+
     public GameObject leftSpawnPoint;
     public GameObject rightSpawnPoint;
+    #endregion
+
+    #region Internal Data
+    private Directions facingDirection = Directions.RIGHT;
 
     private Gun _gun;
-
     private PlayerRaycasting raycast;
+    #endregion
 
 
-    public bool canMove;
-    // Audio
+    #region Audio Vaariables
     private EventInstance playerFootsteps;
-
-
-
+    #endregion
 
     private void Awake()
     {
         instance = this;
     }
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rigidBody = this.gameObject.GetComponent<Rigidbody>();
         _gun = this.gameObject.GetComponent<Gun>();
         raycast = this.gameObject.GetComponent<PlayerRaycasting>();
-        
+
 
         if (AudioManager.instance != null)
         {
@@ -83,10 +94,12 @@ public class PlayerController : MonoBehaviour
         x = moveDir.x;
         y = moveDir.z;
         rigidBody.linearVelocity = moveDir * speed;
+
+        // CalulateFacingDirection();
         UpdateSound();
     }
 
-        
+
 
     private void UpdateSound()
     {
@@ -112,4 +125,25 @@ public class PlayerController : MonoBehaviour
     {
         interactionIcon.SetActive(state);
     }
+
+    #region Utility
+    public BasicAnimator GetAnimator() => GetComponent<BasicAnimator>();
+    #endregion
+
+    /*/private void CalulateFacingDirection()
+    {
+        if (moveDir.x != 0)
+        {
+            // for Moving Right
+            if (moveDir.x > 0)
+            {
+                facingDirection = Directions.RIGHT;
+            }
+            // for Moving Left
+            else if (moveDir.x < 0)
+            {
+                facingDirection = Directions.LEFT;
+            }
+        }
+    }/*/
 }
