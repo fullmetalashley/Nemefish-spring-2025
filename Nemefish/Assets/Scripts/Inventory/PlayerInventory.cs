@@ -4,6 +4,8 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public List<Item> _inventory;
+
+    public int playerHealth = 500;
     
     public void AddItem(Item toAdd)
     {
