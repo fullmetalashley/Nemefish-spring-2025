@@ -13,11 +13,28 @@ public class DebugMenu : MonoBehaviour
 
     public List<GameObject> environments;
     private int areaTracker;
-    
+
+
+    private PlayerInventory _playerInventory;
+    private MainGameHUD _mainGameHUD;
     
     void Start()
     {
         _fishSpawner = FindAnyObjectByType<FishSpawner>();
+        _playerInventory = FindAnyObjectByType<PlayerInventory>();
+        _mainGameHUD = FindAnyObjectByType<MainGameHUD>();
+    }
+
+    public void AddItem(string itemToAdd)
+    {
+        Item newItem = new Item
+        {
+            _itemName = itemToAdd,
+            _quantity = 1
+        };
+
+        _playerInventory.AddItem(newItem);
+        _mainGameHUD.UpdateText();
     }
 
     public void CaughtFish()
