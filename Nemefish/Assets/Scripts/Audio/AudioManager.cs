@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
 
         if (activeScene.name == "Player Camp")
         {
-                        PLAYBACK_STATE playbackState;
+            PLAYBACK_STATE playbackState;
             ptoWalla.getPlaybackState(out playbackState);
             if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
             {

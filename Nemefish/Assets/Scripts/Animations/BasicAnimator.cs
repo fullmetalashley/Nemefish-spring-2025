@@ -6,7 +6,7 @@ public class BasicAnimator : MonoBehaviour
     protected Vector3 oldPos = Vector3.zero;
     protected Vector3 deltaPos = Vector3.zero;
 
-    public virtual void SetWalkingSide(bool val)
+    public virtual void SetWalkSide(bool val)
     {
         thisAnimator.SetBool("WalkSide", val);
     }
@@ -46,7 +46,7 @@ public class BasicAnimator : MonoBehaviour
         thisAnimator.SetTrigger("action_name");
     }
 
-    protected virtual void DeltaMovement()
+    /*/ protected virtual void DeltaMovement()
     {
         deltaPos = transform.position - oldPos;
 
@@ -56,7 +56,7 @@ public class BasicAnimator : MonoBehaviour
             SetWalkingSide(false);
 
         oldPos = transform.position;
-    }
+    }/*/
     
 
 }

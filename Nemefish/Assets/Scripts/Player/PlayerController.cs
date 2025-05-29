@@ -176,11 +176,13 @@ public class PlayerController : MonoBehaviour
         // PC is moving
         if (magnitude > 0)
         {
-            animator.CrossFade(animMoveRight, 0);
+            GetAnimator().SetWalkSide(true);
+            GetAnimator().SetIdle(false);
         }
         else
         {
-            animator.CrossFade(animIdleSmile, 0);
+            GetAnimator().SetWalkSide(false);
+            GetAnimator().SetIdle(true);
         }
     }
 
