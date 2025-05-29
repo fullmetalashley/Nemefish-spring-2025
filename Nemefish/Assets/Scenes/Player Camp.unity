@@ -53874,6 +53874,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 674da0dba751e594f97b4c61e017fb64, type: 3}
+--- !u!1 &2025959663 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6816414828015446593, guid: 3b32ebff7d5707a408c834ec8a24e5e6, type: 3}
+  m_PrefabInstance: {fileID: 726886000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2028505707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55987,8 +55992,40 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3237478072664031789, guid: e348705b6d8613f4d8dbc7e50032af0c, type: 3}
+      propertyPath: fohi
+      value: 
+      objectReference: {fileID: 2025959663}
+    - target: {fileID: 3237478072664031789, guid: e348705b6d8613f4d8dbc7e50032af0c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 284294303}
+    - target: {fileID: 3237478072664031789, guid: e348705b6d8613f4d8dbc7e50032af0c, type: 3}
+      propertyPath: fohiSpawnX
+      value: 41.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3237478072664031789, guid: e348705b6d8613f4d8dbc7e50032af0c, type: 3}
+      propertyPath: fohiSpawnY
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3237478072664031789, guid: e348705b6d8613f4d8dbc7e50032af0c, type: 3}
+      propertyPath: fohiSpawnZ
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 3237478072664031789, guid: e348705b6d8613f4d8dbc7e50032af0c, type: 3}
       propertyPath: sceneToLoad
       value: Southeast Coast
+      objectReference: {fileID: 0}
+    - target: {fileID: 3237478072664031789, guid: e348705b6d8613f4d8dbc7e50032af0c, type: 3}
+      propertyPath: spawnPointX
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 3237478072664031789, guid: e348705b6d8613f4d8dbc7e50032af0c, type: 3}
+      propertyPath: spawnPointY
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3237478072664031789, guid: e348705b6d8613f4d8dbc7e50032af0c, type: 3}
+      propertyPath: spawnPointZ
+      value: 29.5
       objectReference: {fileID: 0}
     - target: {fileID: 8424261848973359172, guid: e348705b6d8613f4d8dbc7e50032af0c, type: 3}
       propertyPath: parameterValue

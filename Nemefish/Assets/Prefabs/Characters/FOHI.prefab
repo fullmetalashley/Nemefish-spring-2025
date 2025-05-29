@@ -86,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6545733837901326833, guid: 80a6bbcca3d15c54789e588be058ba62, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: FOHI
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8165801284435468140, guid: 80a6bbcca3d15c54789e588be058ba62, type: 3}
