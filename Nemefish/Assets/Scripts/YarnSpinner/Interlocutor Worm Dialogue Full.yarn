@@ -1,0 +1,126 @@
+title: Interlocutor_Worm_Dialogue_Tree
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "Interlocutor_Worm_Dialogue_Tree" after mousedown on the PC pack or worm inventory.
+<<if $InterlocutorWorm == true>>
+    <<stop>> 
+<<else>>
+    <<jump Interlocutor_Worm_Dialogue>>
+<<endif>>
+===
+
+title: Interlocutor_Worm_Dialogue
+---
+//<<pose INTERLOCUTOR_WORM_CLOSE_ANIMATION>>
+<<set $InterlocutorWorm = true>>
+Worm: Ugh, this light—blinding as ever. Well, well, well... Took you long enough, Two-Legs. Time we had a little tête-à-tête. What's the big idea feeding worms like me to fish, huh?
+-> Oh, I—
+Worm: "Oh, uh, um"— whaddya got, dirt in your mouth? Come on Surface-Crawler, we don't have all day.
+-> Am I not allowed a minute to adjust to everything being able to talk today?
+    <<jump AMinute>>
+-> I'm starting to think I must've eaten something off yesterday...
+    <<jump AteOff>>
+===
+
+title: AMinute
+---
+//<<pose INTERLOCUTOR_WORM_CLOSE_ANIMATION>>
+Worm: <i>Please</i>! If I had arms, I'd be playing the world's smallest violin for you right now.
+Whiskers: I can't believe I'm siding with something that... ugly—but the Worm's got a point. We creatures have been listening to your lot yammer for years.
+Worm: So? What's the deal with using worms for bait, huh?
+-> I'm so sorry, I just never really thought you... <i>cared</i>.
+    <<jump NeverThought>>
+-> That's just how fishing works!
+    <<jump JustHowFishing>>
+===
+
+title: AteOff
+---
+//<<pose INTERLOCUTOR_WORM_CLOSE_ANIMATION>>
+<<set $Relate2FOHI = $Relate2FOHI - 1>>
+//<<ShowNotification "Whiskers didn't appreciate that.">>
+//UI script commandhandler cue
+Whiskers: <i>Excuse me</i>?
+Worm: You wish! This here is cold hard reality. Now, stop trying to wiggle out of this and answer my question.
+-> I'm so sorry, I just never really thought you... <i>cared</i>.
+    <<jump NeverThought>>
+-> That's just how fishing works!
+    <<jump JustHowFishing>>
+===
+
+title: NeverThought
+---
+//<<pose INTERLOCUTOR_WORM_CLOSE_ANIMATION>>
+Worm: Finally, some honesty! Well, today's your lucky day, Wide-Eyes. See, it's fully in my power to sic every worm for miles on you and your associate here, but I won't if you play nice. My people aren't huge fans of being skewered on a hook, but we <i>do</i> have ambition.
+-> Ambitions for what?
+    <<jump AmbitionsWhat>>
+===
+
+title: JustHowFishing
+---
+//<<pose INTERLOCUTOR_WORM_CLOSE_ANIMATION>>
+Worm: Oh, spare me! Sand crabs, sardines, snails, leeches, crank baits, plugs, poppers, spoons spinners... <i>banana slugs</i>? Are none of these options? Huh? Lucky for you, I'm a forgiving Worm. A forgiving worm who's come here to parlay. See, it's fully in my power to sic every worm for miles on you and your associate here, but I won't if you play nice. My people aren't huge fans of being skewered on a hook, but we <i>do</i> have ambition.
+-> Ambitions for what?
+    <<jump AmbitionsWhat>>
+===
+
+title: AmbitionsWhat
+---
+//<<pose INTERLOCUTOR_WORM_CLOSE_ANIMATION>>
+Worm: Total Drowned Coast domination. Capiche? Get this: used as fish food, we're dunzo, right? But that gun of yours fires us into three, four segments. That's three or four more worms for the cause. And the way you travel? Our clan will soon be spread to all four corners of the Swallowed Strait. <i>That</i> will put the Banana Slugs back in their place. 
+Whiskers: <i>Disgusting</i>.
+Worm: <i>Pragmatic</i>. So?
+-> What's in it for me? Couldn't I just keep doing what I'm doing?
+    <<jump InIt>>
+-> I'll still have to fish. What worm would agree to that?
+    <<jump WhatWorm>>
+===
+
+title: InIt
+---
+//<<pose INTERLOCUTOR_WORM_CLOSE_ANIMATION>>
+Worm: Now here's where it gets <i>juicy</i>. Work with me and my Worms, and you'll be well compensated. Stay out of the dirt and refuse us, you'll have nothing but your clean hands to show for it—and a target on your back. What do you say?
+Whiskers: I can't believe you'd even consider this.
+-> Fine. I'll help your plan for domination. At least this way we get something, too.
+    <<jump WormAgreed>>
+-> You're right, Whiskers. I can't be involved in this. I've always thought of an Exterminator as standing up for nature's balance.
+    <<jump WormDenied>>
+===
+
+title: WhatWorm
+---
+//<<pose INTERLOCUTOR_WORM_CLOSE_ANIMATION>>
+Worm: You think we fear death? Even if we're eaten, whatever eats us croaks later. And guess who's munching on <i>them</i>? If I can give you one inch of wisdom, Human, let it be this: No matter how you slice things, Worms always win.
+Whiskers: Are you <i>really</i> considering this?
+Worm: Work with me and my Worms, and you'll be well compensated. Stay out of the dirt and refuse us, you'll have nothing but your clean hands to show for it—and a target on your back. What do you say?
+-> Fine. I'll help your plan for domination. At least this way we get something, too.
+    <<jump WormAgreed>>
+-> You're right, Whiskers. I can't be involved in this. I've always thought of an Exterminator as standing up for nature's balance.
+    <<jump WormDenied>>
+===
+
+title: WormAgreed
+---
+//<<pose INTERLOCUTOR_WORM_CLOSE_ANIMATION>>
+<<set $Relate2FOHI = $Relate2FOHI - 1>>
+//<<ShowNotification "Whiskers didn't appreciate that.">>
+//UI script commandhandler cue
+Worm: Good. Good. My associates will be pleased to know you're on our side. I'm a Worm of my word, Human. You won't regret working with us. 
+//<<pose INTERLOCUTOR_WORM_CLOSE_ANIMATION_EXITS>>
+Whiskers: Unbelievable. Teaming up with the literal bottom of the food chain.
+-> If it's the difference between us living or dying, I'm willing to keep some strange company—however slimy.
+<<set $WormDominationAgreed = true>>
+<<stop>>
+===
+
+title: WormDenied
+---
+//<<pose INTERLOCUTOR_WORM_CLOSE_ANIMATION>>
+<<set $Relate2FOHI = $Relate2FOHI + 1>>
+//<<ShowNotification "Whiskers appreciated that.">>
+Worm: I might be eyeless, but you humans? <i>Blind</i>. You think Exterminators stand up for nature's balance? You're nature. I'm nature. This? Between us? This is balance. Good luck staying alive, Human. We might be reunited sooner than you think.
+//<<pose INTERLOCUTOR_WORM_CLOSE_ANIMATION_EXITS>>
+Whiskers: For a second there, I was worried you'd accept his offer.
+-> If my using this gun means they'll be growing their numbers, the least I can do is refuse to be their active ally. 
+<<stop>>
+===

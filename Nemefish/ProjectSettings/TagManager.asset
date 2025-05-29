@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Terrain
   - Interactables
-  - FOHI
+  - Journal
   layers:
   - Default
   - TransparentFX

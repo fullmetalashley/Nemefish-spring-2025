@@ -105,18 +105,25 @@ MonoBehaviour:
     Path: event:/Ambience/CoastAmb
   <ptoWalla>k__BackingField:
     Guid:
-      Data1: -1983594512
-      Data2: 1333742896
-      Data3: 838865560
-      Data4: 1185633782
-    Path: event:/SFX/WormGunStandard
+      Data1: -987828124
+      Data2: 1131924591
+      Data3: 791721129
+      Data4: -774962204
+    Path: event:/Ambience/PTOWalla
+  <score>k__BackingField:
+    Guid:
+      Data1: 464873375
+      Data2: 1276282946
+      Data3: -800424277
+      Data4: -1304846434
+    Path: event:/Music/OverworldTheme
   <playerFootstepsDefault>k__BackingField:
     Guid:
       Data1: -368846495
       Data2: 1077670640
       Data3: -752145484
       Data4: -1968647844
-    Path: event:/SFX/PlayerFootsteps
+    Path: event:/SFX/PlayerFootstepsDefault
   <injuryGrunt>k__BackingField:
     Guid:
       Data1: -342205009

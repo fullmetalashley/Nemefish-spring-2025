@@ -48,6 +48,46 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-6241553406895685801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 638840273204582025
+  FileSizes:
+  - Name: Desktop
+    Value: 2025824
+  Exists: 1
+--- !u!114 &-6030717058706180211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Overworld.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Overworld.bank
+  Name: Overworld
+  StudioPath: bank:/Overworld
+  lastModified: 638840273204747869
+  FileSizes:
+  - Name: Desktop
+    Value: 1128640
+  Exists: 1
 --- !u!114 &-5229721654393249975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +107,7 @@ MonoBehaviour:
     Data3: -2030721907
     Data4: 688457125
   Banks:
-  - {fileID: -159822487748726746}
+  - {fileID: -6241553406895685801}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -76,7 +116,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 40000
---- !u!114 &-2722688699240304459
+--- !u!114 &-4652999430892662749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,9 +126,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/PlayerFootsteps
+  m_Name: event:/SFX/PlayerFootstepsDefault
   m_EditorClassIdentifier: 
-  Path: event:/SFX/PlayerFootsteps
+  Path: event:/SFX/PlayerFootstepsDefault
   Guid:
     Data1: -368846495
     Data2: 1077670640
@@ -103,6 +143,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
+--- !u!114 &-4619764117753968569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/PTOWalla
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/PTOWalla
+  Guid:
+    Data1: -987828124
+    Data2: 1131924591
+    Data3: 791721129
+    Data4: -774962204
+  Banks:
+  - {fileID: -6241553406895685801}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 52486
 --- !u!114 &-1063127449003519184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +224,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-159822487748726746
+--- !u!114 &-56764746907982896
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,17 +233,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Ambience.bank
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/OverworldTheme
   m_EditorClassIdentifier: 
-  Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Ambience.bank
-  Name: Ambience
-  StudioPath: bank:/Ambience
-  lastModified: 638839447457874893
-  FileSizes:
-  - Name: Desktop
-    Value: 1346560
-  Exists: 1
+  Path: event:/Music/OverworldTheme
+  Guid:
+    Data1: 464873375
+    Data2: 1276282946
+    Data3: -800424277
+    Data4: -1304846434
+  Banks:
+  - {fileID: -6030717058706180211}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 102857
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,31 +267,38 @@ MonoBehaviour:
   - {fileID: 3718546587010763393}
   - {fileID: 8084373993632148782}
   - {fileID: 875080821087909637}
-  - {fileID: -159822487748726746}
+  - {fileID: -6241553406895685801}
+  - {fileID: -6030717058706180211}
   EditorEvents:
-  - {fileID: -2722688699240304459}
   - {fileID: -5229721654393249975}
   - {fileID: 2805846517297992435}
   - {fileID: -312077130313199644}
   - {fileID: -1063127449003519184}
+  - {fileID: -4619764117753968569}
+  - {fileID: -4652999430892662749}
+  - {fileID: -56764746907982896}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8084373993632148782}
   StringsBanks:
   - {fileID: 3718546587010763393}
   cacheVersion: 131847
-  cacheTime: 638839447457874893
+  cacheTime: 638840273204747869
   SerializableEventsDict:
-  - key: event:/SFX/PlayerFootsteps
-    index: 0
   - key: event:/Ambience/CoastAmb
-    index: 1
+    index: 0
   - key: event:/Ambience/ForestAmb
-    index: 2
+    index: 1
   - key: event:/SFX/InjuryGrunt
-    index: 3
+    index: 2
   - key: event:/SFX/WormGunStandard
+    index: 3
+  - key: event:/Ambience/PTOWalla
     index: 4
+  - key: event:/SFX/PlayerFootstepsDefault
+    index: 5
+  - key: event:/Music/OverworldTheme
+    index: 6
 --- !u!114 &875080821087909637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +314,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638839447457874893
+  lastModified: 638840273204747869
   FileSizes:
   - Name: Desktop
     Value: 39232
@@ -257,7 +338,7 @@ MonoBehaviour:
     Data3: -1007837012
     Data4: 2032137617
   Banks:
-  - {fileID: -159822487748726746}
+  - {fileID: -6241553406895685801}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -281,10 +362,10 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638839447457874893
+  lastModified: 638840273204582025
   FileSizes:
   - Name: Desktop
-    Value: 1136
+    Value: 1274
   Exists: 1
 --- !u!114 &8084373993632148782
 MonoBehaviour:

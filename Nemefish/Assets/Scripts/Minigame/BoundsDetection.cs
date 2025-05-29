@@ -29,15 +29,23 @@ public class BoundsDetection : MonoBehaviour
         {
             Debug.LogWarning("RectTransform not assigned.");
         }
+
+
     }
 
+    public void UpdatingCorners()
+    {
+        _rectTransform.GetWorldCorners(_corners);
+    }
+    
     //Ash note: For whatever reason, Contains is not working with either the rectTransform or the collider. I have scrapped it for now. This is working. 
     public bool PointWithinCorners(Vector2 pointToCheck)
     {
-        //First, check the x. 
-        if (!(pointToCheck.x >= _corners[1].x) || !(pointToCheck.x <= _corners[2].x)) return false;
+        UpdatingCorners();
         
-        //We are within the X if we've made it here. 
-        return pointToCheck.y >= _corners[0].y && pointToCheck.y <= _corners[1].y;
+        if (!(pointToCheck.x >= _corners[0].x)) return false;
+        if (!(pointToCheck.x <= _corners[3].x)) return false;
+        if (!(pointToCheck.y >= _corners[0].y)) return false;
+        return pointToCheck.y <= _corners[1].y;
     }
 }

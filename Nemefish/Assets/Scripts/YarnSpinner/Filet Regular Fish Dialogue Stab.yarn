@@ -1,0 +1,27 @@
+title: Filet_Regular_Fish_Dialogue_Stab
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "Filet_Regular_Fish_Dialogue_Stab" after mousedown on regular fish with knife
+//Will need to access logic for player location in-game.
+<<set $regularfilet = floor(random_range(1, 4))>>
+<<if $regularfilet == 1>>
+    You: Yum!
+    <<stop>>
+    <<endif>>
+<<if $regularfilet == 2>>
+    A Voice: <i>Cough cough</i>.
+        You: Huh?
+    <<stop>>
+    <<endif>>
+<<if $regularfilet == 3>>
+    You: Did we remember our lemon salt?
+    A Voice: <i>gurgles</i>.
+    <<stop>>
+    <<endif>>
+<<if $regularfilet == 4>>
+    A Voice: Oof.
+        You: Did this fish just—?
+    <<stop>>
+<<endif>>
+<<stop>>
+===

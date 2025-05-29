@@ -4,6 +4,8 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public List<Item> _inventory;
+
+    public int playerHealth = 500;
     
     public void AddItem(Item toAdd)
     {
@@ -17,6 +19,20 @@ public class PlayerInventory : MonoBehaviour
             _inventory.Add(toAdd);
         }
     }
+
+    public int ReturnItemCount(string itemName)
+    {
+        for (int i = 0; i < _inventory.Count; i++)
+        {
+            if (_inventory[i]._itemName == itemName)
+            {
+                return _inventory[i]._quantity;
+            }
+        }
+        return 0;
+    }
+    
+    
 
     //Does this item exist in the inventory?
     //Not entirely needed to do it this way, but it's a safety measure. 

@@ -1,0 +1,347 @@
+title: FirstCustomerCloseContract_Dialogue_Start_Tree
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "FirstCustomerCloseContract_Dialogue_Start_Tree" after mousedown on customer.
+<<if $LearnedCoordinates == false>>
+    <<jump FirstCustomerCloseContract_Dialogue>>
+<<elseif $LearnedCoordinates == true and $FOHISpeaks == true>>
+    <<stop>>
+<<else>>
+    <<jump FirstCustomerCloseContract_Dialogue_More>>
+<<endif>>
+===
+
+title: FirstCustomerCloseContract_Dialogue
+---
+//<<pose FIRST_CUSTOMER_GREETS>>
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "FirstCustomerCloseContract_Dialogue" after mousedown on customer.
+//<<pose FIRST_CUSTOMER_OTHER>>
+//<<pose FOHI_NEUTRAL_SITTING>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+Customer: Golly, am I glad to see you! No shivers? No runny nose? Dismal Notch is known for her moods!
+-> We're just glad to be here in one piece.
+    <<jump OnePiece>>
+-> You're kind to worry, sir, but we're used to the elements.
+    <<jump Elements>>
+===
+
+title: OnePiece
+---
+//<<pose FIRST_CUSTOMER_TALKS>>
+//<<pose FOHI_NEUTRAL_SITTING>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+Customer: Of course you are. And the nemefish? Did you give him the ol' splash and slash?
+<<if $LearnCruisers == true>>
+    <<jump AboutThat>>
+<<else>>
+    <<jump OlOneTwo>>
+<<endif>>
+===
+
+title: Elements
+---
+<<set $Relate2FirstCustomer = $Relate2FirstCustomer + 1>>
+    //<<ShowNotification "The Customer appreciated that.">>
+    //UI script commandhandler cue
+//<<pose FIRST_CUSTOMER_TALKS>>
+//<<pose FOHI_NEUTRAL_SITTING>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+Customer: Polite as ever, despite the wildnerness! And the nemefish? Did you give him the ol' splash and slash?
+<<if $LearnCruisers == true>>
+    <<jump AboutThat>>
+<<else>>
+    <<jump OlOneTwo>>
+<<endif>>
+===
+
+title: AboutThat
+---
+-> Um, sir—I found a letter on the island. One that suggests you knew exactly what we were up against. Is that true?
+    <<jump DelicateMatter>>
+-> Yeah, about that. I found a letter that made it pretty clear you knew exactly what we were facing. Why didn't you tell us? You pretended you had no idea!
+    <<jump DirectlyAsk>>
+===
+
+title: DelicateMatter
+---
+//<<pose FIRST_CUSTOMER_WORRIED>>
+//<<pose PC_STANDING_FORWARD_SHRUG_ROD>>
+Customer: It isn't what you think! 
+-> Well, now's the time to explain your side.
+    <<jump Explain>>
+-> It doesn't matter what <i>I</i> think. As a proud employee of Nixer Inc.'s Guide to Nemefish Extermination, I'm obligated to report your withholding of pertinent facts.
+    <<jump NoExplanation>>
+===
+
+title: DirectlyAsk
+---
+//<<pose FIRST_CUSTOMER_WORRIED>>
+//<<pose PC_STANDING_FORWARD_SHRUG_ROD>>
+<<set $Relate2FOHI = $Relate2FOHI + 1>>
+   // <<ShowNotification "Whiskers appreciated that.">>
+    //UI script commandhandler cue
+Customer: I'm sorry! I was afraid!
+-> Well, now's the time to explain your side.
+    <<jump Explain>>
+-> It doesn't matter what <i>I</i> think. As a proud employee of Nixer Inc.'s Guide to Nemefish Extermination, I'm obligated to report your withholding of pertinent facts.
+    <<jump NoExplanation>>
+===
+
+
+title: Explain
+---
+//<<pose FIRST_CUSTOMER_CRY>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+<<set $ExplainFirst = true>>
+Customer: My wife always says I'm a terrible liar... 
+-> Well, you had me fooled.
+Customer: If you remember, it was my aunt who tipped me off about the creature. She belongs to a... community. Not everyone's fond of them. Have you heard of the Cruise Ship Colony?
+-> Bits and pieces.
+Customer: They live on a derelict cruise ship—the Mother Superior. Eccentric folk, mostly harmless. But around here? Well, some Drowners think they're a cult. I was worried that if you knew they were my source of information, you'd write me off. Plenty would.
+-> So you risked peoples' lives for your <i>reputation?</i>
+    <<jump Reputation1>>
+===
+
+title: Reputation1
+---
+//<<pose FIRST_CUSTOMER_CRY>>
+Customer: Not for my reputation. For my wife. For my kids. Every day the tide inches closer to our home. By the time my youngest reaches my hip, it'll be flooded. Still—no matter how much we scrimp and save—we've never had enough to leave. Then, it hit me: Dismal Notch! Thanks to the Shark with Legs, land there is cheap. But we needed it gone in order to relocate.
+-> I understand wanting to protect those you love. 
+    <<jump ProtectFam>>
+-> But you protected your family at <i>our</i> expense. And the other Exterminator? She paid the ultimate price.
+    <<jump CostPrice>>
+===
+
+title: ProtectFam
+---
+<<set $Relate2FirstCustomer = $Relate2FirstCustomer + 1>>
+    //<<ShowNotification "The Customer appreciated that.">>
+    //UI script commandhandler cue
+//<<pose FIRST_CUSTOMER_CRY>>
+//<<pose PC_STANDING_FORWARD_SHRUG_ROD>>
+Customer: I should've realized you were the type to understand.
+-> This isn't an easy world, sir. But the only way we'll get by is if we trust one another.
+Customer: You're right… I just wish I'd realized it sooner.
+<<jump OlOneTwo>>
+===
+
+title: CostPrice
+---
+<<set $Relate2FOHI = $Relate2FOHI + 1>>
+   // <<ShowNotification "Whiskers appreciated that.">>
+    //UI script commandhandler cue
+//<<pose FIRST_CUSTOMER_CRY>>
+//<<pose PC_STANDING_FORWARD_SHRUG_ROD>>
+Customer: Believe me. That girl's fate will weigh on me for the rest of my life.
+-> It has to. Because if you'd trusted us, she might still be alive.
+Customer: You're right… I just wish I'd realized it sooner.
+<<jump OlOneTwo>>
+===
+
+title: NoExplanation
+---
+//<<pose FIRST_CUSTOMER_CRY>>
+//<<pose PC_STANDING_FORWARD_SHRUG_ROD>>
+Customer: You won't give me the chance to explain?
+-> What's done is done. That other Exterminator might still be here if you'd just trusted us, but you didn't. So she's not.
+    <<set $Hold2Account = true>>
+    <<jump OlOneTwo>>
+-> Fine. But only because I can add it to my report. 
+    <<jump Explain>>
+===
+
+title: OlOneTwo
+---
+<<if $Hold2Account == true>>
+    <<set $Relate2FirstCustomer = $Relate2FirstCustomer - 1>>
+    //<<ShowNotification "The Customer didn't appreciate that.">>
+    //UI script commandhandler cue
+    //<<pose FIRST_CUSTOMER_TALKS>>
+    //<<pose PC_STANDING_FORWARD_NEUTRAL>>
+    -> You'll be glad to hear that the nemefish is dead, sir. Dismal Notch is safe.
+    Customer: What a relief!
+    -> About my pay...
+    <<jump ClosingContract>>
+<<else>>
+   //<<pose FIRST_CUSTOMER_TALKS>>
+    //<<pose PC_STANDING_FORWARD_NEUTRAL>>
+    -> You'll be glad to hear that the nemefish is dead, sir. Dismal Notch is safe.
+    Customer: What a relief!
+    -> About my pay...
+    <<jump ClosingContract>>
+<<endif>>
+===
+
+title: ClosingContract
+---
+<<if $FOHISpeaks == true>>
+    //<<pose FIRST_CUSTOMER_WORRIED>>
+    Customer: Of course. I'm sure you collected your deposit. As for the rest...
+    -> What about it?
+    Customer: Easy, friend! I'm good for it, I swear. I just don't have it <i>on me.</i>
+    //<<pose FOHI_STANDING_HISSING>>
+    //<<pose PC_STANDING_FORWARD_SHRUG_ROD>>
+    -> Then where is it?
+    <<if $ExplainFirst == true>>
+        Customer: With my aunt! The one on the cruise ship! It's called the Mother Superior! It's not far away. See? These are the coordinates! It's got an old gift shop where you can resupply! And there's plenty of work—more contracts!
+    <<else>>
+        Customer: With my aunt! She lives on a cruise ship—the Mother Superior! It's not far away. See? These are the coordinates! It's got an old gift shop where you can resupply! And there's plenty of work—more contracts!
+    <<endif>>
+    <<set $LearnedCoordinates = true>>
+    Whiskers: Can I eat him? Oh, <i>please</i>, let me eat him.
+    //<<pose FIRST_CUSTOMER_WORRIED>>
+    Customer: He—? The cat? That's not... That's not possible... Oh stars—
+    //<<pose FIRST_CUSTOMER_PASSED_OUT>>
+    -> He's out cold. I guess you talking was more of a shock than I anticipated.
+    <<jump MoreAShock>>
+    -> Ouch. Poor guy's gonna wake up with one heck of a goose egg.
+    <<jump MoreAShock>>
+<<else>>
+    //<<pose FIRST_CUSTOMER_WORRIED>>
+    Customer: Of course. I'm sure you collected your deposit. As for the rest...
+    -> What about it?
+    Customer: Easy, friend! I'm good for it, I swear. I just don't have it <i>on me.</i>
+    //<<pose FOHI_STANDING_HISSING>>
+    //<<pose PC_STANDING_FORWARD_SHRUG_ROD>>
+    -> Then where is it?
+    <<if $ExplainFirst == true>>
+        Customer: With my aunt! The one on the cruise ship! It's called the Mother Superior! It's not far away. See? These are the coordinates! There's plenty of work—more contracts! 
+    <<else>>
+        Customer: With my aunt! She lives on a cruise ship—the Mother Superior! It's not far away. See? These are the coordinates! There's plenty of work—more contracts!
+    <<endif>>
+    <<set $LearnedCoordinates = true>>
+    -> I don't know that I'd trust your recommendation on paid work, buddy.
+        <<jump NotTrust>> 
+    -> As long as it's not too far...
+        <<jump NotTooFar>>
+<<endif>>
+===
+
+title: MoreAShock
+---
+//<<pose FOHI_NEUTRAL_SITTING>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+Whiskers: I <i>told</i> you this would happen.. So, are we going to eat him or do we have to go all the way to this boat for a meal?
+-> Oh, leave him be. I think we've given him as much of a headache as he's given us. And anyway, the people on the Mother Superior might know more about what's happening to the Swallowed Strait. And what's happening to you. At the very least, sounds like there's work, and we could always use that.
+Whiskers: I prefer the kind that <i>pays</i>.
+-> Here's to hoping.
+<<stop>>
+===
+
+title: NotTrust
+---
+//<<pose FIRST_CUSTOMER_TALKS>>
+//<<pose FOHI_NEUTRAL_SITTING>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+<<set $Relate2FOHI = $Relate2FOHI + 1>>
+   // <<ShowNotification "Whiskers appreciated that.">>
+    //UI script commandhandler cue
+Customer: I suppose I deserved that. 
+    <<jump NotTooFar>>
+===
+
+title: NotTooFar
+---
+//<<pose FIRST_CUSTOMER_TALKS>>
+//<<pose FOHI_NEUTRAL_SITTING>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+<<if $ExplainFirst == true>>
+    Customer: If you set out now, you'll reach the ship by sundown. And I swear, my aunt will treat you fair! She's already agreed to help, even if it's a hassle. And now that you know about her <i>quirks</i>, I have no qualms about you meeting her!
+<<else>>
+    Customer: If you set out now, you'll reach the ship by sundown. And I swear, my aunt will treat you fair! She's already agreed to help, even if it's a hassle.
+<<endif>>
+-> What's her name?
+Customer: Eunice! She works in the old gift shop. It's the perfect place to buy new gear, should you see something you fancy.
+-> Looks like that's my only option.
+<<if $ExplainFirst == true>>
+    Customer: I wish we'd parted on better terms, Inlander. Because of you, my children will be able to grow up in a home with dry floors. I won't forget who we owe for that, or what it cost them.
+<<else>>
+    Customer: I wish we'd parted on better terms, Inlander. You'll never know how much you've helped me and my family. 
+<<endif>>
+<<stop>>
+===
+
+title: FirstCustomerCloseContract_Dialogue_More
+---
+//<<pose FIRST_CUSTOMER_TALKS>>
+//<<pose FOHI_NEUTRAL_SITTING>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+<<set $greetagain = floor(random_range(1, 6))>>
+<<if $greetagain == 1>>
+Customer: Dressed for the weather?
+    <<endif>>
+<<if $greetagain == 2>>
+Customer: My aunt always says, "Mackerel skies and mares' tails, make tall ships carry their low sails."
+    <<endif>>
+<<if $greetagain == 3>>
+Customer: Hope you've not caught a cold!
+    <<endif>>
+<<if $greetagain == 4>>
+Customer: My son insists you Exterminators walk on water. Where do kids get this stuff?!
+    <<endif>>
+<<if $greetagain == 5>>
+Customer: Fish not biting?
+    <<endif>>
+<<if $greetagain == 6>>
+Customer: Now I've got that Nixer Inc. jingle stuck in my head. <i>We make the Unknowable Killable</i>! So catchy!
+<<endif>>
+
+
+-> I'd like to ask you about something. <<if $AskBloom == false>>
+    <<jump EndQuestions>>
+-> Nevermind.
+    <<jump GoodbyeEnd>>
+===
+
+title: GoodbyeEnd
+---
+<<set $endbye = floor(random_range(1, 4))>>
+<<if $endbye == 1>>
+Customer: Stay dry!
+    <<endif>>
+<<if $endbye == 2>>
+Customer: Don't let the geoducks get you down!
+    <<endif>>
+<<if $endbye == 3>>
+Customer: I'll see you soon!
+    <<endif>>
+<<if $endbye == 4>>
+Customer: Keep your chin up!
+    <<endif>>
+<<stop>>
+===
+
+title: EndQuestions
+---
+<<set $endquestion = floor(random_range(1, 4))>>
+<<if $endquestion == 1>>
+Customer: Shoot!
+    <<endif>>
+<<if $endquestion == 2>>
+Customer: I'm all ears!
+    <<endif>>
+<<if $endquestion == 3>>
+Customer: I appreciate your curiosity.
+    <<endif>>
+<<if $endquestion == 4>>
+Customer: As my wife always says, "To assume makes an ass out of you <i>and</i> me!"
+    <<endif>>
+
+-> We saw a strange light last night. Do you know what it was?
+    <<jump Bloom>>
+===
+
+title: Bloom
+---
+//<<pose FIRST_CUSTOMER_TALKS>>
+//<<pose FOHI_NEUTRAL_SITTING>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+<<set $AskBloom = true>>
+Customer: Oh, yes. We call that The Bloom. It's quite spectacular, isn't it? None of us Drowners quite know what it is, but it causes things to... change.
+-> Change?
+Customer: Yes. Sometimes in small ways. Sometimes in ways that... well that themselves change everything. There are people out here who worship The Bloom. There are people who cross their fingers it passes. But all of us know that it's happening.
+<<stop>>
+===
+
+

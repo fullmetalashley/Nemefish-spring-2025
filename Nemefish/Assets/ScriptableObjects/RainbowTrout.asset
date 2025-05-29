@@ -17,9 +17,10 @@ MonoBehaviour:
   _damageDealt: 0
   _health: 5
   _successItem:
-    _itemName: Trout Fillet
+    _itemName: Fish Filet
     _itemIcon: {fileID: 0}
-    _itemCategory: Fillet
+    _itemCategory: Filet
     _quantity: 1
   _tugStrength: 1
   _behavior: Erratic
+  _swimSpeed: 5

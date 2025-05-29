@@ -6,10 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Testing/SampleScene.unity
+    path: Assets/Scenes/Main Menu.unity
+    guid: eff0a61a8b728134f8428729e4e2a98a
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/Testing/Tilemap Testing.unity
+    path: Assets/Scenes/Tilemap Testing.unity
     guid: ca9082d912cd3174c9d514231f8d3bde
   - enabled: 1
     path: Assets/Scenes/Abandoned Town.unity
@@ -18,22 +21,22 @@ EditorBuildSettings:
     path: Assets/Scenes/East Coast.unity
     guid: 5955c1dec79bc66479a010cca789c3b7
   - enabled: 1
-    path: Assets/Scenes/Cut Areas/Forest Entry.unity
+    path: Assets/Scenes/Forest Entry.unity
     guid: 67951332ad84cbe418c03d207439c435
   - enabled: 1
-    path: Assets/Scenes/Cut Areas/Forest Interior.unity
+    path: Assets/Scenes/Forest Interior.unity
     guid: 16401482b7bd0664ca05e07cb2793fab
   - enabled: 1
     path: Assets/Scenes/Graybox with trees.unity
     guid: 81f87bbd01b7af142b97340e0b631fcc
   - enabled: 1
-    path: Assets/Scenes/Testing/Narrative Testing.unity
+    path: Assets/Scenes/Narrative Testing.unity
     guid: 11c743e90f1c22c45bef67705c53f02b
   - enabled: 1
     path: Assets/Scenes/North Coast.unity
     guid: 9024ec6eb5b0a9a4288a55577a8fb218
   - enabled: 1
-    path: Assets/Scenes/Cut Areas/North Forest.unity
+    path: Assets/Scenes/North Forest.unity
     guid: 5ce3bd3f854fdce48b7bf8c970f97bef
   - enabled: 1
     path: Assets/Scenes/Old Exterminator Camp.unity
@@ -48,20 +51,41 @@ EditorBuildSettings:
     path: Assets/Scenes/Secret Worm Room.unity
     guid: d04255a14475b264cae3a701bbb95bba
   - enabled: 1
-    path: Assets/Scenes/Cut Areas/Shark Arena.unity
+    path: Assets/Scenes/Shark Arena.unity
     guid: 043fd6982ee2f084aa4c64c340a16dcb
   - enabled: 1
-    path: Assets/Scenes/Cut Areas/Sharkfood Dock.unity
+    path: Assets/Scenes/Sharkfood Dock.unity
     guid: 34d40097408dc8e49b58d3f1f6748f1b
   - enabled: 1
-    path: Assets/Scenes/Cut Areas/South Dock.unity
+    path: Assets/Scenes/South Dock.unity
     guid: f91947de8185bee4c96d4ef2060b4eb4
-  - enabled: 0
-    path: Assets/Scenes/Testing/Southeast Coast Graybox.unity
-    guid: 1f7b4ba5291e01f469ccc2c57637aaa6
   - enabled: 1
     path: Assets/Scenes/Southeast Coast.unity
-    guid: 24129cb4f38039f48a2f7e718a6fa1a2
+    guid: 1f7b4ba5291e01f469ccc2c57637aaa6
+  - enabled: 1
+    path: Assets/Scenes/Testing/MinigameUI.unity
+    guid: e8214612f651d9f4cb920d4b9a06525c
+  - enabled: 1
+    path: Assets/Scenes/Testing/MinigameImport.unity
+    guid: b964b2f265fb78647aa33371ef7001ce
+  - enabled: 1
+    path: Assets/Scenes/Main Game HUD.unity
+    guid: d0e4dfae872e3da42b8317f7639c304c
+  - enabled: 1
+    path: Assets/Scenes/Combat HUD.unity
+    guid: f7936bec9a8287b43a8997b437add817
+  - enabled: 1
+    path: Assets/Scenes/Quest Log.unity
+    guid: 2a579cb7b19a37f43bcace76af340255
+  - enabled: 1
+    path: Assets/Scenes/Quest Journal.unity
+    guid: 6a61d2169697a2045b71e67890fd6e0a
+  - enabled: 1
+    path: Assets/Scenes/Readable Dead Exterminator Journal Testing.unity
+    guid: 181468872a53b2b459a4c926f060b12c
+  - enabled: 1
+    path: Assets/Scenes/You Died Card.unity
+    guid: 5c2f4bb23b5a8f54bbefe6624ea51793
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

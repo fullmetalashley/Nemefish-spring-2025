@@ -1,0 +1,27 @@
+title: Cruise_Ship_Colony_Letter
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "Cruise_Ship_Colony_Letter" after mousedown on Cruise ship colony letter.
+<<if $LearnCruisers == true>>
+    <<stop>>  
+<<else>>
+    <<jump Cruise_Ship_Colony_Letter_Dialogue>>
+<<endif>>
+===
+
+title: Cruise_Ship_Colony_Letter_Dialogue
+---
+<<set $LearnCruisers = true>>
+<<if $FindExterminatorCamp == true>>
+    You: A letter... I think it's addressed to the other Exterminator.
+    <<wait 2>>
+    You: How terrible... And to think our customer knew all about this nemefish! Why wouldn't he have said anything?
+    Theodore: Mrrp!
+<<else>>
+    You: A letter... I think it's addressed to the other Exterminator.
+    <<wait 2>>
+    You: How terrible... And to think our customer knew all about this nemefish! Why wouldn't he have said anything? We should find the other Exterminator's camp!
+    Theodore: Brrt!
+<<endif>>
+===
+

@@ -1,0 +1,17 @@
+title: Find_Journal
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "Find_Journal" after mousedown on exterminator's journal.
+<<if $FindJournal == true>>
+    <<stop>>  
+<<else>>
+    <<jump Find_Journal_Dialogue>>
+<<endif>>
+===
+
+
+title: Find_Journal_Dialogue
+---
+<<set $FindJournal = true>>
+You: The Exterminator's guide... We may get useful information from this.
+===

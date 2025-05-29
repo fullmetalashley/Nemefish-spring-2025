@@ -1,0 +1,58 @@
+title: Tent_Tree
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "Tent_Tree" after mousedown on tent object.
+<<if $DarkIsDangerous == true and $BloomSeen == false>>
+    <<jump EndofDay>>
+<<elseif $DarkIsDangerous == true and $BloomSeen == true>>
+    <<stop>>
+<<else>>
+    <<jump NotYet>>
+<<endif>>
+===
+
+
+title: NotYet
+---
+<<set $notent = floor(random_range(1, 4))>>
+<<if $notent == 1>>
+    Theodore: Mrrrow.
+    -> You're right, we've still got stuff to do.
+    <<endif>>
+<<if $notent == 2>>
+    -> I couldn't sleep if I tried.
+    <<endif>>
+<<if $notent == 3>>
+Theodore: Growl.
+    -> Fine! Fine! I only thought a power nap might be nice.
+    <<endif>>
+<<if $notent == 4>>
+    -> This is no time for kicking our feet up.
+    <<endif>>
+<<stop>>
+===
+
+
+title: EndofDay
+---
+//<<pose FOHI_NEUTRAL_SITTING>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+//<<pose NoBloom>>>
+Theodore: Ack ack ack!
+-> Is something wrong, Theodore?
+//If it was possible to initiate the Bloom using a Yarn command, that would be fire.
+//<<pose Bloom1>>
+//<<pose FOHI_STANDING_HISSING>>
+//<<pose PC_STANDING_FORWARD_SURPRISED>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+//<<pose FOHI_NEUTRAL_STANDING_IDLE>>
+Theodore: Hiss.
+-> What is <i>that</i>?
+Theodore: Mrrrow. <i>Cough cough cough</i>.
+-> You okay, Theodore?
+Theodore: Prr— <i>Cough cough cough</i>.
+-> We'd better get you to bed.
+//<<pose NoBloom>>
+<<set $BloomSeen = true>>
+<<stop>>
+===

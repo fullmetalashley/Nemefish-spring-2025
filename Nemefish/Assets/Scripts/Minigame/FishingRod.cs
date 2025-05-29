@@ -12,6 +12,7 @@ public class FishingRod : MonoBehaviour
     public float chargeMod;
     public float marginOfError;
     [SerializeField] private float maxCharge;
+    private int directional = 1;
     
     [Header("Targeting Elements")]
     public GameObject bobber;
@@ -27,7 +28,7 @@ public class FishingRod : MonoBehaviour
     //Script refs
     private UIManager _uiManager;
     private QuicktimeManager _quicktimeManager;
-    private CombatController _combatController;
+    private FishSpawner _fishSpawner;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,7 +36,7 @@ public class FishingRod : MonoBehaviour
     {
         _uiManager = FindAnyObjectByType<UIManager>();
         _quicktimeManager = FindAnyObjectByType<QuicktimeManager>();
-        _combatController = FindAnyObjectByType<CombatController>();
+        _fishSpawner = FindAnyObjectByType<FishSpawner>();
     }
     
     // Update is called once per frame
@@ -58,10 +59,14 @@ public class FishingRod : MonoBehaviour
         
         if (Input.GetMouseButton(1))    //On a continued hold, the charge value increases
         {
-            bobber.SetActive(false);
-            if (charge >= maxCharge) return;
-            charge+= (chargeMod * Time.deltaTime);
+            //bobber.SetActive(false);
+            if (charge >= maxCharge) directional = -1;
+            if (charge <= 0) directional = 1;
+            
+            charge+= (directional * chargeMod * Time.deltaTime);
             _uiManager.chargeBar.value = charge;
+            castTarget.transform.position = Input.mousePosition;
+            VisualizeCastPoint();
         }
 
         if (Input.GetMouseButtonUp(1))  //On RMB up, the rod is cast
@@ -70,6 +75,21 @@ public class FishingRod : MonoBehaviour
             bobber.SetActive(true);
             CalculateDistance();
         }
+    }
+
+    public void VisualizeCastPoint()
+    {
+        //Distances
+        float baseDistance = Vector2.Distance(lineStart.transform.position, castTarget.transform.position);
+        float distanceTraveled = baseRodDistance * (charge / maxCharge);
+        float difference = baseDistance - distanceTraveled;
+        
+        //Setting up the vectors
+        Vector3 direction = (castTarget.transform.position - lineStart.transform.position).normalized;
+        Vector3 displacement = direction * distanceTraveled;
+        Vector3 targetPoint = lineStart.transform.position + displacement;
+        
+        bobber.transform.position = targetPoint;
     }
 
     public void CalculateGunshotDistance()
@@ -81,7 +101,7 @@ public class FishingRod : MonoBehaviour
             {
                 if (fishSpot.PointWithinCorners(shotTarget.transform.position))
                 {
-                    _combatController.RemoveMutant(fishSpot.gameObject);
+                    //_fishSpawner.RemoveMutant(fishSpot.gameObject);
                     return;
                 }
             }
@@ -125,7 +145,7 @@ public class FishingRod : MonoBehaviour
     //Set things to cast again. 
     public void CanCastAgain()
     {
-        //Reset UI elements
+        /*//Reset UI elements
         cursor.GetComponent<CrosshairFollow>().enabled = true;
         fishingRodObject.SetActive(true);
         bobber.SetActive(true);
@@ -134,5 +154,6 @@ public class FishingRod : MonoBehaviour
         //Reset the charge value
         charge = 0f;
         _uiManager.chargeBar.value = charge;
+        */
     }
 }

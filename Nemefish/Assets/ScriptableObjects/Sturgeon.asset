@@ -17,9 +17,10 @@ MonoBehaviour:
   _damageDealt: 0
   _health: 15
   _successItem:
-    _itemName: Sturgeon Fillet
+    _itemName: Fish Filet
     _itemIcon: {fileID: 0}
-    _itemCategory: Fillet
+    _itemCategory: Filet
     _quantity: 0
   _tugStrength: 2
   _behavior: Chill
+  _swimSpeed: 1

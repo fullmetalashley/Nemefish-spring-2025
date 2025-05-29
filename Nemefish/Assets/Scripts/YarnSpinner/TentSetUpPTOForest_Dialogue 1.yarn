@@ -1,0 +1,91 @@
+title: SetUpCamp_Tree
+---
+//Will need to access logic for player location in-game.
+//will play upon entry to "Player Camp"
+<<if $MakeCamp == true>>
+    <<stop>>  // End the node immediately if it has already played
+<<else>>
+<<jump TentSetUpPTOForest_Dialogue>>
+<<endif>>
+===
+
+
+title: TentSetUpPTOForest_Dialogue
+---
+//<<pose PTO1CAMO>>
+//<<pose PTO2CAMO>>
+//<<pose PTO3CAMO>>
+You: Flat ground, big trees—and look at that view! Perfect spot to pitch our tent.  
+    Theodore: Brrrp.
+//animation note that PTOs in trees will change from the color of the bark to their NoBloom animations.
+//<<pose PTO1NOBLOOM>>
+//<<pose PTO2NOBLOOM>>
+//<<pose PTO3NOBLOOM>>
+//<<pose FOHI_STANDING_HISSING>>
+//<<pose PC_STANDING_FORWARD_SURPRISED>>
+You: Whoa! A real Pacific Tree Octopus roost.
+Theodore: Hiss.
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+-> Don't start another barnacle-flea fiasco, Theodore. 
+    <<jump WussPuss>>
+-> No claws needed just yet, Theodore. 
+    <<jump BeBrave>>
+===
+
+
+title: WussPuss
+---
+//<<pose FOHI_SITTING_HISSING>>
+//<<pose PC_STANDING_FORWARD_SHRUG_SMILE_ROD>>    
+//UI script commandhandler cue
+Theodore: Mrowr.
+-> Easy, fuzzball. Just because something gives you the heebie-jeebies doesn't mean it's dangerous.
+    <<jump KittyCat>>
+-> Not everything on the Drowned Coast is as pretty as you, Theodore.  
+    <<jump PrettyAsYou>>
+===
+
+
+title: KittyCat
+---
+<<set $Relate2FOHI = $Relate2FOHI - 1>>
+//<<ShowNotification "Theodore didn't appreciate that.">>
+//<<pose FOHI_STANDING_HISSING>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+-> Whoops. <i>Creature of Human Intelligence</i>, not fuzzball. My bad, Theodore.
+//<<pose FOHI_SITTING_NEUTRAL>>
+Theodore: Mrrrow.
+    <<jump MakeCamp>>
+===
+
+
+title: BeBrave
+---
+//<<pose FOHI_SITTING_NEUTRAL>>
+//<<pose PC_STANDING_FORWARD_SHRUG_ROD>>
+-> There are no recorded instances of Pacific Tree Octopus aggression.
+Theodore: Ack ack ack.
+-> Sad truth is, most Drowned Coast critters won't be as pretty as you. 
+    <<jump PrettyAsYou>>
+===
+
+
+title: PrettyAsYou
+---
+<<set $Relate2FOHI = $Relate2FOHI + 1>>
+//<<ShowNotification "Theodore appreciated that.">>
+//<<pose FOHI_SITTING_NEUTRAL>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+Theodore: Prrt.
+    <<jump MakeCamp>>
+===
+
+
+title: MakeCamp
+---
+//<<pose FOHI_SITTING_NEUTRAL>>
+//<<pose PC_STANDING_FORWARD_NEUTRAL>>
+-> Alright, let's haul out the tent and get ourselves some shelter.
+<<set $MakeCamp = true>>
+//Some UI trigger should happen here for the tent
+===

@@ -6,7 +6,10 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Ambience")]
     [field: SerializeField] public EventReference forestAmbience { get; private set; }
     [field: SerializeField] public EventReference coastAmbience { get; private set; }
-    [field: SerializeField] public EventReference ptoWalla { get; private set; }
+    [field: SerializeField] public EventReference ptoWalla { get; private set;  }
+
+    [field: Header("Music")]
+    [field: SerializeField] public EventReference score { get; private set; }
     
     [field: Header("Player SFX")]
     [field: SerializeField] public EventReference playerFootstepsDefault { get; private set; }

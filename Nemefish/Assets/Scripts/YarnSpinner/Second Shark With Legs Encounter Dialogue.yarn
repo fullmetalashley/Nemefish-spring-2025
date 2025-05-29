@@ -1,0 +1,6 @@
+title: Second_Shark_With_Legs_Encounter
+---
+//played immediately upon exit from second encounter/first combat with shark.
+You: That was way too close. We'll need to prepare if we're going to defeat that thing.
+<<stop>>
+===

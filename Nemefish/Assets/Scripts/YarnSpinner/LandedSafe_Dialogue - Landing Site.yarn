@@ -1,9 +1,0 @@
-title: LandedSafe_Dialogue
----
-//run when landed on shore.
-You: That must be the nemefish we've been sent here to deal with, Theodore.
-Theodore: Meow.
-You: We should probably find a place to set up camp before night falls.
-<<showNotification "Your Quest Log has been updated.">>
-<<questUpdate "MakeCamp">>
-===

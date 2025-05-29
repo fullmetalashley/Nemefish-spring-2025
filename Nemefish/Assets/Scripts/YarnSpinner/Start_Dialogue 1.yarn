@@ -1,0 +1,62 @@
+title: Start_Dialogue
+---
+<<declare $Relate2FOHI = 0>>  
+<<declare $Relate2FirstCustomer = 0>>
+<<declare $hasContract = false>>
+<<declare $FirstCustomerVisited = false>>
+<<declare $BloomLevel1 = false>>
+<<declare $KilledNemefish1 = false>>
+<<declare $FindPayment = false>>
+<<declare $FindJournal = false>>
+<<declare $FindNightCrawler9MM = false>>
+<<declare $FOHISpeaks = false>>
+<<declare $LearnCruisers = false>>
+<<declare $FindExterminatorCamp = false>>
+<<declare $FindWaterfrontTown = false>>
+<<declare $MakeCamp = false>>
+<<declare $BloodTrailCampSeen = false>>
+<<declare $BloodTrailConfused = false>>
+<<declare $Hold2Account = false>>
+<<declare $LapWarmer = false>>
+<<declare $DarkIsDangerous = false>>
+<<declare $BossEncounter2 = false>>
+<<declare $BloomSeen = false>>
+<<declare $LearnedofExterminator = false>>
+<<declare $KnowFOHIName = false>>
+<<declare $AskSwallowedStrait = false>>
+<<declare $AskDismalNotchNemefish = false>>
+<<declare $AskDismalNotchIsland = false>>
+<<declare $AskHalfUpFront = false>>
+<<declare $NoQuestionsAsked = false>>
+<<declare $AskHalfUpFront_Again = false>>
+<<declare $ExplainFirst = false>>
+<<declare $LearnedCoordinates = false>>
+<<declare $AskBloom = false>>
+<<declare $greetagain = 0>>
+<<declare $endquestion = 0>>
+<<declare $endbye = 0>>
+<<declare $greet = 0>>
+<<declare $question = 0>>
+<<declare $bye = 0>>
+<<declare $blood = 0>>
+<<declare $leaveearly = 0>>
+<<declare $LandedSafe = false>>
+<<declare $worm = 0>>
+<<declare $notent = 0>>
+<<declare $WormNightCrawlerStab = 0>>
+<<declare $PTOSpeaks = 0>>
+<<declare $mutantfilet = 0>>
+<<declare $fishingarea = 0>>
+<<declare $regularfilet = 0>>
+<<declare $InterlocutorWorm = false>>
+<<declare $WormDominationAgreed = false>>
+
+<<if $Relate2FOHI == 0>>
+//<<pose FIRST_CUSTOMER_GREETS>>
+You: That's our customer, alright. Over or under he stiffs us, Theodore?
+	Theodore: Mrrp.
+-> Just what I was thinking.
+<<set $Relate2FOHI = 1>>
+<<endif>>
+<<leap InteractablePoint>>
+===

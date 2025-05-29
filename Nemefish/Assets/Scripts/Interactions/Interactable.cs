@@ -22,7 +22,7 @@ public class Interactable : MonoBehaviour
     void Update()
     {
         //If we press the key and haven't already triggered dialogue...
-        if (Input.GetKeyDown(KeyCode.E) && !dialogueRunning)
+        if (Input.GetKeyDown(KeyCode.E) && !dialogueRunning && playerWithinRange)
         {
             //Trigger the dialogue.
             dialogueRunning = true;

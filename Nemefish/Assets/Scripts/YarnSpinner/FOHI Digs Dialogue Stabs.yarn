@@ -1,0 +1,23 @@
+title: FOHI_DIGS_DIALOGUE_STAB
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "FOHI_DIGS_DIALOGUE_STAB" after mousedown on worm dirt
+//Will need to access logic for player location in-game.
+<<set $worm = floor(random_range(1, 4))>>
+<<if $worm == 1>>
+    You: Atta boy!
+    <<stop>>
+    <<endif>>
+<<if $worm == 2>>
+    You: Those worms don't stand a chance!
+    <<stop>>
+    <<endif>>
+<<if $worm == 3>>
+    You: I think I see one over there!
+    <<stop>>
+    <<endif>>
+<<if $worm == 4>>
+    You: Good work!
+    <<stop>>
+    <<endif>>
+===

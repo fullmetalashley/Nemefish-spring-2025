@@ -1,0 +1,40 @@
+
+title: Check_With_FOHI
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "Check_With_FOHI" after mousedown on boat.
+//<<pose PC_STANDING_FORWARD_SHRUG_SMILE_ROD>>
+//<<pose FOHI_NEUTRAL_STANDING_IDLE>>
+-> Ready, Theodore?
+<<if $LapWarmer == true>>
+    <<jump Amends>>
+<<else>>
+    <<jump StartContract>>
+<<endif>>
+===
+
+title: Amends
+---
+//<<pose FOHI_STANDING_HISSING>>
+Theodore: <i>Hiss.</i>
+-> Are you upset I called you a LapWarmer 5000?
+//<<pose FOHI_NEUTRAL_STANDING_IDLE>>
+Theodore: Mew.
+-> Haven't you learned not to take me seriously? You're crucial to our operation, Theodore!
+    <<set $Relate2FOHI = $Relate2FOHI + 1>>
+    //<<ShowNotification "Theodore appreciated that.">>
+    //UI script commandhandler cue
+    <<jump StartContract>>
+-> That's pretty high falutin coming from a cat who spent all last night sleeping on my head. What if we call things even?
+    <<set $Relate2FOHI = $Relate2FOHI + 1>>
+    //<<ShowNotification "Theodore appreciated that.">>
+    //UI script commandhandler cue
+    <<jump StartContract>>
+===
+
+title: StartContract
+---
+Theodore: Brrt.
+-> It's settled. Let's motor!
+<<stop>>
+===

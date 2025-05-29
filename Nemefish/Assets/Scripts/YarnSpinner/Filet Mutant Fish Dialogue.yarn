@@ -1,0 +1,44 @@
+title: Filet_Mutant_Fish_Dialogue_Stab
+---
+//Triggering dialogue is handled externally. Yarn nodes assume they begin immediately after the object click or event triggers it via Unity.
+//start "Filet_Regular_Fish_Dialogue_Stab" after mousedown on regular fish with knife
+//Will need to access logic for player location in-game.
+<<set $mutantfilet = floor(random_range(1, 8))>>
+<<if $mutantfilet == 1>>
+    A Voice: I'd prefer you just ripped right through, Human.
+    You: Gah!
+    <<stop>>
+    <<endif>>
+<<if $mutantfilet == 2>>
+    A Voice: They say the soul's somewhere inside. Go on. See if I still have one.
+    You: Aah!
+    <<stop>>
+    <<endif>>
+<<if $mutantfilet == 3>>
+    A Voice: Is this my invitation to dinner?
+    <<stop>>
+    <<endif>>
+<<if $mutantfilet == 4>>
+    A Voice: Heh... that tickles...
+    <<stop>>
+    <<endif>>
+<<if $mutantfilet == 5>>
+    A Voice: Oh. I'm leaking...
+    <<stop>>
+    <<endif>>
+<<if $mutantfilet == 6>>
+    A Voice: Take me to dinner first, would ya?
+    You: Blech!
+    <<stop>>
+    <<endif>>
+<<if $mutantfilet == 7>>
+    A Voice: Cut deeper... cut deeper... cut—
+    Another Voice: No! No, please! Not there!
+    <<stop>>
+    <<endif>>
+<<if $mutantfilet == 8>>
+    A Voice: I've shown you mine. I look forward to seeing <i>yours</i>.
+    <<stop>>
+    <<endif>>
+<<stop>>
+===
