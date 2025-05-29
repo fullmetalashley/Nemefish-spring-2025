@@ -3,6 +3,8 @@ using UnityEngine;
 using Yarn.Compiler;
 using FMOD.Studio;
 using UnityEngine.EventSystems;
+using JetBrains.Annotations;
+using UnityEngine.InputSystem;
 
 [SelectionBase]
 public class PlayerController : MonoBehaviour
@@ -38,6 +40,9 @@ public class PlayerController : MonoBehaviour
     #region Internal Data
     private Directions facingDirection = Directions.RIGHT;
 
+    private readonly int animMoveRight = Animator.StringToHash("PC_WALKING_NEUTRAL_ROD_Clip");
+    private readonly int animIdleSmile = Animator.StringToHash("PC_IDLE_SMILE");
+
     private Gun _gun;
     private PlayerRaycasting raycast;
     #endregion
@@ -65,8 +70,6 @@ public class PlayerController : MonoBehaviour
         rigidBody = this.gameObject.GetComponent<Rigidbody>();
         _gun = this.gameObject.GetComponent<Gun>();
         raycast = this.gameObject.GetComponent<PlayerRaycasting>();
-        // playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.playerFootstepsDefault);
-
 
         if (AudioManager.instance != null)
         {
@@ -102,8 +105,10 @@ public class PlayerController : MonoBehaviour
         x = moveDir.x;
         y = moveDir.z;
         rigidBody.linearVelocity = moveDir * speed;
+        float mag = moveDir.sqrMagnitude;
 
-        // CalulateFacingDirection();
+        CalculateFacingDirection(x);
+        UpdateAnimation(mag);
         UpdateSound();
     }
 
@@ -138,20 +143,47 @@ public class PlayerController : MonoBehaviour
     public BasicAnimator GetAnimator() => GetComponent<BasicAnimator>();
     #endregion
 
-    /*/private void CalulateFacingDirection()
+    #region Animation Logic
+    private void CalculateFacingDirection(float horizontalDirection)
     {
-        if (moveDir.x != 0)
+        if (horizontalDirection != 0)
         {
             // for Moving Right
-            if (moveDir.x > 0)
+            if (horizontalDirection > 0)
             {
                 facingDirection = Directions.RIGHT;
             }
             // for Moving Left
-            else if (moveDir.x < 0)
+            else if (horizontalDirection < 0)
             {
                 facingDirection = Directions.LEFT;
             }
         }
-    }/*/
+
+    }
+
+    private void UpdateAnimation(float magnitude)
+    {
+        if (facingDirection == Directions.LEFT)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (facingDirection == Directions.RIGHT)
+        {
+            spriteRenderer.flipX = false;
+        }
+
+        // PC is moving
+        if (magnitude > 0)
+        {
+            animator.CrossFade(animMoveRight, 0);
+        }
+        else
+        {
+            animator.CrossFade(animIdleSmile, 0);
+        }
+    }
+
+    #endregion
+
 }

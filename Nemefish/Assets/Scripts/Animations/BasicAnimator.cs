@@ -8,7 +8,12 @@ public class BasicAnimator : MonoBehaviour
 
     public virtual void SetWalkingSide(bool val)
     {
-        thisAnimator.SetBool("Walking Side", val);
+        thisAnimator.SetBool("WalkSide", val);
+    }
+
+    public virtual void SetIdle(bool val)
+    {
+        thisAnimator.SetBool("Idle", val);
     }
 
     public virtual void SetWalkingFront(bool val)
@@ -38,7 +43,7 @@ public class BasicAnimator : MonoBehaviour
     // Set state for yarnspinner poses
     public void Pose(string action_name)
     {
-        thisAnimator.SetTrigger("action_name");   
+        thisAnimator.SetTrigger("action_name");
     }
 
     protected virtual void DeltaMovement()
@@ -52,5 +57,6 @@ public class BasicAnimator : MonoBehaviour
 
         oldPos = transform.position;
     }
+    
 
 }
