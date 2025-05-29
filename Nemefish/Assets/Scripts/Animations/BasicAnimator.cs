@@ -16,14 +16,14 @@ public class BasicAnimator : MonoBehaviour
         thisAnimator.SetBool("Idle", val);
     }
 
-    public virtual void SetWalkingFront(bool val)
+    public virtual void SetWalkUp(bool val)
     {
-        thisAnimator.SetBool("Walking Front", val);
+        thisAnimator.SetBool("WalkUp", val);
     }
 
-    public virtual void SetWalkingBack(bool val)
+    public virtual void SetWalkDown(bool val)
     {
-        thisAnimator.SetBool("Walking Back", val);
+        thisAnimator.SetBool("WalkDown", val);
     }
     public virtual void TriggerFishRodSwing()
     {
@@ -45,18 +45,6 @@ public class BasicAnimator : MonoBehaviour
     {
         thisAnimator.SetTrigger("action_name");
     }
-
-    /*/ protected virtual void DeltaMovement()
-    {
-        deltaPos = transform.position - oldPos;
-
-        if (deltaPos.sqrMagnitude > .001f * Time.deltaTime)
-            SetWalkingSide(true);
-        else
-            SetWalkingSide(false);
-
-        oldPos = transform.position;
-    }/*/
     
 
 }

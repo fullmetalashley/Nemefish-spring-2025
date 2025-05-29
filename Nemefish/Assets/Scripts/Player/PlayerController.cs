@@ -107,9 +107,9 @@ public class PlayerController : MonoBehaviour
         rigidBody.linearVelocity = moveDir * speed;
         float mag = moveDir.sqrMagnitude;
 
+        UpdateSound();
         CalculateFacingDirection(x);
         UpdateAnimation(mag);
-        UpdateSound();
     }
 
 
@@ -179,6 +179,9 @@ public class PlayerController : MonoBehaviour
             GetAnimator().SetWalkSide(true);
             GetAnimator().SetIdle(false);
         }
+        // Run argument to check if vertical movement is greater than Horizontal movement
+        // If vertical is greater moveSide to "False"
+        // If only vertical movement, set moveUp/moveDown to "false"
         else
         {
             GetAnimator().SetWalkSide(false);
