@@ -20,7 +20,10 @@ public class bookmanager_script : MonoBehaviour
     public void Open()
     {
         Debug.Log("Open Triggered!");
-        activePages[index].SetActive(true);
+        if (activePages.Count != 0)
+        {
+            activePages[index].SetActive(true);
+        }
         foreach (GameObject b in btns)
         {
             b.SetActive(true);

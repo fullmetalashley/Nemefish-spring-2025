@@ -49,4 +49,9 @@ public class MainGameHUD : MonoBehaviour
     {
         mainMenuPanel.SetActive(!mainMenuPanel.activeSelf);
     }
+
+    public void OpenQuestLog()
+    {
+        FindAnyObjectByType<bookmanager_script>().Open();
+    }
 }
