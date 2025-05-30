@@ -75985,46 +75985,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6561761696819618723, guid: c04bda1d871f96347885261045b9a019, type: 3}
-      propertyPath: _sceneToLoad.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6561761696819618723, guid: c04bda1d871f96347885261045b9a019, type: 3}
-      propertyPath: '_sceneToLoad.Array.data[0]'
-      value: Main Game HUD
-      objectReference: {fileID: 0}
-    - target: {fileID: 6561761696819618723, guid: c04bda1d871f96347885261045b9a019, type: 3}
-      propertyPath: '_sceneToLoad.Array.data[1]'
-      value: MinigameUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 6561761696819618723, guid: c04bda1d871f96347885261045b9a019, type: 3}
-      propertyPath: _conditionalSceneToLoad.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6561761696819618723, guid: c04bda1d871f96347885261045b9a019, type: 3}
-      propertyPath: '_conditionalSceneToLoad.Array.data[0]'
-      value: Readable Dead Exterminator Journal Testing
-      objectReference: {fileID: 0}
-    - target: {fileID: 6561761696819618723, guid: c04bda1d871f96347885261045b9a019, type: 3}
-      propertyPath: '_conditionalSceneToLoad.Array.data[1]'
-      value: Combat HUD
-      objectReference: {fileID: 0}
-    - target: {fileID: 6561761696819618723, guid: c04bda1d871f96347885261045b9a019, type: 3}
-      propertyPath: '_conditionalSceneToLoad.Array.data[2]'
-      value: You Died Card
-      objectReference: {fileID: 0}
-    - target: {fileID: 6561761696819618723, guid: c04bda1d871f96347885261045b9a019, type: 3}
-      propertyPath: '_conditionalSceneToLoad.Array.data[3]'
-      value: Quest Journal
-      objectReference: {fileID: 0}
-    - target: {fileID: 6561761696819618723, guid: c04bda1d871f96347885261045b9a019, type: 3}
-      propertyPath: '_conditionalSceneToLoad.Array.data[4]'
-      value: Quest Log
-      objectReference: {fileID: 0}
-    - target: {fileID: 6561761696819618723, guid: c04bda1d871f96347885261045b9a019, type: 3}
-      propertyPath: '_conditionalSceneToLoad.Array.data[5]'
-      value: MinigameUI
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

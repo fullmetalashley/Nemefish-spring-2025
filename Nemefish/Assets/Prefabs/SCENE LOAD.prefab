@@ -45,10 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneToLoad:
-  - MinigameUI
   - Main Game HUD
+  - MinigameUI
+  _conditionalSceneToLoad:
+  - Readable Dead Exterminator Journal Testing
+  - Combat HUD
+  - You Died Card
   - Quest Journal
   - Quest Log
-  - Readable Dead Exterminator Journal Testing
-  - You Died Card
-  - Combat HUD

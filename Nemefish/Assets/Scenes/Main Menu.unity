@@ -2524,7 +2524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37dcf8853946c6b49b00fc4b9d9aab20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneToLoad: MinigameImport
+  _sceneToLoad: Map Dev
 --- !u!1 &1714924212
 GameObject:
   m_ObjectHideFlags: 0
