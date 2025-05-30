@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 222262677851352320}
   speed: 7
   groundDist: 0
   canMove: 0
@@ -1214,6 +1214,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: -8435245712485981826, guid: d8b25145811459b40b9bac8bee76fcf0, type: 3}
+--- !u!212 &222262677851352320 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3626916397498700004, guid: d8b25145811459b40b9bac8bee76fcf0, type: 3}
+  m_PrefabInstance: {fileID: 3549055880795995620}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6635282584507204329 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: d8b25145811459b40b9bac8bee76fcf0, type: 3}

@@ -25,7 +25,6 @@ public class Interactable : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && !dialogueRunning && playerWithinRange)
         {
             //Trigger the dialogue.
-            dialogueRunning = true;
             CallYarn();
         }
     }
@@ -38,7 +37,6 @@ public class Interactable : MonoBehaviour
             this.playerWithinRange = true;
             if (autoInteract)
             {
-                dialogueRunning = true;
                 CallYarn();
             }
         }
@@ -54,6 +52,15 @@ public class Interactable : MonoBehaviour
     }
     public void CallYarn()
     {
+        dialogueRunning = true;
+        Debug.Log("Entering Yarn node " + yarnNode);
+
+        if (!_dialogueRunner)
+        {
+            Debug.Log("No dialogue runner found for Interactible with yarn node " + yarnNode);
+            return;
+        }
+
         _dialogueRunner.StartDialogue(yarnNode);
     }
 

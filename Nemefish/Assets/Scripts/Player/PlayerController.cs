@@ -164,28 +164,31 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateAnimation(float magnitude)
     {
-        if (facingDirection == Directions.LEFT)
+        if (spriteRenderer != null && animator != null)
         {
-            spriteRenderer.flipX = true;
-        }
-        else if (facingDirection == Directions.RIGHT)
-        {
-            spriteRenderer.flipX = false;
-        }
+            if (facingDirection == Directions.LEFT)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else if (facingDirection == Directions.RIGHT)
+            {
+                spriteRenderer.flipX = false;
+            }
 
-        // PC is moving
-        if (magnitude > 0)
-        {
-            GetAnimator().SetWalkSide(true);
-            GetAnimator().SetIdle(false);
-        }
-        // Run argument to check if vertical movement is greater than Horizontal movement
-        // If vertical is greater moveSide to "False"
-        // If only vertical movement, set moveUp/moveDown to "false"
-        else
-        {
-            GetAnimator().SetWalkSide(false);
-            GetAnimator().SetIdle(true);
+            // PC is moving
+            if (magnitude > 0)
+            {
+                GetAnimator().SetWalkSide(true);
+                GetAnimator().SetIdle(false);
+            }
+            // Run argument to check if vertical movement is greater than Horizontal movement
+            // If vertical is greater moveSide to "False"
+            // If only vertical movement, set moveUp/moveDown to "false"
+            else
+            {
+                GetAnimator().SetWalkSide(false);
+                GetAnimator().SetIdle(true);
+            }
         }
     }
 
