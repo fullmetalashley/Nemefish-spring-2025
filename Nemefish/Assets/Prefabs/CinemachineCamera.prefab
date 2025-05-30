@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1094334176618924885
+--- !u!1 &136137367081082641
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4285283745600203621}
-  - component: {fileID: 5460123912519848330}
-  - component: {fileID: 237110503722265584}
+  - component: {fileID: 3154860443791661792}
+  - component: {fileID: 6349152205464738447}
+  - component: {fileID: 5637037990382087698}
+  - component: {fileID: 2844036304742524145}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -18,28 +19,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4285283745600203621
+--- !u!4 &3154860443791661792
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094334176618924885}
+  m_GameObject: {fileID: 136137367081082641}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: -0.18796949, y: 4.3441906, z: -9.934915}
+  m_LocalRotation: {x: 0.47718117, y: 0.000000029474862, z: -0.0000000044058166, w: 0.878805}
+  m_LocalPosition: {x: -46.03, y: 7.373229, z: -34.624546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
---- !u!114 &5460123912519848330
+  m_LocalEulerAnglesHint: {x: 50.76, y: 0, z: 0}
+--- !u!114 &6349152205464738447
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094334176618924885}
+  m_GameObject: {fileID: 136137367081082641}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
@@ -57,10 +58,10 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 40
-    OrthographicSize: 1.69
+    FieldOfView: 61.1
+    OrthographicSize: 5
     NearClipPlane: 0.1
-    FarClipPlane: 5000
+    FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
     PhysicalProperties:
@@ -76,22 +77,39 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
---- !u!114 &237110503722265584
+--- !u!114 &5637037990382087698
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094334176618924885}
+  m_GameObject: {fileID: 136137367081082641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 886251e9a18ece04ea8e61686c173e1b, type: 3}
+  m_Script: {fileID: 11500000, guid: b617507da6d07e749b7efdb34e1173e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraDistance: 10
-  DeadZoneDepth: 0
+  TrackerSettings:
+    BindingMode: 0
+    PositionDamping: {x: 0.93, y: 0.21, z: 0.05}
+    AngularDampingMode: 0
+    RotationDamping: {x: 1.75, y: 0.05, z: 0.05}
+    QuaternionDamping: 1
+  FollowOffset: {x: -0.14, y: 4.84, z: -4.81}
+--- !u!114 &2844036304742524145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136137367081082641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f38bda98361e1de48a4ca2bd86ea3c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   Composition:
-    ScreenPosition: {x: 0, y: 0}
+    ScreenPosition: {x: 0, y: -0.5}
     DeadZone:
       Enabled: 0
       Size: {x: 0.2, y: 0.2}
@@ -100,8 +118,8 @@ MonoBehaviour:
       Size: {x: 0.8, y: 0.8}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
-  TargetOffset: {x: 0, y: 0, z: 0}
-  Damping: {x: 0, y: 0, z: 0}
+  TargetOffset: {x: -0.14, y: 4.02, z: 2.44}
+  Damping: {x: 0, y: 0}
   Lookahead:
     Enabled: 0
     Time: 0
