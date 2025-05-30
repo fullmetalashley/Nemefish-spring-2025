@@ -47,9 +47,8 @@ MonoBehaviour:
   _sceneToLoad:
   - Main Game HUD
   - MinigameUI
+  - Quest Log
   _conditionalSceneToLoad:
   - Readable Dead Exterminator Journal Testing
   - Combat HUD
   - You Died Card
-  - Quest Journal
-  - Quest Log

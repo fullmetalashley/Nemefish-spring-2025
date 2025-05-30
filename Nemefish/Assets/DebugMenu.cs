@@ -17,12 +17,27 @@ public class DebugMenu : MonoBehaviour
 
     private PlayerInventory _playerInventory;
     private MainGameHUD _mainGameHUD;
+
+    [SerializeField] private GameObject debugMenu;
     
     void Start()
     {
         _fishSpawner = FindAnyObjectByType<FishSpawner>();
         _playerInventory = FindAnyObjectByType<PlayerInventory>();
         _mainGameHUD = FindAnyObjectByType<MainGameHUD>();
+    }
+
+    public void ToggleMenu()
+    {
+        debugMenu.SetActive(!debugMenu.activeSelf);
+
+        if (debugMenu.activeSelf)
+        {
+            //Try and get those refs again, just in case. 
+            _fishSpawner = FindAnyObjectByType<FishSpawner>();
+            _playerInventory = FindAnyObjectByType<PlayerInventory>();
+            _mainGameHUD = FindAnyObjectByType<MainGameHUD>();
+        }
     }
 
     public void AddItem(string itemToAdd)

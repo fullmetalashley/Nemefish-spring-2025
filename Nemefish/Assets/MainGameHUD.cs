@@ -27,10 +27,17 @@ public class MainGameHUD : MonoBehaviour
         
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
     public void UpdateText()
     {
+        _playerInventory = FindAnyObjectByType<PlayerInventory>();
+
         //Update the health text
         //Update all inventory
+        if (_playerInventory == null) return;
         healthText.text = "" + _playerInventory.playerHealth;
         fishFiletText.text = "" + _playerInventory.ReturnItemCount("Fish Filet");
         mutantFiletText.text = "" + _playerInventory.ReturnItemCount("Mutant Filet");
