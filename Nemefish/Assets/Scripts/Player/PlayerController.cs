@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
 
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-        Vector3 moveDir = new Vector3(x, 0, y);
+        Vector3 moveDir = new Vector3(y * -1, 0, x);
 
         if (x * x + y * y > 1)
             moveDir.Normalize();
