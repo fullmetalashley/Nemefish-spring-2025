@@ -10,7 +10,17 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     #region Enums
-    private enum Directions { UP, DOWN, LEFT, RIGHT }
+    private enum Directions
+    {
+        UP,
+        DOWN,
+        LEFT,
+        RIGHT,
+        STAND_UP,
+        STAND_DOWN,
+        STAND_LEFT,
+        STAND_RIGHT
+    }
     #endregion
 
     #region Editor Data
@@ -51,6 +61,8 @@ public class PlayerController : MonoBehaviour
     #region Audio Vaariables
     private EventInstance playerFootsteps;
     #endregion
+
+
 
     private void Awake()
     {
@@ -110,6 +122,8 @@ public class PlayerController : MonoBehaviour
         UpdateSound();
         CalculateFacingDirection(x);
         UpdateAnimation(mag);
+
+        // UpdateAnimation(x, y);
     }
 
 
@@ -190,6 +204,42 @@ public class PlayerController : MonoBehaviour
                 GetAnimator().SetIdle(true);
             }
         }
+    }
+
+    private void UpdateAnimation(float x, float y)
+    {
+        // Check if player is holding still. If so, use a standing animation. Else, use a walking animation
+        if (x == 0 && y == 0)
+        {
+            // If player is currently in a walking animation, switch to the standing animation of the same direction
+            if (facingDirection == Directions.UP)
+                facingDirection = Directions.STAND_UP;
+            if (facingDirection == Directions.LEFT)
+                facingDirection = Directions.STAND_LEFT;
+            if (facingDirection == Directions.RIGHT)
+                facingDirection = Directions.STAND_RIGHT;
+            if (facingDirection == Directions.DOWN)
+                facingDirection = Directions.STAND_DOWN;
+        }
+        // Check if left-right movement is more significant than up-down movement
+        else if (Math.Abs(x) >= Math.Abs(y))
+        {
+            // East, else West
+            if (x > 0)
+                facingDirection = Directions.RIGHT;
+            else if (x < 0)
+                facingDirection = Directions.LEFT;
+        }
+        else
+        {
+            // North, else South
+            if (y > 0)
+                facingDirection = Directions.UP;
+            else if (y < 0)
+                facingDirection = Directions.DOWN;
+        }
+
+        // facingDirection is calculated, code to set animator based on direction goes here
     }
 
     #endregion
