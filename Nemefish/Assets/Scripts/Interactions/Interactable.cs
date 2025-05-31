@@ -4,13 +4,25 @@ using Yarn.Unity;
 
 public class Interactable : MonoBehaviour
 {
-    public bool playerWithinRange;
-    public bool dialogueRunning;
-    public bool autoInteract;
+    public bool triggersOnProximity;
+    public bool triggersOnMouseClick;
+    public bool triggersOnInteractButton;
+    public bool isSingleUse;
 
-    private DialogueRunner _dialogueRunner;
-
+    public bool hasDialogue;
     public string yarnNode;
+
+    public bool teleportPlayerAfterUse;
+    public float teleportX;
+    public float teleportY;
+    public float teleportZ;
+
+    public string tagOfItemGivenOnUse;
+
+    public bool playerWithinRange = false;
+    public bool dialogueRunning = false;
+    public bool hasBeenUsed = false;
+    private DialogueRunner _dialogueRunner;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,10 +34,10 @@ public class Interactable : MonoBehaviour
     void Update()
     {
         //If we press the key and haven't already triggered dialogue...
-        if (Input.GetKeyDown(KeyCode.E) && !dialogueRunning && playerWithinRange)
+        if (triggersOnInteractButton && Input.GetKeyDown(KeyCode.E) && !dialogueRunning && playerWithinRange)
         {
             //Trigger the dialogue.
-            CallYarn();
+            RunBehavior();
         }
     }
 
@@ -35,15 +47,16 @@ public class Interactable : MonoBehaviour
         {
             //This is the player character, and this object is now interactable. 
             this.playerWithinRange = true;
-            if (autoInteract)
-            {
-                if (_dialogueRunner == null)
-                {
-                    _dialogueRunner = FindAnyObjectByType<DialogueRunner>();
-                }
-                CallYarn();
-            }
+
+            if (triggersOnProximity)
+                RunBehavior();
         }
+    }
+
+    void OnClick()
+    {
+        if (triggersOnMouseClick)
+            RunBehavior();
     }
 
     private void OnTriggerExit(Collider other)
@@ -54,24 +67,58 @@ public class Interactable : MonoBehaviour
             this.playerWithinRange = false;
         }
     }
-    public void CallYarn()
+
+    private void RunBehavior()
     {
-        dialogueRunning = true;
-        Debug.Log("Entering Yarn node " + yarnNode);
-
-        if (!_dialogueRunner)
-        {
-            Debug.Log("No dialogue runner found for Interactible with yarn node " + yarnNode);
+        if (isSingleUse && hasBeenUsed)
             return;
-        }
 
-        _dialogueRunner.StartDialogue(yarnNode);
+        if (hasDialogue)
+        {
+            Debug.Log("Entering Yarn node " + yarnNode);
+
+            if (!_dialogueRunner)
+            {
+                Debug.Log("No dialogue runner found for Interactible with yarn node " + yarnNode);
+                return;
+            }
+
+            dialogueRunning = true;
+
+            _dialogueRunner.StartDialogue(yarnNode);
+        }
+        else
+        {
+            EndRunBehavior();
+        }
     }
 
     [YarnCommand("leap")]
     public void EndDialogue()
     {
-        Debug.Log("Stopping dialogue");
+        Debug.Log("Exiting dialogue for yarn node " + yarnNode);
         dialogueRunning = false;
+        EndRunBehavior();
+    }
+    
+    private void EndRunBehavior()
+    {
+        if (teleportPlayerAfterUse)
+        {
+            Vector3 destination = new Vector3(teleportX, teleportY, teleportZ);
+            GameObject player = GameObject.FindWithTag("Player");
+
+            Debug.Log("Teleporting player to " + destination);
+            player.GetComponent<Rigidbody>().position = destination;
+        }
+
+        if (tagOfItemGivenOnUse != "")
+        {
+            Debug.Log("Giving player item with tag " + tagOfItemGivenOnUse);
+
+            // Code to give player item, such as worm
+        }
+
+        hasBeenUsed = true;
     }
 }
