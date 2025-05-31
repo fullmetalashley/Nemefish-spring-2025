@@ -17,6 +17,7 @@ public class DebugMenu : MonoBehaviour
 
     private PlayerInventory _playerInventory;
     private MainGameHUD _mainGameHUD;
+    private UIManager _uiManager;
 
     [SerializeField] private GameObject debugMenu;
     
@@ -25,6 +26,7 @@ public class DebugMenu : MonoBehaviour
         _fishSpawner = FindAnyObjectByType<FishSpawner>();
         _playerInventory = FindAnyObjectByType<PlayerInventory>();
         _mainGameHUD = FindAnyObjectByType<MainGameHUD>();
+        _uiManager = FindAnyObjectByType<UIManager>();
     }
 
     public void ToggleMenu()
@@ -50,6 +52,13 @@ public class DebugMenu : MonoBehaviour
 
         _playerInventory.AddItem(newItem);
         _mainGameHUD.UpdateText();
+    }
+
+    public void ToggleMinigame()
+    {
+        _uiManager = FindAnyObjectByType<UIManager>();
+
+        _uiManager.ToggleFishing();
     }
 
     public void CaughtFish()
