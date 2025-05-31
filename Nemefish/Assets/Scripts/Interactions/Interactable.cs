@@ -37,6 +37,10 @@ public class Interactable : MonoBehaviour
             this.playerWithinRange = true;
             if (autoInteract)
             {
+                if (_dialogueRunner == null)
+                {
+                    _dialogueRunner = FindAnyObjectByType<DialogueRunner>();
+                }
                 CallYarn();
             }
         }

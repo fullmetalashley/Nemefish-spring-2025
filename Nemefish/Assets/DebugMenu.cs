@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Yarn.Unity;
 
 public class DebugMenu : MonoBehaviour
 {
@@ -31,6 +32,11 @@ public class DebugMenu : MonoBehaviour
         _mainGameHUD.UpdateText();
     }
 
+    public void CheckYarnVariables()
+    {
+        data.text += "\n" + FindAnyObjectByType<InMemoryVariableStorage>().GetDebugList();
+    }
+    
     public void ToggleMenu()
     {
         debugMenu.SetActive(!debugMenu.activeSelf);
