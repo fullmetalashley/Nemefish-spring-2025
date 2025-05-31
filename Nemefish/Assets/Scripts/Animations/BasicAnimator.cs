@@ -1,4 +1,5 @@
 using UnityEngine;
+using Yarn.Unity;
 
 public class BasicAnimator : MonoBehaviour
 {
@@ -41,9 +42,10 @@ public class BasicAnimator : MonoBehaviour
     }
 
     // Set state for yarnspinner poses
+    [YarnCommand("pose")]
     public void Pose(string action_name)
     {
-        thisAnimator.SetTrigger("action_name");
+        thisAnimator.SetTrigger(action_name);
     }
     
 
