@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
         STAND_UP,
         STAND_DOWN,
         STAND_LEFT,
-        STAND_RIGHT
+        STAND_RIGHT,
+        IDLE
     }
     #endregion
 
@@ -49,9 +50,6 @@ public class PlayerController : MonoBehaviour
 
     #region Internal Data
     private Directions facingDirection = Directions.RIGHT;
-
-    private readonly int animMoveRight = Animator.StringToHash("PC_WALKING_NEUTRAL_ROD_Clip");
-    private readonly int animIdleSmile = Animator.StringToHash("PC_IDLE_SMILE");
 
     private Gun _gun;
     private PlayerRaycasting raycast;
@@ -120,10 +118,8 @@ public class PlayerController : MonoBehaviour
         float mag = moveDir.sqrMagnitude;
 
         UpdateSound();
-        CalculateFacingDirection(x);
-        UpdateAnimation(mag);
-
-        // UpdateAnimation(x, y);
+        CalculateFacingDirection(x, y);
+        UpdateAnimation();
     }
 
 
@@ -158,55 +154,77 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Animation Logic
-    private void CalculateFacingDirection(float horizontalDirection)
+    private void CalculateFacingDirection(float x, float y)
     {
-        if (horizontalDirection != 0)
+        // Check if player is holding still. If so, use a standing animation. Else, use a walking animation
+        if (x == 0 && y == 0)
+            facingDirection = Directions.IDLE;
+
+        // Check if left-right movement is more significant than up-down movement
+        else if (Math.Abs(x) >= Math.Abs(y))
         {
-            // for Moving Right
-            if (horizontalDirection > 0)
+            // East, else West
+            if (x > 0)
             {
                 facingDirection = Directions.RIGHT;
-            }
-            // for Moving Left
-            else if (horizontalDirection < 0)
-            {
-                facingDirection = Directions.LEFT;
-            }
-        }
-
-    }
-
-    private void UpdateAnimation(float magnitude)
-    {
-        if (spriteRenderer != null && animator != null)
-        {
-            if (facingDirection == Directions.LEFT)
-            {
-                spriteRenderer.flipX = true;
-            }
-            else if (facingDirection == Directions.RIGHT)
-            {
                 spriteRenderer.flipX = false;
             }
-
-            // PC is moving
-            if (magnitude > 0)
+            else if (x < 0)
             {
-                GetAnimator().SetWalkSide(true);
-                GetAnimator().SetIdle(false);
-            }
-            // Run argument to check if vertical movement is greater than Horizontal movement
-            // If vertical is greater moveSide to "False"
-            // If only vertical movement, set moveUp/moveDown to "false"
-            else
-            {
-                GetAnimator().SetWalkSide(false);
-                GetAnimator().SetIdle(true);
+                facingDirection = Directions.LEFT;
+                spriteRenderer.flipX = true;
             }
         }
+            else
+            {
+                // North, else South
+                if (y > 0)
+                    facingDirection = Directions.UP;
+                else if (y < 0)
+                    facingDirection = Directions.DOWN;
+            }
+
+        // Debug.Log(facingDirection);
+
     }
 
-    private void UpdateAnimation(float x, float y)
+    private void UpdateAnimation()
+    {
+        if (facingDirection == Directions.IDLE)
+        {
+                GetAnimator().SetIdle(true);
+                GetAnimator().SetWalkSide(false);
+                GetAnimator().SetWalkUp(false);
+                GetAnimator().SetWalkDown(false);
+        }
+        else
+        {
+            if (facingDirection == Directions.LEFT || facingDirection == Directions.RIGHT)
+            {
+                GetAnimator().SetIdle(false);
+                GetAnimator().SetWalkSide(true);
+                GetAnimator().SetWalkUp(false);
+                GetAnimator().SetWalkDown(false);
+            }
+            else if (facingDirection == Directions.UP)
+            {
+                GetAnimator().SetIdle(false);
+                GetAnimator().SetWalkSide(false);
+                GetAnimator().SetWalkUp(true);
+                GetAnimator().SetWalkDown(false);
+            }
+            else if (facingDirection == Directions.DOWN)
+            {
+                GetAnimator().SetIdle(false);
+                GetAnimator().SetWalkSide(false);
+                GetAnimator().SetWalkUp(false);
+                GetAnimator().SetWalkDown(true);
+            }
+        }
+        
+    }
+
+    private void UpdateAnimation2(float x, float y)
     {
         // Check if player is holding still. If so, use a standing animation. Else, use a walking animation
         if (x == 0 && y == 0)
