@@ -105,20 +105,17 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-        Vector3 moveDir = new Vector3(y * -1, 0, x);
+        Vector2 playerInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-        if (x * x + y * y > 1)
-            moveDir.Normalize();
+        if (playerInput.sqrMagnitude > 1)
+            playerInput.Normalize();
 
-        x = moveDir.x;
-        y = moveDir.z;
+        Vector3 moveDir = new Vector3(playerInput.y * -1, 0, playerInput.x);
+
         rigidBody.linearVelocity = moveDir * speed;
-        float mag = moveDir.sqrMagnitude;
 
         UpdateSound();
-        CalculateFacingDirection(x, y);
+        CalculateFacingDirection(playerInput.x, playerInput.y);
         UpdateAnimation();
     }
 
