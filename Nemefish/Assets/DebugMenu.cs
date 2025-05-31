@@ -27,6 +27,8 @@ public class DebugMenu : MonoBehaviour
         _playerInventory = FindAnyObjectByType<PlayerInventory>();
         _mainGameHUD = FindAnyObjectByType<MainGameHUD>();
         _uiManager = FindAnyObjectByType<UIManager>();
+        
+        _mainGameHUD.UpdateText();
     }
 
     public void ToggleMenu()
