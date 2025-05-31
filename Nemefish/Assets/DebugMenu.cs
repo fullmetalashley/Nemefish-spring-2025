@@ -20,6 +20,9 @@ public class DebugMenu : MonoBehaviour
     private MainGameHUD _mainGameHUD;
     private UIManager _uiManager;
 
+    public InputField yarnNode;
+    public InputField yarnVariable;
+
     [SerializeField] private GameObject debugMenu;
     
     void Start()
@@ -35,6 +38,21 @@ public class DebugMenu : MonoBehaviour
     public void CheckYarnVariables()
     {
         data.text += "\n" + FindAnyObjectByType<InMemoryVariableStorage>().GetDebugList();
+    }
+
+    public void CallYarnNode()
+    {
+        DialogueRunner _dialogue = FindAnyObjectByType<DialogueRunner>();
+        
+        _dialogue.StartDialogue(yarnNode.text);
+    }
+
+    public void SetYarnVariable()
+    {
+        DialogueRunner _dialogue = FindAnyObjectByType<DialogueRunner>();
+        
+        _dialogue.VariableStorage.TryGetValue(yarnVariable.text, out bool currentStatus);
+        _dialogue.VariableStorage.SetValue(yarnVariable.text, !currentStatus);
     }
     
     public void ToggleMenu()
