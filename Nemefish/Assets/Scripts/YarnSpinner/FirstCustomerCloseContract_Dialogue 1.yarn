@@ -47,7 +47,7 @@ title: Elements
 //<<pose FIRST_CUSTOMER_TALKS>>
 //<<pose FOHI_NEUTRAL_SITTING>>
 //<<pose PC_STANDING_FORWARD_NEUTRAL>>
-Customer: Polite as ever, despite the wildnerness! And the nemefish? Did you give him the ol' splash and slash?
+Customer: Polite as ever, even after a night in the cold! And the nemefish? Did you give him the ol' splash and slash?
 <<if $LearnCruisers == true>>
     <<jump AboutThat>>
 <<else>>
@@ -57,7 +57,7 @@ Customer: Polite as ever, despite the wildnerness! And the nemefish? Did you giv
 
 title: AboutThat
 ---
--> Um, sir—I found a letter on the island. One that suggests you knew exactly what we were up against. Is that true?
+-> Um, sir—I found a letter on the island. It made it seem you knew exactly what we were up against. Is that true?
     <<jump DelicateMatter>>
 -> Yeah, about that. I found a letter that made it pretty clear you knew exactly what we were facing. Why didn't you tell us? You pretended you had no idea!
     <<jump DirectlyAsk>>
@@ -68,9 +68,9 @@ title: DelicateMatter
 //<<pose FIRST_CUSTOMER_WORRIED>>
 //<<pose PC_STANDING_FORWARD_SHRUG_ROD>>
 Customer: It isn't what you think! 
--> Well, now's the time to explain your side.
+-> Well, now's the time to explain.
     <<jump Explain>>
--> It doesn't matter what <i>I</i> think. As a proud employee of Nixer Inc.'s Guide to Nemefish Extermination, I'm obligated to report your withholding of pertinent facts.
+-> It doesn't matter what <i>I</i> think. As a proud employee of Nixer Inc.'s Guide to Nemefish Extermination, I'm obligated to report you for the withholding of pertinent facts.
     <<jump NoExplanation>>
 ===
 
@@ -82,9 +82,9 @@ title: DirectlyAsk
    // <<ShowNotification "Whiskers appreciated that.">>
     //UI script commandhandler cue
 Customer: I'm sorry! I was afraid!
--> Well, now's the time to explain your side.
+-> Well, now's the time to explain.
     <<jump Explain>>
--> It doesn't matter what <i>I</i> think. As a proud employee of Nixer Inc.'s Guide to Nemefish Extermination, I'm obligated to report your withholding of pertinent facts.
+-> It doesn't matter what <i>I</i> think. As a proud employee of Nixer Inc.'s Guide to Nemefish Extermination, I'm obligated to report you for the withholding of pertinent facts.
     <<jump NoExplanation>>
 ===
 
@@ -98,7 +98,7 @@ Customer: My wife always says I'm a terrible liar...
 -> Well, you had me fooled.
 Customer: If you remember, it was my aunt who tipped me off about the creature. She belongs to a... community. Not everyone's fond of them. Have you heard of the Cruise Ship Colony?
 -> Bits and pieces.
-Customer: They live on a derelict cruise ship—the Mother Superior. Eccentric folk, mostly harmless. But around here? Well, some Drowners think they're a cult. I was worried that if you knew they were my source of information, you'd write me off. Plenty would.
+Customer: They live on a derelict cruise ship. Eccentric folk, mostly harmless. But around here? Well, some Drowners think they're a cult. I was worried that if you knew they were my source of information, you'd write me off. Plenty would.
 -> So you risked peoples' lives for your <i>reputation?</i>
     <<jump Reputation1>>
 ===
@@ -106,7 +106,7 @@ Customer: They live on a derelict cruise ship—the Mother Superior. Eccentric f
 title: Reputation1
 ---
 //<<pose FIRST_CUSTOMER_CRY>>
-Customer: Not for my reputation. For my wife. For my kids. Every day the tide inches closer to our home. By the time my youngest reaches my hip, it'll be flooded. Still—no matter how much we scrimp and save—we've never had enough to leave. Then, it hit me: Dismal Notch! Thanks to the Shark with Legs, land there is cheap. But we needed it gone in order to relocate.
+Customer: Not for my reputation. For my wife. For my kids. Every day the tide inches closer to our home. In just a couple years, it'll be flooded. Still—no matter how much we scrimp and save—we've never had enough to leave. Then, it hit me: Dismal Notch! Thanks to the Shark with Legs, land there is cheap. But we needed it gone in order to relocate.
 -> I understand wanting to protect those you love. 
     <<jump ProtectFam>>
 -> But you protected your family at <i>our</i> expense. And the other Exterminator? She paid the ultimate price.
@@ -222,7 +222,7 @@ title: MoreAShock
 ---
 //<<pose FOHI_NEUTRAL_SITTING>>
 //<<pose PC_STANDING_FORWARD_NEUTRAL>>
-Whiskers: I <i>told</i> you this would happen.. So, are we going to eat him or do we have to go all the way to this boat for a meal?
+Whiskers: I <i>told</i> you this would happen.. So, is he going to be lunch or do we have to go all the way to this boat for a meal?
 -> Oh, leave him be. I think we've given him as much of a headache as he's given us. And anyway, the people on the Mother Superior might know more about what's happening to the Swallowed Strait. And what's happening to you. At the very least, sounds like there's work, and we could always use that.
 Whiskers: I prefer the kind that <i>pays</i>.
 -> Here's to hoping.
@@ -252,7 +252,7 @@ title: NotTooFar
     Customer: If you set out now, you'll reach the ship by sundown. And I swear, my aunt will treat you fair! She's already agreed to help, even if it's a hassle.
 <<endif>>
 -> What's her name?
-Customer: Eunice! She works in the old gift shop. It's the perfect place to buy new gear, should you see something you fancy.
+Customer: Eunice! She works in the old gift shop. It's the perfect place to buy new gear, if you wanted to resupply.
 -> Looks like that's my only option.
 <<if $ExplainFirst == true>>
     Customer: I wish we'd parted on better terms, Inlander. Because of you, my children will be able to grow up in a home with dry floors. I won't forget who we owe for that, or what it cost them.

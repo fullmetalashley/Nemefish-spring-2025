@@ -1,37 +1,43 @@
 title: Discover_PTOs_Speak
 --- 
-<<set $PTOSpeaks = floor(random_range(1, 8))>>
-<<if $PTOSpeaks == 1>>
-    Pacific Tree Octopus: It matters what matters we use to think other matters with.
+<<if $FOHISpeaks == true>>
+    //<<pose PTO1BLOOM1>>
+    //<<pose PTO2BLOOM1>>
+    //<<pose PTO3BLOOM1>>
+    <<set $PTOSpeaks = floor(random_range(1, 8))>>
+    <<if $PTOSpeaks == 1>>
+        Pacific Tree Octopus: It matters what matters we use to think other matters with.
+        <<stop>>
+        <<endif>>
+    <<if $PTOSpeaks == 2>>
+        Pacific Tree Octopus: It matters what stories we tell to tell other stories with.
+        <<stop>>
+        <<endif>>
+    <<if $PTOSpeaks == 3>>
+        Pacific Tree Octopus: It matters what knots knot knots, what thoughts think thoughts, what descriptions describe descriptions, what ties tie ties.
+        <<stop>>
+        <<endif>>
+    <<if $PTOSpeaks == 4>>
+        Pacific Tree Octopus: It matters what stories make worlds, what worlds make stories.
+        <<stop>>
+        <<endif>>
+    <<if $PTOSpeaks == 5>>
+        Pacific Tree Octopus: If I entirely change color, shift into a new shape, and completely alter my texture... am I still the same octopus I was before?
+        <<endif>>
+    <<if $PTOSpeaks == 6>>
+        Pacific Tree Octopus: When does the old entity end and the new entity begin?
+        <<stop>>
+        <<endif>>
+    <<if $PTOSpeaks == 7>>
+        Pacific Tree Octopus: Man is the only creature who refuses to be what he is.
+        <<stop>>
+        <<endif>>
+    <<if $PTOSpeaks == 8>>
+        Pacific Tree Octopus: One must imagine him happy...
+        <<stop>>
+        <<endif>>
     <<stop>>
-    <<endif>>
-<<if $PTOSpeaks == 2>>
-    Pacific Tree Octopus: It matters what stories we tell to tell other stories with.
+<<else>>
     <<stop>>
-    <<endif>>
-<<if $PTOSpeaks == 3>>
-    Pacific Tree Octopus: It matters what knots knot knots, what thoughts think thoughts, what descriptions describe descriptions, what ties tie ties.
-    <<stop>>
-    <<endif>>
-<<if $PTOSpeaks == 4>>
-    Pacific Tree Octopus: It matters what stories make worlds, what worlds make stories.
-    <<stop>>
-    <<endif>>
-<<if $PTOSpeaks == 5>>
-    Pacific Tree Octopus: One cannot say: 'Here are our monsters,' without immediately turning the monsters into pets.
-    <<stop>>
-    <<endif>>
-<<if $PTOSpeaks == 6>>
-    Pacific Tree Octopus: The coming being is whatever being.
-    <<stop>>
-    <<endif>>
-<<if $PTOSpeaks == 7>>
-    Pacific Tree Octopus: Man is the only creature who refuses to be what he is.
-    <<stop>>
-    <<endif>>
-<<if $PTOSpeaks == 8>>
-    Pacific Tree Octopus: One must imagine him happy...
-    <<stop>>
-    <<endif>>
-<<stop>>
+<<endif>>
 ===
