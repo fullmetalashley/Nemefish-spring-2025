@@ -47,6 +47,7 @@ public class MainGameHUD : MonoBehaviour
 
     public void ToggleMainMenu()
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.openCloseInventory, this.transform.position);
         mainMenuPanel.SetActive(!mainMenuPanel.activeSelf);
     }
 

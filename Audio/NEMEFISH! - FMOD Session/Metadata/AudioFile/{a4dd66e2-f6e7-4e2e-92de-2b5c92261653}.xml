@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{a4dd66e2-f6e7-4e2e-92de-2b5c92261653}">
+		<property name="assetPath">
+			<value>UX/UX_new-item-in-inventory_chime_shot.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.42327083333333332</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e7020341-c902-470a-b004-c3ceda7517ca}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -6,7 +6,7 @@ public class PlayerInventory : MonoBehaviour
     public List<Item> _inventory;
 
     public int playerHealth = 500;
-    
+
     public void AddItem(Item toAdd)
     {
         if (CheckForItem(toAdd))
@@ -18,6 +18,8 @@ public class PlayerInventory : MonoBehaviour
         {
             _inventory.Add(toAdd);
         }
+        // Play SFX for adding item to inventory
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.addItemToInventory, this.transform.position);
     }
 
     public int ReturnItemCount(string itemName)

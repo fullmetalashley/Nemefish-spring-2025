@@ -131,6 +131,13 @@ MonoBehaviour:
       Data3: 53788316
       Data4: 498371144
     Path: event:/SFX/InjuryGrunt
+  <fohiFootstepsDefault>k__BackingField:
+    Guid:
+      Data1: -236859841
+      Data2: 1117413569
+      Data3: 534519681
+      Data4: -1539483600
+    Path: event:/SFX/fohiFootstepsDefault
   <wormGunStandard>k__BackingField:
     Guid:
       Data1: -1983594512
@@ -138,3 +145,38 @@ MonoBehaviour:
       Data3: 838865560
       Data4: 1185633782
     Path: event:/SFX/WormGunStandard
+  <filetFish>k__BackingField:
+    Guid:
+      Data1: 637237179
+      Data2: 1293330314
+      Data3: -431596887
+      Data4: 1453008470
+    Path: event:/SFX/filetFish
+  <addItemToInventory>k__BackingField:
+    Guid:
+      Data1: 564549588
+      Data2: 1232219912
+      Data3: 1431881404
+      Data4: -497814157
+    Path: event:/SFX/UX/additemToInventory
+  <openCloseInventory>k__BackingField:
+    Guid:
+      Data1: 754617440
+      Data2: 1245263348
+      Data3: -1898399600
+      Data4: -898553197
+    Path: event:/SFX/UX/openCloseInventory
+  <menuChangeSelection>k__BackingField:
+    Guid:
+      Data1: 1691536522
+      Data2: 1119602976
+      Data3: 1084873891
+      Data4: 823282828
+    Path: event:/SFX/UX/menuChangeSelection
+  <menuOptionSelect>k__BackingField:
+    Guid:
+      Data1: 1721619519
+      Data2: 1097146161
+      Data3: -1068531837
+      Data4: -387657739
+    Path: event:/SFX/UX/menuSelectOption

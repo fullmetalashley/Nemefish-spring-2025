@@ -37,6 +37,7 @@ public class Gun : MonoBehaviour
         {
             _fishSpawner.FishScatter();
         }
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.wormGunStandard, this.transform.position);
         ammo--;
         FindAnyObjectByType<UIManager>().UpdateUIText();
     }
