@@ -14,9 +14,19 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Player SFX")]
     [field: SerializeField] public EventReference playerFootstepsDefault { get; private set; }
     [field: SerializeField] public EventReference injuryGrunt { get; private set; }
+
+    [field: Header("FOHI SFX")]
+    [field: SerializeField] public EventReference fohiFootstepsDefault { get; private set; }
     
-    [field: Header("Gun SFX")]
+    [field: Header("Minigame SFX")]
     [field: SerializeField] public EventReference wormGunStandard { get; private set; }
+    [field: SerializeField] public EventReference filetFish { get; private set; }
+
+    [field: Header("Inventory SFX")]
+    [field: SerializeField] public EventReference addItemToInventory { get; private set; }
+    [field: SerializeField] public EventReference openCloseInventory { get; private set; }
+    [field: SerializeField] public EventReference menuChangeSelection { get; private set; }
+    [field: SerializeField] public EventReference menuOptionSelect { get; private set; }
     public static FMODEvents instance { get; private set; }
 
     private void Awake()

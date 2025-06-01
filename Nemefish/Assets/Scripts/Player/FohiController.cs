@@ -35,7 +35,7 @@ public class FohiController : MonoBehaviour
     private int animationSleepFrameCounter;
 
     // Audio
-    private EventInstance playerFootsteps;
+    private EventInstance fohiFootsteps;
 
     private enum AnimationKey
     {
@@ -63,7 +63,7 @@ public class FohiController : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
     }
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -84,6 +84,11 @@ public class FohiController : MonoBehaviour
 
         trackedRigidBody = trackedPlayer.GetComponent<Rigidbody>();
         trackingDistanceSquared = Math.Pow(trackingDistance, 2);
+        
+        if (AudioManager.instance != null)
+        {
+            fohiFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.fohiFootstepsDefault);
+        }
     }
 
     // Update is called once per frame
@@ -232,16 +237,16 @@ public class FohiController : MonoBehaviour
         {
             // Get the playback state
             PLAYBACK_STATE playbackState;
-            playerFootsteps.getPlaybackState(out playbackState);
+            fohiFootsteps.getPlaybackState(out playbackState);
             if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
             {
-                playerFootsteps.start();
+                fohiFootsteps.start();
             }
         }
         // Otherwise, stop the footstep event
         else
         {
-            playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+            fohiFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
         }
     }
 

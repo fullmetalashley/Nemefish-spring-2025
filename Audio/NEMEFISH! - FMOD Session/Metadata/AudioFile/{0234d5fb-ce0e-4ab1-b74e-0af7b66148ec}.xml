@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{0234d5fb-ce0e-4ab1-b74e-0af7b66148ec}">
+		<property name="assetPath">
+			<value>Enemies/EMY_ramora_hit_shot.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.81185416666666665</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e7020341-c902-470a-b004-c3ceda7517ca}</destination>
+		</relationship>
+	</object>
+</objects>
