@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{a4dd66e2-f6e7-4e2e-92de-2b5c92261653}">
+	<object class="AudioFile" id="{b771cac7-94c5-442b-895f-7624662def16}">
 		<property name="assetPath">
 			<value>UX/UX_new-item-in-inventory_chime_shot.ogg</value>
 		</property>
