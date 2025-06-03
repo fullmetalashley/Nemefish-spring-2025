@@ -5,7 +5,7 @@
 			<value>MenuAmbience</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{3b64773d-0bfb-451b-8b80-a644016c5e56}</destination>
@@ -100,6 +100,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{4688b78d-dac9-48ad-a9b8-f1cf23d26a59}">
+		<property name="volume">
+			<value>-4</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
