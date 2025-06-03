@@ -144,10 +144,12 @@ Transform:
   m_GameObject: {fileID: 144707303}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.82227, y: 2.2619715, z: -31.3742}
+  m_LocalPosition: {x: 1349, y: 720, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 588121938}
+  - {fileID: 2081120826}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &192728576
@@ -764,11 +766,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 464873375
-      Data2: 1276282946
-      Data3: -800424277
-      Data4: -1304846434
-    Path: event:/Music/OverworldTheme
+      Data1: 1979386291
+      Data2: 1276729474
+      Data3: 167384728
+      Data4: 1863963862
+    Path: event:/Music/MenuMusic
   Event: 
   EventPlayTrigger: 1
   EventStopTrigger: 2
@@ -788,12 +790,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588121936}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.82227, y: 2.2619715, z: -31.3742}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 144707304}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &610274080
 GameObject:
@@ -3318,12 +3320,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081120824}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45.82227, y: 2.2619715, z: -31.3742}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 144707304}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2090911354
 GameObject:
@@ -3410,5 +3412,3 @@ SceneRoots:
   - {fileID: 1055770060}
   - {fileID: 1702085767}
   - {fileID: 144707304}
-  - {fileID: 588121938}
-  - {fileID: 2081120826}

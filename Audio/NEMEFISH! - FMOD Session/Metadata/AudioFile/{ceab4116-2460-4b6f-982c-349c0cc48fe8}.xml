@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{ceab4116-2460-4b6f-982c-349c0cc48fe8}">
+		<property name="assetPath">
+			<value>Music/NEMEFISH! - Let's go Nemefishing.wav.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>60</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e7020341-c902-470a-b004-c3ceda7517ca}</destination>
+		</relationship>
+	</object>
+</objects>

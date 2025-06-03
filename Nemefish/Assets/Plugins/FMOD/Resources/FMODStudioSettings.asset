@@ -562,6 +562,7 @@ MonoBehaviour:
   - Master
   Banks:
   - Ambience
+  - Main Menu
   - Overworld
   - SFX
   BanksToLoad: []

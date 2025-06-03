@@ -171,7 +171,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638844781018372966
+  lastModified: 638845567804614643
   FileSizes:
   - Name: Desktop
     Value: 2345408
@@ -191,10 +191,10 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Overworld.bank
   Name: Overworld
   StudioPath: bank:/Overworld
-  lastModified: 638843904372313775
+  lastModified: 638845562722025557
   FileSizes:
   - Name: Desktop
-    Value: 1128608
+    Value: 2394752
   Exists: 1
 --- !u!114 &-5780637303468957870
 MonoBehaviour:
@@ -323,6 +323,7 @@ MonoBehaviour:
   - {fileID: 875080821087909637}
   - {fileID: -6241553406895685801}
   - {fileID: -6030717058706180211}
+  - {fileID: 425491488435094599}
   EditorEvents:
   - {fileID: -5229721654393249975}
   - {fileID: 2805846517297992435}
@@ -339,13 +340,15 @@ MonoBehaviour:
   - {fileID: -5780637303468957870}
   - {fileID: 8544504057900732849}
   - {fileID: 688613637491365290}
+  - {fileID: 3236352204962697694}
+  - {fileID: 6428948745204215230}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8084373993632148782}
   StringsBanks:
   - {fileID: 3718546587010763393}
   cacheVersion: 131847
-  cacheTime: 638844781018372966
+  cacheTime: 638845567804835216
   SerializableEventsDict:
   - key: event:/Ambience/CoastAmb
     index: 0
@@ -377,6 +380,30 @@ MonoBehaviour:
     index: 13
   - key: event:/SFX/Minigame/WormGunStandard
     index: 14
+  - key: event:/Music/MenuMusic
+    index: 15
+  - key: event:/Music/ptoTheme
+    index: 16
+--- !u!114 &425491488435094599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Main Menu.bank
+  m_EditorClassIdentifier: 
+  Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Main Menu.bank
+  Name: Main Menu
+  StudioPath: bank:/Main Menu
+  lastModified: 638845567804835216
+  FileSizes:
+  - Name: Desktop
+    Value: 726336
+  Exists: 1
 --- !u!114 &688613637491365290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,6 +506,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 60000
+--- !u!114 &3236352204962697694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MenuMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Music/MenuMusic
+  Guid:
+    Data1: 1979386291
+    Data2: 1276729474
+    Data3: 167384728
+    Data4: 1863963862
+  Banks:
+  - {fileID: 425491488435094599}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 60000
 --- !u!114 &3718546587010763393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,10 +548,10 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638843925309463999
+  lastModified: 638845562708508604
   FileSizes:
   - Name: Desktop
-    Value: 1722
+    Value: 1862
   Exists: 1
 --- !u!114 &4756391395127127885
 MonoBehaviour:
@@ -553,6 +607,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &6428948745204215230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/ptoTheme
+  m_EditorClassIdentifier: 
+  Path: event:/Music/ptoTheme
+  Guid:
+    Data1: 531674737
+    Data2: 1337618321
+    Data3: 2104506522
+    Data4: -468330335
+  Banks:
+  - {fileID: -6030717058706180211}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 97777
 --- !u!114 &8084373993632148782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,7 +649,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638843925309460250
+  lastModified: 638845562708500410
   FileSizes:
   - Name: Desktop
     Value: 1074
