@@ -70,7 +70,7 @@ MonoBehaviour:
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 0
+  Default: 0.5
   ID:
     data1: 2913999531
     data2: 1466056275
@@ -94,7 +94,7 @@ MonoBehaviour:
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 0
+  Default: 0.5
   ID:
     data1: 2913999531
     data2: 1466056275
@@ -171,10 +171,10 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638845567804614643
+  lastModified: 638846528848651238
   FileSizes:
   - Name: Desktop
-    Value: 2345408
+    Value: 2345696
   Exists: 1
 --- !u!114 &-6030717058706180211
 MonoBehaviour:
@@ -191,10 +191,10 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Overworld.bank
   Name: Overworld
   StudioPath: bank:/Overworld
-  lastModified: 638845562722025557
+  lastModified: 638846528848860127
   FileSizes:
   - Name: Desktop
-    Value: 2394752
+    Value: 2394880
   Exists: 1
 --- !u!114 &-5780637303468957870
 MonoBehaviour:
@@ -348,7 +348,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 3718546587010763393}
   cacheVersion: 131847
-  cacheTime: 638845567804835216
+  cacheTime: 638846528848860127
   SerializableEventsDict:
   - key: event:/Ambience/CoastAmb
     index: 0
@@ -399,10 +399,10 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Main Menu.bank
   Name: Main Menu
   StudioPath: bank:/Main Menu
-  lastModified: 638845567804835216
+  lastModified: 638846489858247154
   FileSizes:
   - Name: Desktop
-    Value: 726336
+    Value: 726304
   Exists: 1
 --- !u!114 &688613637491365290
 MonoBehaviour:
@@ -446,10 +446,10 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638843904373214361
+  lastModified: 638846489871648791
   FileSizes:
   - Name: Desktop
-    Value: 130720
+    Value: 130688
   Exists: 1
 --- !u!114 &1810519486723850809
 MonoBehaviour:
@@ -548,7 +548,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638845562708508604
+  lastModified: 638846522179835308
   FileSizes:
   - Name: Desktop
     Value: 1862
@@ -649,7 +649,7 @@ MonoBehaviour:
   Path: ../Audio/NEMEFISH! - FMOD Session/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638845562708500410
+  lastModified: 638846522179825017
   FileSizes:
   - Name: Desktop
     Value: 1074

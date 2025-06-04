@@ -13,7 +13,21 @@
 	</object>
 	<object class="GameParameter" id="{044d8570-b253-465c-bc65-c6862dae0a42}">
 		<property name="initialValue">
-			<value>0</value>
+			<value>0.5</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{95f3282c-53a7-4232-bebc-8ecfb5ff1c91}</destination>
+		</relationship>
+	</object>
+	<object class="SeekModulator" id="{95f3282c-53a7-4232-bebc-8ecfb5ff1c91}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>cursorPosition</value>
+		</property>
+		<property name="speedAscending">
+			<value>0.32999998331069946</value>
 		</property>
 	</object>
 </objects>

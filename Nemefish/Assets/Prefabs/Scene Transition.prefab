@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8521785617240050492}
   - component: {fileID: 2141639581587844689}
-  - component: {fileID: 3237478072664031789}
   - component: {fileID: 8424261848973359172}
+  - component: {fileID: 3237478072664031789}
   m_Layer: 0
   m_Name: Scene Transition
   m_TagString: Untagged
@@ -55,19 +55,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5398865, y: 1, z: 2.3485317}
   m_Center: {x: 0.76994324, y: 0, z: -0.67426586}
---- !u!114 &3237478072664031789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8631063614234334625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 830752a9396ccc148bcc2b7be0c91b24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: 
 --- !u!114 &8424261848973359172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,3 +69,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameterName: amb_intensity_mix
   parameterValue: 0
+--- !u!114 &3237478072664031789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8631063614234334625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830752a9396ccc148bcc2b7be0c91b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: 
+  spawnPointX: 0
+  spawnPointY: 0
+  spawnPointZ: 0
+  fohiSpawnX: 0
+  fohiSpawnY: 0
+  fohiSpawnZ: 0

@@ -123,35 +123,35 @@ MonoBehaviour:
       Data2: 1077670640
       Data3: -752145484
       Data4: -1968647844
-    Path: event:/SFX/PlayerFootstepsDefault
+    Path: event:/SFX/Player/PlayerFootstepsDefault
   <injuryGrunt>k__BackingField:
     Guid:
       Data1: -342205009
       Data2: 1115854853
       Data3: 53788316
       Data4: 498371144
-    Path: event:/SFX/InjuryGrunt
+    Path: event:/SFX/Player/InjuryGrunt
   <fohiFootstepsDefault>k__BackingField:
     Guid:
       Data1: -236859841
       Data2: 1117413569
       Data3: 534519681
       Data4: -1539483600
-    Path: event:/SFX/fohiFootstepsDefault
+    Path: event:/SFX/FOHI/fohiFootstepsDefault
   <wormGunStandard>k__BackingField:
     Guid:
       Data1: -1983594512
       Data2: 1333742896
       Data3: 838865560
       Data4: 1185633782
-    Path: event:/SFX/WormGunStandard
+    Path: event:/SFX/Minigame/WormGunStandard
   <filetFish>k__BackingField:
     Guid:
       Data1: 637237179
       Data2: 1293330314
       Data3: -431596887
       Data4: 1453008470
-    Path: event:/SFX/filetFish
+    Path: event:/SFX/Minigame/FiletFish
   <addItemToInventory>k__BackingField:
     Guid:
       Data1: 564549588
