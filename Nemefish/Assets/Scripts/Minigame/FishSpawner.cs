@@ -34,6 +34,7 @@ public class FishSpawner : MonoBehaviour
     public int activeMutantLimit;
 
     public List<SpawnPoint> spawnPositions;
+    public List<SpawnPoint> mutantSpawnPositions;
     public List<GameObject> allFishMovementPoints;
 
     public GameObject regularFishPrefab;
@@ -103,7 +104,11 @@ public class FishSpawner : MonoBehaviour
 
         //If we hit spawn time, instantiate the mutant prefab. Only one prefab for now. 
         //TODO: Make this a list of mutants, and spawn them at random?
-        var newMutant = Instantiate(mutantPrefab, environment.transform);
+
+        int randomMutantIndex = Random.Range(0, mutantSpawnPositions.Count);
+        
+        
+        var newMutant = Instantiate(mutantPrefab, mutantSpawnPositions[randomMutantIndex].transform);
         newMutant.transform.position = environment.transform.position;
 
         //Add the detection spot to the list
